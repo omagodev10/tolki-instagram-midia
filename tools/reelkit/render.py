@@ -90,6 +90,12 @@ LOGO_W = os.path.join(ASSETS, "tolki-logo-white.png")
 LOGO_D = os.path.join(ASSETS, "tolki-logo-dark.png")
 
 
+def fonts_css():
+    return "".join(f"@font-face{{font-family:'{fam}';font-weight:{w};src:url('file://{FONTS}/{fn}')}}" for fam, w, fn in [
+        ("Montserrat", 800, "montserrat-latin-800.ttf"), ("Montserrat", 900, "montserrat-latin-900.ttf"),
+        ("Inter", 400, "inter-latin-600.ttf"), ("Inter", 600, "inter-latin-600.ttf"), ("Inter", 700, "inter-latin-700.ttf"), ("Inter", 800, "inter-latin-800.ttf")])
+
+
 def card_html(c):
     k = c["kind"]
     body = c.get("html", "")
@@ -120,28 +126,13 @@ def card_html(c):
 <div style="font-family:Inter;font-weight:600;font-size:38px;line-height:1.4;color:#F1E6FB;margin-top:40px;max-width:880px">{c.get('sub','')}</div></div>"""
     else:
         raise ValueError(k)
-    ff = "".join(f"@font-face{{font-family:'{fam}';font-weight:{w};src:url('file://{FONTS}/{fn}')}}" for fam, w, fn in [
-        ("Montserrat", 800, "montserrat-latin-800.ttf"), ("Montserrat", 900, "montserrat-latin-900.ttf"),
-        ("Inter", 400, "inter-latin-600.ttf"), ("Inter", 600, "inter-latin-600.ttf"), ("Inter", 700, "inter-latin-700.ttf"), ("Inter", 800, "inter-latin-800.ttf")])
+    ff = fonts_css()
     return f"<!doctype html><html><head><meta charset='utf-8'><style>{ff}html,body{{margin:0;background:transparent}}</style></head><body><div style='position:relative;width:{W}px;height:{HH}px;overflow:hidden'>{inner}</div></body></html>"
 
 
 def render_cards(src, out):
     os.makedirs(out, exist_ok=True)
-    try:
-        from playwright.sync_api import sync_playwright
-    except ImportError:
-        return run(["node", os.path.join(NODE_DIR, "cards.js"), src, out])
-    with sync_playwright() as pw:
-        exe = "/opt/pw-browsers/chromium"
-        b = pw.chromium.launch(**({"executable_path": exe} if os.path.exists(exe) else {}))
-        pg = b.new_page(viewport={"width": W, "height": HH})
-        for f in sorted(x for x in os.listdir(src) if x.endswith(".html")):
-            pg.goto("file://" + os.path.join(src, f))
-            pg.evaluate("document.fonts.ready.then(()=>1)")
-            pg.wait_for_timeout(200)
-            pg.screenshot(path=os.path.join(out, f.replace(".html", ".png")), omit_background=True)
-        b.close()
+    return run(["node", os.path.join(NODE_DIR, "cards.js"), src, out])
 
 
 def run(cmd):
@@ -157,8 +148,10 @@ def main():
     P = json.load(open(plan_p, encoding="utf-8"))
     work = os.path.join(os.path.dirname(os.path.abspath(edit_p)), "render")
     os.makedirs(os.path.join(work, "html"), exist_ok=True)
-    for f in os.listdir(os.path.join(work, "html")):
-        os.remove(os.path.join(work, "html", f))
+    import shutil
+    for d in ("html", "png"):
+        shutil.rmtree(os.path.join(work, d), ignore_errors=True)
+    os.makedirs(os.path.join(work, "html"), exist_ok=True)
     LT = {int(k): v for k, v in E["line_times"].items()}
     total = E["out_duration"]
 
@@ -171,7 +164,20 @@ def main():
         t0 = max(0, LT[a][0] - 0.12)
         nxt = min([v[0] for k, v in LT.items() if k > b] or [total])
         t1 = min(total, max(LT[b][1] + 0.15, min(nxt, LT[b][1] + 0.6)))
+        if "t1_pad" in c:
+            t1 = min(total, LT[b][1] + c["t1_pad"])
         name = f"c{i:02d}"
+        if c["kind"] == "broll":
+            cards.append({"name": name, "t0": round(t0, 3), "t1": round(t1, 3), "full": True, "broll": c["src"], "captions": True,
+                          "ss": c.get("ss", 0.0)})
+            continue
+        if c["kind"] == "anim":
+            import math, motion
+            N = int(math.ceil((t1 - t0) * FPS)) + 1
+            html, full = motion.anim_html(c, t1 - t0, {"icon": ICON, "logo_dark": LOGO_D, "logo_white": LOGO_W}, fonts_css(), W, HH)
+            open(os.path.join(work, "html", f"{name}__{N}.seq.html"), "w", encoding="utf-8").write(html)
+            cards.append({"name": name, "t0": round(t0, 3), "t1": round(t1, 3), "full": full, "seq": True})
+            continue
         open(os.path.join(work, "html", name + ".html"), "w", encoding="utf-8").write(card_html(c))
         cards.append({"name": name, "t0": round(t0, 3), "t1": round(t1, 3), "full": c["kind"] in ("number", "virada")})
     # cartões em sequência na mesma área: o anterior termina quando o próximo começa
@@ -181,7 +187,7 @@ def main():
             x["t1"] = y["t0"]; x["cut"] = True
     if cards:
         render_cards(os.path.join(work, "html"), os.path.join(work, "png"))
-    hide = [(c["t0"], c["t1"]) for c in cards if c["full"]]
+    hide = [(c["t0"], c["t1"]) for c in cards if c["full"] and not c.get("captions")]
     ass = os.path.join(work, "captions.ass")
     write_ass(E["words"], hide, ass)
 
@@ -204,14 +210,23 @@ def main():
     inputs = ["-i", raw]
     last = "base0"
     for j, c in enumerate(cards):
-        png = os.path.join(work, "png", c["name"] + ".png")
         d = c["t1"] - c["t0"]
-        inputs += ["-loop", "1", "-t", f"{d:.3f}", "-framerate", str(FPS), "-i", png]
         idx = j + 1
-        fo = "" if c.get("cut") else f",fade=t=out:st={max(0, d - 0.14):.3f}:d=0.14:alpha=1"
-        f.append(f"[{idx}:v]format=rgba,fade=t=in:st=0:d=0.16:alpha=1{fo},setpts=PTS-STARTPTS+{c['t0']}/TB[o{j}]")
-        ydist = 0 if c["full"] else 36
-        f.append(f"[{last}][o{j}]overlay=x=0:y='if(lt(t-{c['t0']},0.18),{ydist}*(1-(t-{c['t0']})/0.18),0)':eof_action=pass:eval=frame[b{j}]")
+        if c.get("broll"):
+            inputs += ["-ss", f"{c.get('ss', 0):.3f}", "-t", f"{d:.3f}", "-i", c["broll"]]
+            f.append(f"[{idx}:v]scale={int(W*1.06)}:{int(HH*1.06)}:force_original_aspect_ratio=increase,crop={W}:{HH},setsar=1,fps={FPS},"
+                     f"eq=contrast=1.04:saturation=1.05,format=rgba,setpts=PTS-STARTPTS+{c['t0']}/TB[o{j}]")
+        elif c.get("seq"):
+            inputs += ["-framerate", str(FPS), "-start_number", "1", "-i", os.path.join(work, "png", c["name"], "%04d.png")]
+            fo = "" if (c.get("cut") or c["full"]) else f",fade=t=out:st={max(0, d - 0.14):.3f}:d=0.14:alpha=1"
+            f.append(f"[{idx}:v]format=rgba{fo},setpts=PTS-STARTPTS+{c['t0']}/TB[o{j}]")
+        else:
+            png = os.path.join(work, "png", c["name"] + ".png")
+            inputs += ["-loop", "1", "-t", f"{d:.3f}", "-framerate", str(FPS), "-i", png]
+            fo = "" if c.get("cut") else f",fade=t=out:st={max(0, d - 0.14):.3f}:d=0.14:alpha=1"
+            f.append(f"[{idx}:v]format=rgba,fade=t=in:st=0:d=0.16:alpha=1{fo},setpts=PTS-STARTPTS+{c['t0']}/TB[o{j}]")
+        ydist = 0 if (c["full"] or c.get("seq")) else 36
+        f.append(f"[{last}][o{j}]overlay=x=0:y='if(lt(t-{c['t0']},0.18),{ydist}*(1-(t-{c['t0']})/0.18),0)':eof_action=pass:eval=frame:enable='between(t,{c['t0']},{c['t1']})'[b{j}]")
         last = f"b{j}"
     f.append(f"[{last}]ass={ass}:fontsdir={FONTS},format=yuv420p[vout]")
     # whoosh sintetizado na entrada de cada cartão
