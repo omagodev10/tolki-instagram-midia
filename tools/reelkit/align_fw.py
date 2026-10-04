@@ -14,8 +14,8 @@ dur = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=d
                            capture_output=True, text=True).stdout.strip())
 from faster_whisper import WhisperModel
 m = WhisperModel(model, device="cpu", compute_type="int8")
-segs, _ = m.transcribe(video, language="pt", word_timestamps=True, vad_filter=True,
-                       initial_prompt=open(script, encoding="utf-8").read()[:600])
+segs, _ = m.transcribe(video, language="pt", word_timestamps=True, vad_filter=False,
+                       condition_on_previous_text=False, beam_size=5)
 hw = []  # (token, start, end)
 for s in segs:
     for w in s.words:

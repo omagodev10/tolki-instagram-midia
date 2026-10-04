@@ -1,13 +1,12 @@
 Sua IA responde o paciente. Mas ela agenda?
-Porque paciente que só recebe resposta some do mesmo jeito.
-A Meta lançou uma IA de 59 reais.
+Paciente que só recebe resposta some igual.
+A Meta lançou uma IA de 59 reais por mês.
 Conversa com seu cliente dia e noite.
 Antes de ligar, faz 3 perguntas.
 1: ela vê a sua agenda real?
 2: sabe quem já é paciente?
 3: chama de volta quem faltou?
-Não?
-Então você tem uma recepcionista que não marca horário.
+Se não, é uma recepcionista que não marca horário.
 Na Tolki a IA faz o ciclo inteiro.
 Do primeiro oi até a consulta marcada.
 A Odonto Excellence saiu de 15 pra 45% de agendamento.
