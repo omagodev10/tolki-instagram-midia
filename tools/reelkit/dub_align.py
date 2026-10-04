@@ -33,26 +33,63 @@ def phrases(path, model):
     return out
 
 
+def words(path, model):
+    segs, _ = model.transcribe(path, language="pt", word_timestamps=True, beam_size=5, vad_filter=False,
+                               condition_on_previous_text=False)
+    import re
+    return [(w.start, w.end, re.sub(r"[^a-z0-9à-ú]", "", w.word.lower())) for s in segs for w in s.words]
+
+
+def anchors(wv, wc, min_gap=0.28):
+    """palavras iguais nas duas falas viram âncoras (início no limpo -> início no vídeo)"""
+    import difflib
+    sm = difflib.SequenceMatcher(a=[w[2] for w in wc], b=[w[2] for w in wv], autojunk=False)
+    pts = [(wc[0][0], wv[0][0])]
+    for a, b, n in sm.get_matching_blocks():
+        for k in range(n):
+            c, v = wc[a + k][0], wv[b + k][0]
+            if c - pts[-1][0] >= min_gap and v - pts[-1][1] >= min_gap:
+                pts.append((c, v))
+    end = (wc[-1][1], wv[-1][1])
+    if end[0] - pts[-1][0] < min_gap or end[1] - pts[-1][1] < min_gap:
+        pts[-1] = end
+    else:
+        pts.append(end)
+    return pts
+
+
 def main():
     video, clean, outp = sys.argv[1:4]
     from faster_whisper import WhisperModel
     m = WhisperModel("small", compute_type="int8")
-    pv, pc = phrases(video, m), phrases(clean, m)
-    print("vídeo:", [(round(a, 2), round(b, 2), " ".join(t)) for a, b, t in pv])
-    print("limpo:", [(round(a, 2), round(b, 2), " ".join(t)) for a, b, t in pc])
     D = dur(video)
-    if len(pv) != len(pc):  # sem par frase a frase: estica a fala inteira entre o 1º e o último som
-        pv = [[pv[0][0], pv[-1][1], []]]; pc = [[pc[0][0], pc[-1][1], []]]
-    pad = 0.06
+    if "--frases" not in sys.argv:  # padrão: âncoras palavra a palavra
+        wv, wc = words(video, m), words(clean, m)
+        pts = anchors(wv, wc)
+        print("âncoras (limpo -> vídeo):", [(round(c, 2), round(v, 2)) for c, v in pts])
+        pv = [[pts[i][1], pts[i + 1][1], []] for i in range(len(pts) - 1)]
+        pc = [[pts[i][0], pts[i + 1][0], []] for i in range(len(pts) - 1)]
+        pad = 0.0
+    else:
+        pv, pc = phrases(video, m), phrases(clean, m)
+        print("vídeo:", [(round(a, 2), round(b, 2), " ".join(t)) for a, b, t in pv])
+        print("limpo:", [(round(a, 2), round(b, 2), " ".join(t)) for a, b, t in pc])
+        if len(pv) != len(pc):  # sem par frase a frase: estica a fala inteira entre o 1º e o último som
+            pv = [[pv[0][0], pv[-1][1], []]]; pc = [[pc[0][0], pc[-1][1], []]]
+        pad = 0.06
+    if pad == 0.0 and pv:  # respiro antes da 1ª e depois da última palavra
+        pc[0][0] = max(0.0, pc[0][0] - 0.05); pv[0][0] = max(0.0, pv[0][0] - 0.05)
+        pc[-1][1] = min(dur(clean), pc[-1][1] + 0.12); pv[-1][1] = min(D, pv[-1][1] + 0.12)
     fl, ins = [], ["-i", clean]
     for i, ((va, vb, _), (ca, cb, _)) in enumerate(zip(pv, pc)):
         ca, cb = max(0.0, ca - pad), min(dur(clean), cb + pad)
         tgt = (vb - va) + 2 * pad
         r = (cb - ca) / tgt  # >1 acelera
-        r = min(1.25, max(0.8, r))
+        r = min(1.35, max(0.75, r))
         ms = int(max(0.0, va - pad) * 1000)
-        fl.append(f"[0:a]atrim={ca:.3f}:{cb:.3f},asetpts=PTS-STARTPTS,atempo={r:.4f},afade=t=in:d=0.02,"
-                  f"adelay={ms}|{ms}[p{i}]")
+        seg = (cb - ca) / r
+        fl.append(f"[0:a]atrim={ca:.3f}:{cb:.3f},asetpts=PTS-STARTPTS,atempo={r:.4f},afade=t=in:d=0.006,"
+                  f"afade=t=out:st={max(0, seg - 0.006):.3f}:d=0.006,adelay={ms}|{ms}[p{i}]")
         print(f"frase {i}: limpa {cb-ca:.2f}s -> vídeo {tgt:.2f}s (x{r:.3f}) em {va-pad:.2f}s")
     n = len(fl)
     fl.append("".join(f"[p{i}]" for i in range(n)) + f"amix=inputs={n}:normalize=0,apad,atrim=0:{D:.3f}[a]")
