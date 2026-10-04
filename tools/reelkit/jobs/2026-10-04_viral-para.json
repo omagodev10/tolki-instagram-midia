@@ -1,0 +1,38 @@
+{
+ "script": "roteiros_2026-10-04_viral-para.txt",
+ "plan": "plan_viral-para.json",
+ "whisper": "small",
+ "speed": 1.2,
+ "scenes": [
+  {
+   "video": "https://d2ol7oe51mr4n9.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/ab2da7c9-8d08-4425-92fd-cc22608fbbd9.mp4",
+   "audio": "",
+   "mode": "own"
+  },
+  {
+   "video": "",
+   "audio": "https://d8j0ntlcm91z4.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/hf_20261004_234128_bca2f049-d591-4515-b122-2998d6cc0a3e.mp3",
+   "mode": "cover"
+  },
+  {
+   "video": "https://d2ol7oe51mr4n9.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/786ba6b8-ce03-4d72-97d7-ac2493b22748.mp4",
+   "audio": "",
+   "mode": "own"
+  }
+ ],
+ "broll": {},
+ "assets": {
+  "MUSIC": "https://dnznrvs05pmza.cloudfront.net/lyria3-pro/c94a6cfa-9d8c-4568-9b99-26dc332e1db5/Tolki_viral___phonk.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiMDQzZTkxZmUzZTM4Mjc4NCIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MTI2MDY3MH0.VEAf_A10L6_f7x8LrBrBpijdhlx5yUkR8lMApaIIzfk",
+  "SFX_WHOOSH": "https://d2ol7oe51mr4n9.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/8b3fca14-361b-49a0-aa2c-42d357b7336f.mp3",
+  "SFX_POP": "https://d2ol7oe51mr4n9.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/b6e5ada1-d993-485c-a979-1ee37bddd052.mp3",
+  "SFX_DING": "https://d2ol7oe51mr4n9.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/1a333ed8-cf47-4db7-81b5-f243d12375c7.mp3",
+  "SFX_CASH": "https://d2ol7oe51mr4n9.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/9652deaa-76b4-4d92-96cf-796ef5dbec26.mp3",
+  "SFX_COUNTER": "https://d2ol7oe51mr4n9.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/2949f162-7efc-48c9-91f7-942808a6cf8d.mp3",
+  "SFX_TYPING": "https://d2ol7oe51mr4n9.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/7e5b7980-c8da-4177-a102-c6e06c35556a.mp3",
+  "SFX_RISER": "https://d2ol7oe51mr4n9.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/cca2683a-2e19-407b-aa65-590d3f7e124f.mp3",
+  "SFX_BOOM": "https://d2ol7oe51mr4n9.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/980c06f2-68a0-42e4-bce9-9d8a027cc035.mp3"
+ },
+ "_voz": "Luana Tolki BR (clone ElevenLabs 6023c405). Cena A: Seedance 72d75998 (fala nativa) + TTS do clone 3543d1fb alinhado por dub_align. Meio: TTS bca2f049 coberto por cards. Cena C: Seedance 45ea660f + TTS 7a3c0535 (dub_align).",
+ "_trilha": "phonk original gerado no Runway (lyria-3-pro, c94a6cfa), drop logo depois do gancho",
+ "_efeitos": "fx.py: zoom-punch em todo número, tremida nas batidas, glitch RGB nos cortes"
+}

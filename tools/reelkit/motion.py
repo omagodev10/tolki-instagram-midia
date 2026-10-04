@@ -184,6 +184,27 @@ def stamp(c, D, a):
 <div class="fade" style="{_d(t + 0.55)};font:800 50px/1.3 Montserrat;color:#fff;text-align:center;margin-top:70px">{c.get('sub','')}</div></div>"""
 
 
+def slash(c, D, a):
+    """Preço velho riscado e preço novo batendo na tela (fundo escuro, agressivo).
+    starts = [risca, bate] em segundos a partir do início do cartão."""
+    st = c.get("starts") or [0.3 * D, 0.6 * D]
+    t_cut, t_slam = st[0], st[1] if len(st) > 1 else st[0] + 0.5
+    return f"""<style>
+@keyframes cut{{from{{width:0}}to{{width:112%}}}}
+@keyframes dim{{to{{opacity:.38;transform:scale(.82)}}}}
+@keyframes slam2{{0%{{opacity:0;transform:scale(2.8) rotate(-4deg)}}55%{{opacity:1;transform:scale(.9) rotate(-4deg)}}78%{{transform:scale(1.06) rotate(-4deg)}}100%{{opacity:1;transform:scale(1) rotate(-4deg)}}}}
+@keyframes jolt{{0%,100%{{transform:none}}15%{{transform:translate(-22px,12px)}}35%{{transform:translate(18px,-14px)}}55%{{transform:translate(-12px,8px)}}75%{{transform:translate(8px,-5px)}}}}</style>
+<div style="position:absolute;inset:0;background:{c.get('bg', '#0B0D12')}"></div>
+<div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;animation:jolt .34s ease-out {t_slam + 0.24:.2f}s both">
+<div class="pop" style="font:800 58px Montserrat;color:#fff;letter-spacing:6px;text-transform:uppercase;margin-bottom:40px">{c.get('kicker', 'Com a Tolki')}</div>
+<div style="position:relative;animation:dim .25s ease-out {t_cut + 0.1:.2f}s both">
+<div class="pop" style="font:900 {c.get('old_size', 190)}px/1 Montserrat;color:#E5484D;white-space:nowrap;letter-spacing:-6px">{c.get('old', 'R$ 0,34')}</div>
+<div style="position:absolute;left:-6%;top:46%;height:26px;border-radius:13px;background:#E5484D;transform:rotate(-8deg);box-shadow:0 0 0 6px {c.get('bg', '#0B0D12')};animation:cut .18s ease-in {t_cut:.2f}s both"></div></div>
+<div style="font:900 {c.get('size', 240)}px/1 Montserrat;color:{c.get('color', '#2BD67B')};white-space:nowrap;letter-spacing:-8px;margin-top:40px;text-shadow:0 0 60px {c.get('color', '#2BD67B')}55;animation:slam2 .5s cubic-bezier(.2,.9,.3,1) {t_slam:.2f}s both">{c.get('new', 'R$ 0,04')}</div>
+<div class="fade" style="{_d(t_slam + 0.4)};font:800 54px Montserrat;color:#fff;margin-top:36px;text-transform:uppercase;letter-spacing:3px">{c.get('sub', 'por disparo')}</div></div>
+<div class="fade" style="{_d(t_slam + 0.2)};position:absolute;left:90px;right:90px;top:1500px;font:600 30px Inter;color:#8A94A0;text-align:center">{c.get('note', '')}</div>"""
+
+
 def media(c, D, a):
     """Mensagens de WhatsApp com vídeo, imagem e link entrando uma a uma, cada uma com etiqueta de preço.
     starts = [vídeo, imagem, link, faixa final] em segundos."""
@@ -230,7 +251,8 @@ def media(c, D, a):
 
 
 TEMPLATES = {"checklist": (checklist, True), "chat": (chat, True), "counter": (counter, True), "cycle": (cycle, True),
-             "comment": (comment, False), "compare": (compare, True), "stamp": (stamp, True), "media": (media, True)}
+             "comment": (comment, False), "compare": (compare, True), "stamp": (stamp, True), "media": (media, True),
+             "slash": (slash, True)}
 
 
 def anim_html(c, D, assets, fonts_css, W, H):

@@ -1,0 +1,75 @@
+{
+ "zoom": [1.0, 1.16],
+ "cap_size": 96,
+ "cap_words": 2,
+ "cap_chars": 13,
+ "cap_y": 1240,
+ "flash_lines": [1, 2, 3, 4, 5],
+ "sfx_lib": {
+  "whoosh": "SFX_WHOOSH", "pop": "SFX_POP", "ding": "SFX_DING", "cash": "SFX_CASH",
+  "counter": "SFX_COUNTER", "typing": "SFX_TYPING", "riser": "SFX_RISER", "boom": "SFX_BOOM"
+ },
+ "music": {"src": "MUSIC", "gain": 0.55, "duck_thr": 0.05, "duck_ratio": 4, "fade_out": 0.5, "drop_at_line": 1},
+ "card_sfx": "whoosh",
+ "cards": [
+  {
+   "line": 0, "kind": "top", "instant": true, "size": 86, "sfx": "boom", "sfx_gain": 0.7,
+   "html": "Para de pagar<br><span style='color:#E5484D;font-size:118px'>R$&nbsp;0,34</span><div style='font:800 38px Inter;text-transform:none;color:#5B6673;margin-top:10px;letter-spacing:0'>por disparo</div>"
+  },
+  {
+   "line": 1, "kind": "anim", "tpl": "slash", "starts_at": [[1, 2], [1, 4]],
+   "kicker": "Com a Tolki", "old": "R$ 0,34", "new": "R$ 0,04", "sub": "por disparo",
+   "note": "mensagens de utilidade (lembrete, confirmação, retorno), valor aproximado com impostos",
+   "sfx_gain": 0.4,
+   "sfx_at": [{"name": "pop", "i": 0, "gain": 0.45}, {"name": "boom", "i": 1, "gain": 0.75}, {"name": "cash", "i": 1, "offset": 0.15, "gain": 0.5}]
+  },
+  {
+   "line": 2, "kind": "anim", "tpl": "compare", "starts_at": [[2, 0], [2, 2], [2, 3]],
+   "kicker": "Faz a conta", "title": "5 mil disparos",
+   "rows": [["Pagando R$ 0,34", 1700, 100, "#E5484D"], ["Com a Tolki", 200, 12, "#1597D4"]],
+   "pill": "+R$ 1.500 no bolso",
+   "note": "mensagens de utilidade, valor aproximado com impostos",
+   "sfx_gain": 0.35,
+   "sfx_at": [{"name": "counter", "i": 1, "offset": 0.15, "gain": 0.35}, {"name": "cash", "i": 2, "offset": 0.7, "gain": 0.6}]
+  },
+  {
+   "line": 3, "kind": "anim", "tpl": "counter", "from": 0, "to": 45, "prefix": "+R$ ", "suffix": " mil", "size": 150,
+   "kicker": "Orthodontic", "sub": "economizados em disparos",
+   "sfx_gain": 0.3,
+   "sfx_at": [{"name": "counter", "t": 0.15, "gain": 0.35}, {"name": "cash", "t": 1.1, "gain": 0.6}]
+  },
+  {
+   "line": 4, "kind": "anim", "tpl": "comment", "word": "DISPARO", "label": "Comenta aqui embaixo",
+   "sfx_gain": 0.25,
+   "sfx_at": [{"name": "typing", "t": 0.3, "gain": 0.45}, {"name": "pop", "t": 1.0, "gain": 0.5}]
+  },
+  {
+   "line": 5, "kind": "top", "size": 70, "sfx_gain": 0.3,
+   "html": "Ou continua pagando <span style='color:#E5484D'>R$&nbsp;0,34</span>?"
+  }
+ ],
+ "sfx_events": [
+  {"name": "riser", "line": 4, "offset": -1.0, "gain": 0.3},
+  {"name": "boom", "line": 5, "word": 3, "gain": 0.45}
+ ],
+ "fx": {
+  "center_y": 0.4,
+  "glitch_lines": [1, 2, 3, 4, 5],
+  "glitch_dur": 0.16,
+  "punch_numbers": 0.09,
+  "glitch": [{"abs": 0.0, "dur": 0.22, "rgb": 30, "invert": true}],
+  "punch": [
+   {"line": 0, "word": 0, "amt": 0.12},
+   {"line": 0, "word": 6, "amt": 0.07},
+   {"line": 1, "word": 4, "amt": 0.1},
+   {"line": 4, "word": 1, "amt": 0.1},
+   {"line": 5, "word": 2, "amt": 0.06}
+  ],
+  "shake": [
+   {"line": 0, "word": 3, "dur": 0.28, "amp": 14},
+   {"line": 1, "word": 4, "offset": 0.2, "dur": 0.35, "amp": 22},
+   {"line": 2, "word": 4, "offset": 0.1, "dur": 0.25, "amp": 12},
+   {"line": 5, "word": 3, "dur": 0.35, "amp": 18}
+  ]
+ }
+}

@@ -349,7 +349,33 @@ def main():
     cmd = ["ffmpeg", "-v", "error", "-y"] + inputs + ["-filter_complex_script", fg, "-map", "[vout]", "-map", "[aout]",
            "-c:v", "libx264", "-preset", "medium", "-crf", "18", "-profile:v", "high", "-pix_fmt", "yuv420p", "-r", str(FPS),
            "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-movflags", "+faststart", "-t", f"{total:.3f}", out]
+    fx = P.get("fx")
+    if fx:  # efeitos de edição por cima de tudo: zoom-punch, tremida, glitch (fx.py)
+        base_out = out
+        out = os.path.join(work, "pre_fx.mp4")
+        cmd[-1] = out
     run(cmd)
+    if fx:
+        def at(e):
+            if "abs" in e:
+                return e["abs"]
+            if e.get("line") not in LT:
+                return None
+            return (word_t(e["line"], e["word"]) if "word" in e else LT[e["line"]][0]) + e.get("offset", 0.0)
+        R = {"center_y": fx.get("center_y", 0.42)}
+        for k in ("punch", "shake", "glitch"):
+            R[k] = [dict(e, t=round(max(0.0, t), 3)) for e in fx.get(k, []) for t in [at(e)] if t is not None]
+        for l in fx.get("glitch_lines", []):  # glitch curto em cada corte de linha
+            if l in LT:
+                R["glitch"].append({"t": round(max(0.0, LT[l][0] - 0.1), 3), "dur": fx.get("glitch_dur", 0.16)})
+        if fx.get("punch_numbers"):  # todo número falado ganha um soco de zoom
+            for w in E["words"]:
+                if any(ch.isdigit() for ch in w["w"]):
+                    R["punch"].append({"t": round(max(0.0, w["start"] - 0.03), 3), "amt": fx["punch_numbers"]})
+        evp = os.path.join(work, "fx.json")
+        json.dump(R, open(evp, "w"), indent=1)
+        run(["python3", os.path.join(os.path.dirname(os.path.abspath(__file__)), "fx.py"), out, evp, base_out])
+        out = base_out
     json.dump(cards, open(os.path.join(work, "cards.json"), "w"), indent=1)
     print("ok", out, f"{total:.1f}s", len(cards), "cartões")
 
