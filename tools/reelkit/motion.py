@@ -145,6 +145,13 @@ def compare(c, D, a):
                     f'<div class="n{i}" style="font:900 100px/1 Montserrat;color:{col};letter-spacing:-3px"></div></div>'
                     f'<div style="height:58px;border-radius:29px;background:#EEF2F6;overflow:hidden;margin-top:20px">'
                     f'<div style="height:100%;border-radius:29px;background:{col};animation:g{i} .9s cubic-bezier(.3,.8,.3,1) {g:.2f}s both"></div></div></div>')
+    grid = ""
+    if c.get("grid"):  # enxame de mensagens surgindo enquanto ele fala "mil lembretes"
+        nb = int(c.get("grid", 40))
+        g0, g1 = starts[0] + 0.35, max(starts[0] + 0.8, (starts[1] if len(starts) > 1 else D) - 0.25)
+        grid = ('<div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:44px">' + "".join(
+            f'<div class="pop" style="{_d(g0 + (g1 - g0) * i / nb)};width:76px;height:54px;border-radius:18px 18px 18px 6px;'
+            f'background:{LBLUE if i % 3 else BLUE};opacity:.9"></div>' for i in range(nb)) + '</div>')
     pill = ""
     if c.get("pill"):
         pt = max(starts[-1] + 0.3, min(starts[-1] + 0.8, D - 0.8))
@@ -153,10 +160,10 @@ def compare(c, D, a):
     return f"""<style>{''.join(css)}</style>
 <div style="position:absolute;inset:0;background:#fff;padding:0 90px">
 <img class="fade" src="file://{a['logo_dark']}" style="position:absolute;top:250px;left:50%;transform:translateX(-50%);height:56px">
-<div style="position:absolute;left:90px;right:90px;top:430px">
+<div style="position:absolute;left:90px;right:90px;top:400px">
 <div class="pop" style="{_d(starts[0])};font:700 34px Inter;letter-spacing:4px;color:{PURPLE};text-transform:uppercase">{c.get('kicker','Faz a conta')}</div>
-<div class="pop" style="{_d(starts[0] + 0.06)};font:900 80px/1.05 Montserrat;color:{INK};text-transform:uppercase;margin-top:10px">{c.get('title','')}</div>
-{''.join(body)}{pill}</div>
+<div class="pop" style="{_d(starts[0] + 0.06)};font:900 84px/1.05 Montserrat;color:{INK};text-transform:uppercase;margin-top:10px">{c.get('title','')}</div>
+{grid}{''.join(body)}{pill}</div>
 <div class="fade" style="{_d(starts[0])};position:absolute;left:90px;right:90px;top:1560px;font:600 28px Inter;color:#8A94A0;text-align:center">{c.get('note','')}</div></div>"""
 
 
@@ -169,7 +176,7 @@ def stamp(c, D, a):
 <div style="position:absolute;inset:0;background:{bg}"></div>
 <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 80px;animation:shake .32s ease-out {t + 0.26:.2f}s both">
 <img class="pop" src="file://{a['icon']}" style="width:130px;margin-bottom:46px">
-<div class="pop" style="{_d(0.05)};font:700 46px/1.3 Inter;color:#F1E6FB;text-align:center">{c.get('kicker','')}</div>
+<div class="pop" style="{_d(0.05)};font:800 62px/1.15 Montserrat;color:#fff;text-align:center">{c.get('kicker','')}</div>
 <div style="margin-top:56px;border:14px solid #fff;border-radius:26px;padding:22px 50px 16px;font:900 {c.get('size',120)}px/1 Montserrat;color:#fff;letter-spacing:1px;text-transform:uppercase;animation:slam .5s cubic-bezier(.2,.9,.3,1) {t:.2f}s both">{c.get('word','UTILIDADE')}</div>
 <div class="fade" style="{_d(t + 0.55)};font:800 50px/1.3 Montserrat;color:#fff;text-align:center;margin-top:70px">{c.get('sub','')}</div></div>"""
 
