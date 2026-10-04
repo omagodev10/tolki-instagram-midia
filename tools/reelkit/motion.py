@@ -140,8 +140,8 @@ def compare(c, D, a):
         css.append(f"@keyframes g{i}{{from{{width:0}}to{{width:{pct}%}}}}")
         body.append(f'<div class="pop" style="{_d(s)};margin-top:64px">'
                     f'<div style="display:flex;justify-content:space-between;align-items:flex-end">'
-                    f'<div style="font:900 52px/1 Montserrat;color:{INK};text-transform:uppercase">{label}</div>'
-                    f'<div id="n{i}" style="font:900 100px/1 Montserrat;color:{col};letter-spacing:-3px"></div></div>'
+                    f'<div style="flex:1;min-width:0;font:900 46px/1.05 Montserrat;color:{INK};text-transform:uppercase">{label}</div>'
+                    f'<div id="n{i}" style="white-space:nowrap;margin-left:20px;font:900 90px/1 Montserrat;color:{col};letter-spacing:-3px"></div></div>'
                     f'<div style="height:58px;border-radius:29px;background:#EEF2F6;overflow:hidden;margin-top:20px">'
                     f'<div style="height:100%;border-radius:29px;background:{col};animation:g{i} .9s cubic-bezier(.3,.8,.3,1) {g:.2f}s both"></div></div></div>')
     grid = ""
