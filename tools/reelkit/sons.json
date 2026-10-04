@@ -1,0 +1,15 @@
+{
+ "_nota": "biblioteca de sons da Tolki (Runway, normalizados a -1 dBFS; trilha a -16 LUFS, 45 s, silêncio entre 32,7 e 40,5 s). Use as chaves em manifest.assets e no plano.",
+ "sons": {
+  "MUSIC_TECHHOUSE": "https://d2ol7oe51mr4n9.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/04866869-24dd-4788-bead-d7f5289bd866.mp3",
+  "SFX_WHOOSH": "https://d2ol7oe51mr4n9.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/8b3fca14-361b-49a0-aa2c-42d357b7336f.mp3",
+  "SFX_POP": "https://d2ol7oe51mr4n9.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/b6e5ada1-d993-485c-a979-1ee37bddd052.mp3",
+  "SFX_DING": "https://d2ol7oe51mr4n9.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/1a333ed8-cf47-4db7-81b5-f243d12375c7.mp3",
+  "SFX_CASH": "https://d2ol7oe51mr4n9.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/9652deaa-76b4-4d92-96cf-796ef5dbec26.mp3",
+  "SFX_COUNTER": "https://d2ol7oe51mr4n9.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/2949f162-7efc-48c9-91f7-942808a6cf8d.mp3",
+  "SFX_TYPING": "https://d2ol7oe51mr4n9.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/7e5b7980-c8da-4177-a102-c6e06c35556a.mp3",
+  "SFX_RISER": "https://d2ol7oe51mr4n9.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/cca2683a-2e19-407b-aa65-590d3f7e124f.mp3",
+  "SFX_BOOM": "https://d2ol7oe51mr4n9.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/980c06f2-68a0-42e4-bce9-9d8a027cc035.mp3",
+  "SFX_STAMP": "https://d2ol7oe51mr4n9.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/28b1ccdc-8452-4220-bcfe-3097d6f75173.mp3"
+ }
+}

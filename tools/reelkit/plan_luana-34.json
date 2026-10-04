@@ -8,14 +8,24 @@
    "line": 0,
    "kind": "top",
    "instant": true,
-   "size": 74,
-   "html": "<span style='color:#E5484D'>R$&nbsp;0,34</span><br>ou <span style='color:#1597D4'>R$&nbsp;0,04</span>?<div style='font:600 26px Inter;text-transform:none;color:#5B6673;margin-top:14px;letter-spacing:0'>por mensagem no WhatsApp, valores aproximados com impostos</div>"
+   "size": 58,
+   "html": "<span style='color:#E5484D'>R$&nbsp;0,34</span> ou <span style='color:#1597D4'>R$&nbsp;0,04</span>?<div style='font:600 24px Inter;text-transform:none;color:#5B6673;margin-top:12px;letter-spacing:0'>por mensagem no WhatsApp, valores aproximados com impostos</div>",
+   "sfx": "boom",
+   "sfx_gain": 0.55
   },
   {
    "line": 1,
    "kind": "broll",
    "src": "BROLL_CELULAR",
-   "ss": 0.6
+   "ss": 0.6,
+   "sfx_gain": 0.35,
+   "sfx_at": [
+    {
+     "name": "ding",
+     "t": 0.2,
+     "gain": 0.45
+    }
+   ]
   },
   {
    "line": 2,
@@ -39,13 +49,38 @@
      5
     ]
    ],
-   "final": "Tudo a"
+   "final": "Tudo a",
+   "sfx_gain": 0.3,
+   "sfx_at": [
+    {
+     "name": "pop",
+     "i": 0,
+     "gain": 0.55
+    },
+    {
+     "name": "pop",
+     "i": 1,
+     "gain": 0.55
+    },
+    {
+     "name": "pop",
+     "i": 2,
+     "gain": 0.55
+    },
+    {
+     "name": "cash",
+     "i": 3,
+     "gain": 0.4
+    }
+   ]
   },
   {
    "line": 3,
    "kind": "top",
    "size": 70,
-   "html": "<span style='color:#1597D4'>Utilidade</span>, não <span style='color:#E5484D'>marketing</span>"
+   "html": "<span style='color:#1597D4'>Utilidade</span>, não <span style='color:#E5484D'>marketing</span>",
+   "y": 960,
+   "sfx_gain": 0.3
   },
   {
    "line": 4,
@@ -84,7 +119,28 @@
     ]
    ],
    "pill": "R$ 1.500 a menos",
-   "note": "valores aproximados por mensagem, com impostos"
+   "note": "valores aproximados por mensagem, com impostos",
+   "sfx_gain": 0.3,
+   "sfx_at": [
+    {
+     "name": "counter",
+     "i": 1,
+     "offset": 0.15,
+     "gain": 0.3
+    },
+    {
+     "name": "counter",
+     "i": 2,
+     "offset": 0.15,
+     "gain": 0.3
+    },
+    {
+     "name": "cash",
+     "i": 2,
+     "offset": 0.8,
+     "gain": 0.45
+    }
+   ]
   },
   {
    "line": 6,
@@ -96,20 +152,80 @@
    "suffix": " mil",
    "size": 150,
    "kicker": "Orthodontic",
-   "sub": "economizados em disparos"
+   "sub": "economizados em disparos",
+   "sfx_gain": 0.3,
+   "sfx_at": [
+    {
+     "name": "counter",
+     "t": 0.2,
+     "gain": 0.3
+    },
+    {
+     "name": "cash",
+     "t": 1.3,
+     "gain": 0.5
+    }
+   ]
   },
   {
    "line": 7,
    "kind": "anim",
    "tpl": "comment",
    "word": "DISPARO",
-   "label": "Comenta aqui embaixo"
+   "label": "Comenta aqui embaixo",
+   "sfx_gain": 0.25,
+   "sfx_at": [
+    {
+     "name": "typing",
+     "t": 0.3,
+     "gain": 0.45
+    },
+    {
+     "name": "pop",
+     "t": 1.25,
+     "gain": 0.5
+    }
+   ]
   },
   {
    "line": 8,
    "kind": "top",
-   "size": 74,
-   "html": "Ou continua pagando <span style='color:#E5484D'>R$&nbsp;0,34</span>?"
+   "size": 64,
+   "html": "Ou continua pagando <span style='color:#E5484D'>R$&nbsp;0,34</span>?",
+   "sfx_gain": 0.3
+  }
+ ],
+ "sfx_lib": {
+  "whoosh": "SFX_WHOOSH",
+  "pop": "SFX_POP",
+  "ding": "SFX_DING",
+  "cash": "SFX_CASH",
+  "counter": "SFX_COUNTER",
+  "typing": "SFX_TYPING",
+  "riser": "SFX_RISER",
+  "boom": "SFX_BOOM"
+ },
+ "music": {
+  "src": "MUSIC_TECHHOUSE",
+  "gain": 0.35,
+  "duck_thr": 0.03,
+  "duck_ratio": 6,
+  "fade_out": 1.0
+ },
+ "card_sfx": "whoosh",
+ "sfx_events": [
+  {
+   "name": "riser",
+   "line": 7,
+   "offset": -1.0,
+   "gain": 0.35
+  },
+  {
+   "name": "boom",
+   "line": 8,
+   "word": 3,
+   "offset": 0.0,
+   "gain": 0.3
   }
  ]
 }

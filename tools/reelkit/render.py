@@ -155,6 +155,23 @@ def main():
     LT = {int(k): v for k, v in E["line_times"].items()}
     total = E["out_duration"]
 
+    # efeitos sonoros (biblioteca em plan["sfx_lib"]: nome -> arquivo)
+    LIB = {k: v for k, v in P.get("sfx_lib", {}).items() if v and os.path.exists(v)}
+    events = []  # (instante, nome, ganho)
+
+    def word_t(l, k):
+        ws = sorted([w for w in E["words"] if w["line"] == l], key=lambda w: w["start"])
+        return ws[min(k, len(ws) - 1)]["start"] if ws else LT[l][0]
+
+    def card_events(c, t0):
+        nm = c.get("sfx", P.get("card_sfx", "whoosh"))
+        if nm and nm in LIB:
+            events.append((t0, nm, c.get("sfx_gain", 0.45)))
+        for e in c.get("sfx_at", []):
+            st = c.get("starts") or [0.0]
+            base = t0 + (st[min(e["i"], len(st) - 1)] if "i" in e else e.get("t", 0.0))
+            events.append((base + e.get("offset", 0.0), e["name"], e.get("gain", 0.5)))
+
     # cartões: tempo de cada um pela linha do roteiro
     cards = []
     for i, c in enumerate(P.get("cards", [])):
@@ -172,6 +189,7 @@ def main():
         if c["kind"] == "broll":
             cards.append({"name": name, "t0": round(t0, 3), "t1": round(t1, 3), "full": True, "broll": c["src"], "captions": True,
                           "ss": c.get("ss", 0.0)})
+            card_events(c, t0)
             continue
         if c["kind"] == "anim":
             import math, motion
@@ -191,10 +209,20 @@ def main():
             html, full = motion.anim_html(c, t1 - t0, {"icon": ICON, "logo_dark": LOGO_D, "logo_white": LOGO_W}, fonts_css(), W, HH)
             open(os.path.join(work, "html", f"{name}__{N}.seq.html"), "w", encoding="utf-8").write(html)
             cards.append({"name": name, "t0": round(t0, 3), "t1": round(t1, 3), "full": full, "seq": True})
+            card_events(c, t0)
             continue
         open(os.path.join(work, "html", name + ".html"), "w", encoding="utf-8").write(card_html(c))
         cards.append({"name": name, "t0": round(t0, 3), "t1": round(t1, 3), "full": c["kind"] in ("number", "virada"),
                       "instant": bool(c.get("instant"))})
+        card_events(c, t0)
+    for e in P.get("sfx_events", []):  # eventos soltos: {"name","line","word"?,"offset"?,"gain"?} ou {"abs": s}
+        if "abs" in e:
+            t = e["abs"]
+        elif e.get("line") in LT:
+            t = (word_t(e["line"], e["word"]) if "word" in e else LT[e["line"]][0]) + e.get("offset", 0.0)
+        else:
+            continue
+        events.append((max(0.0, t), e["name"], e.get("gain", 0.5)))
     # cartões em sequência na mesma área: o anterior termina quando o próximo começa
     tops = sorted([c for c in cards if not c["full"]], key=lambda c: c["t0"])
     for x, y in zip(tops, tops[1:]):
@@ -250,15 +278,40 @@ def main():
         f.append(f"[{last}][o{j}]overlay=x=0:y='if(lt(t-{c['t0']},0.18),{ydist}*(1-(t-{c['t0']})/0.18),0)':eof_action=pass:eval=frame:enable='between(t,{c['t0']},{c['t1']})'[b{j}]")
         last = f"b{j}"
     f.append(f"[{last}]ass={ass}:fontsdir={FONTS},format=yuv420p[vout]")
-    # whoosh sintetizado na entrada de cada cartão
-    sfx = [c["t0"] for c in cards]
-    amix_in = "[ca]"
-    if sfx and P.get("sfx", True):
-        for k, t in enumerate(sfx):
-            f.append(f"anoisesrc=d=0.32:c=pink:a=0.5:r=48000,highpass=f=900,lowpass=f=6000,"
-                     f"afade=t=in:d=0.12,afade=t=out:st=0.12:d=0.2,volume=0.10,adelay={int(t*1000)}|{int(t*1000)},aformat=channel_layouts=stereo[w{k}]")
-        f.append("[ca]aformat=sample_rates=48000:channel_layouts=stereo[cas]")
-        f.append("[cas]" + "".join(f"[w{k}]" for k in range(len(sfx))) + f"amix=inputs={len(sfx)+1}:duration=first:normalize=0[mix]")
+    # áudio: voz + efeitos + trilha (abaixa sozinha quando a voz entra)
+    n_in = 1 + len(cards)
+    f.append("[ca]aformat=sample_rates=48000:channel_layouts=stereo[cas]")
+    voice, extra = "[cas]", []
+    mus = P.get("music") or {}
+    if mus.get("src") and os.path.exists(mus["src"]):
+        inputs += ["-stream_loop", "-1", "-i", mus["src"]]
+        mi = n_in; n_in += 1
+        fo = mus.get("fade_out", 1.2)
+        f.append(f"[{mi}:a]atrim=start={mus.get('ss', 0)}:duration={total:.3f},asetpts=PTS-STARTPTS,"
+                 f"aformat=sample_rates=48000:channel_layouts=stereo,volume={mus.get('gain', 0.22)},"
+                 f"afade=t=in:d=0.2,afade=t=out:st={max(0, total - fo):.3f}:d={fo}[mus]")
+        f.append("[cas]asplit=2[vo][key]")
+        f.append(f"[mus][key]sidechaincompress=threshold={mus.get('duck_thr', 0.03)}:ratio={mus.get('duck_ratio', 6)}:"
+                 f"attack=15:release=350[mduck]")
+        voice, extra = "[vo]", ["[mduck]"]
+    if P.get("sfx", True):
+        if LIB:
+            for k, (t, nm, g) in enumerate(sorted(events)):
+                if nm not in LIB or t >= total:
+                    continue
+                inputs += ["-i", LIB[nm]]
+                ms = int(t * 1000)
+                f.append(f"[{n_in}:a]aformat=sample_rates=48000:channel_layouts=stereo,volume={g},adelay={ms}|{ms}[w{k}]")
+                extra.append(f"[w{k}]"); n_in += 1
+        else:  # sem biblioteca: whoosh sintetizado na entrada de cada cartão
+            for k, c in enumerate(cards):
+                t = c["t0"]
+                f.append(f"anoisesrc=d=0.32:c=pink:a=0.5:r=48000,highpass=f=900,lowpass=f=6000,"
+                         f"afade=t=in:d=0.12,afade=t=out:st=0.12:d=0.2,volume=0.10,adelay={int(t*1000)}|{int(t*1000)},aformat=channel_layouts=stereo[w{k}]")
+                extra.append(f"[w{k}]")
+    amix_in = voice
+    if extra:
+        f.append(voice + "".join(extra) + f"amix=inputs={len(extra)+1}:duration=first:normalize=0[mix]")
         amix_in = "[mix]"
     f.append(f"{amix_in}highpass=f=70,acompressor=threshold=-20dB:ratio=3:attack=5:release=90:makeup=2,"
              f"loudnorm=I=-14:TP=-1.5:LRA=9,aresample=48000[aout]")

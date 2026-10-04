@@ -202,6 +202,19 @@ def main():
         for c in plan["cards"]:
             if c.get("src") == key:
                 c["src"] = local
+    # demais arquivos (trilha, efeitos): qualquer texto do plano igual à chave vira o caminho baixado
+    loc = {}
+    for i, (key, url) in enumerate(man.get("assets", {}).items()):
+        ext = os.path.splitext(url.split("?")[0])[1] or ".mp3"
+        loc[key] = fetch(url, f"asset{i}{ext}")
+
+    def sub(x):
+        if isinstance(x, dict):
+            return {k: sub(v) for k, v in x.items()}
+        if isinstance(x, list):
+            return [sub(v) for v in x]
+        return loc.get(x, x) if isinstance(x, str) else x
+    plan = sub(plan)
     plan_p = os.path.join(W, "plan.json")
     json.dump(plan, open(plan_p, "w"), ensure_ascii=False)
     sh("python3", os.path.join(HERE, "align_fw.py"), joined, man["script"], os.path.join(W, "out"), man.get("whisper", "small"))
