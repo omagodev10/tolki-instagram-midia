@@ -99,7 +99,12 @@ def build_scene(k, sc, mode, speed, prev):
     if mode == "own":
         v = fetch(sc["video"], f"v{k}.mp4")
         segs = speech_segments(v)
-        print(f"cena {k} (áudio do próprio vídeo): {len(segs)} trechos, {sum(b-a for a,b in segs):.2f}s de {dur(v):.2f}s")
+        got = sum(b - a for a, b in segs)
+        if sc.get("match") and sc.get("audio"):
+            # o Seedance costuma esticar a fala: acelera a cena até o ritmo do áudio limpo
+            ref = sum(b - a for a, b in speech_segments(fetch(sc["audio"], f"ref{k}.mp3")))
+            speed = min(1.3, max(1.0, got / ref * speed)) if ref > 0 else speed
+        print(f"cena {k} (áudio do próprio vídeo): {len(segs)} trechos, {got:.2f}s de {dur(v):.2f}s, velocidade {speed:.3f}")
         fl = []
         for i, (a, b) in enumerate(segs):
             fl.append(f"[0:v]trim={a:.3f}:{b:.3f},setpts=PTS-STARTPTS,{vf}[v{i}];[0:a]atrim={a:.3f}:{b:.3f},asetpts=PTS-STARTPTS,"

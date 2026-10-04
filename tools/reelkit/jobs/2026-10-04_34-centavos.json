@@ -1,0 +1,30 @@
+{
+ "script": "roteiros_2026-10-04_34-centavos.txt",
+ "plan": "plan_34-centavos.json",
+ "whisper": "small",
+ "speed": 1.08,
+ "scenes": [
+  {
+   "video": "https://d8j0ntlcm91z4.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/hf_20261004_194216_f4062911-bfa8-4180-bf9d-94cf10b4c401.mp4",
+   "audio": "https://d2ol7oe51mr4n9.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/25979281-6a39-4221-b414-f2c49fcb235b.mp3",
+   "mode": "own",
+   "match": true
+  },
+  {
+   "video": "",
+   "audio": "https://d2ol7oe51mr4n9.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/d2e0a0a4-1c8c-466e-9855-805ffc174032.mp3",
+   "mode": "cover"
+  },
+  {
+   "video": "https://d8j0ntlcm91z4.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/hf_20261004_194216_7fcbe503-6d27-4545-95ad-314b4473952d.mp4",
+   "audio": "https://d2ol7oe51mr4n9.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/31d0fa41-75e0-4b8b-ad87-e70f80576114.mp3",
+   "mode": "own",
+   "match": true
+  }
+ ],
+ "broll": {
+  "BROLL_CELULAR": "https://dnznrvs05pmza.cloudfront.net/seedance_2/cgt-20261005033725-m4v8c/Vertical_close_up_shot__A_smartphone_lying_on_a_bright_modern_dental_clinic_reception_desk__the_scre.mp4?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiYjQxN2QwZmQ0OGVkNTQ4NSIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MTI5NjUwOX0.WKFVXtZ9wRoW_I4kiLBpsnovsWnkonMjd3E7Sp2d7Vc",
+  "BROLL_MOEDAS": "https://dnznrvs05pmza.cloudfront.net/seedance_2/cgt-20261005033726-572mh/Vertical_slow_motion_shot__Brazilian_real_coins_slipping_through_a_person_s_open_fingers_and_falling.mp4?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiNWE1ODg2ZDdmZjkzMTFmMSIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MTI4MDcyN30.6hA0pLpaEFkIC5qeK8PJylReyGcy7CSqG6cMaDkMGvI",
+  "BROLL_PAINEL": "https://dnznrvs05pmza.cloudfront.net/seedance_2/cgt-20261005033728-5n2wh/Vertical_over_the_shoulder_shot_of_a_laptop_on_a_modern_office_desk_showing_a_clean_messaging_dashbo.mp4?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiOTFjNzQ5MTI1NWE3YWQyMyIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MTI3NjY5MH0.sDUoifE5F4i3pK6_1xbeZUTmldyvNGHFn3dT5NW_y0A"
+ }
+}
