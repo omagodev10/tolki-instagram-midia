@@ -2,7 +2,7 @@
  "script": "roteiros_2026-10-04_luana-34.txt",
  "plan": "plan_luana-34.json",
  "whisper": "small",
- "speed": 1.08,
+ "speed": 1.2,
  "scenes": [
   {
    "video": "https://d8j0ntlcm91z4.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/hf_20261004_211227_d1f55742-e69f-4317-b1c3-4693d2d59e0a.mp4",
