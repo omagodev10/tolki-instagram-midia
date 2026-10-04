@@ -1,0 +1,155 @@
+{
+ "zoom": [
+  1.0,
+  1.16
+ ],
+ "cap_size": 92,
+ "cap_words": 2,
+ "cap_chars": 13,
+ "cap_y": 1240,
+ "flash_lines": [
+  1,
+  2,
+  3,
+  4
+ ],
+ "sfx_lib": {
+  "whoosh": "SFX_WHOOSH",
+  "pop": "SFX_POP",
+  "ding": "SFX_DING",
+  "cash": "SFX_CASH",
+  "counter": "SFX_COUNTER",
+  "typing": "SFX_TYPING",
+  "riser": "SFX_RISER",
+  "boom": "SFX_BOOM"
+ },
+ "music": {
+  "src": "MUSIC",
+  "gain": 0.5,
+  "duck_thr": 0.04,
+  "duck_ratio": 5,
+  "fade_out": 0.6,
+  "drop_at_line": 0
+ },
+ "card_sfx": "whoosh",
+ "cards": [
+  {
+   "line": 0,
+   "kind": "top",
+   "instant": true,
+   "size": 78,
+   "sfx": "boom",
+   "sfx_gain": 0.6,
+   "html": "Pare de pagar <span style='color:#E5484D'>R$&nbsp;0,34</span><div style='font:800 34px Inter;text-transform:none;color:#5B6673;margin-top:10px;letter-spacing:0'>por lembrete de consulta</div>"
+  },
+  {
+   "line": 1,
+   "kind": "broll",
+   "src": "BROLL_CELULAR",
+   "ss": 0.6,
+   "sfx_gain": 0.35,
+   "sfx_at": [
+    {
+     "name": "ding",
+     "t": 0.2,
+     "gain": 0.5
+    }
+   ]
+  },
+  {
+   "line": 1,
+   "kind": "top",
+   "size": 70,
+   "sfx": null,
+   "html": "Lembrete = <span style='color:#1597D4'>utilidade</span><br><span style='color:#1597D4'>R$&nbsp;0,04</span><div style='font:800 34px Inter;text-transform:none;color:#5B6673;margin-top:10px;letter-spacing:0'>valor aproximado, com impostos</div>"
+  },
+  {
+   "line": 2,
+   "kind": "broll",
+   "src": "BROLL_MOEDAS",
+   "ss": 0.5,
+   "sfx_gain": 0.35,
+   "sfx_at": [
+    {
+     "name": "cash",
+     "t": 0.9,
+     "gain": 0.5
+    }
+   ]
+  },
+  {
+   "line": 2,
+   "kind": "top",
+   "size": 120,
+   "y": 640,
+   "sfx": null,
+   "html": "<span style='color:#E5484D'>R$&nbsp;1.500</span><br><span style='font-size:64px'>no lixo</span><div style='font:800 34px Inter;text-transform:none;color:#5B6673;margin-top:10px;letter-spacing:0'>em 5 mil lembretes</div>"
+  },
+  {
+   "line": 3,
+   "kind": "anim",
+   "tpl": "counter",
+   "from": 0,
+   "to": 45,
+   "prefix": "+R$ ",
+   "suffix": " mil",
+   "size": 150,
+   "kicker": "Orthodontic",
+   "sub": "economizados em disparos",
+   "sfx_gain": 0.3,
+   "sfx_at": [
+    {
+     "name": "counter",
+     "t": 0.15,
+     "gain": 0.35
+    },
+    {
+     "name": "cash",
+     "t": 1.1,
+     "gain": 0.55
+    }
+   ]
+  },
+  {
+   "line": 4,
+   "kind": "anim",
+   "tpl": "comment",
+   "word": "DISPARO",
+   "label": "Comenta aqui embaixo",
+   "sfx_gain": 0.25,
+   "sfx_at": [
+    {
+     "name": "typing",
+     "t": 0.3,
+     "gain": 0.45
+    },
+    {
+     "name": "pop",
+     "t": 1.0,
+     "gain": 0.5
+    }
+   ]
+  },
+  {
+   "line": 5,
+   "kind": "top",
+   "size": 64,
+   "sfx_gain": 0.3,
+   "html": "Ou continua pagando <span style='color:#E5484D'>R$&nbsp;0,34</span>?"
+  }
+ ],
+ "sfx_events": [
+  {
+   "name": "riser",
+   "line": 4,
+   "offset": -1.0,
+   "gain": 0.3
+  },
+  {
+   "name": "boom",
+   "line": 5,
+   "word": 3,
+   "gain": 0.35
+  }
+ ]
+}

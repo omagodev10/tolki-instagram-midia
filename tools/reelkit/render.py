@@ -47,7 +47,7 @@ def chunks(words, maxw=3, maxc=16):
     return out
 
 
-def write_ass(words, hide, path):
+def write_ass(words, hide, path, size=76, maxw=3, y=1268, maxc=16):
     hdr = f"""[Script Info]
 ScriptType: v4.00+
 PlayResX: {W}
@@ -57,13 +57,13 @@ ScaledBorderAndShadow: yes
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
-Style: Cap,TK Montserrat Black,76,{ass_color('#FFFFFF')},{ass_color('#FFFFFF')},{ass_color(INK)},{ass_color('#000000','80')},0,0,0,0,100,100,0,0,1,7,2,5,90,90,0,1
+Style: Cap,TK Montserrat Black,{size},{ass_color('#FFFFFF')},{ass_color('#FFFFFF')},{ass_color(INK)},{ass_color('#000000','80')},0,0,0,0,100,100,0,0,1,7,2,5,90,90,0,1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 """
     ev = []
-    cs = chunks(words)
+    cs = chunks(words, maxw=maxw, maxc=maxc)
     for ci, c in enumerate(cs):
         c_end = c[-1]["end"]
         if ci + 1 < len(cs) and cs[ci + 1][0]["start"] - c_end < 0.35:
@@ -81,7 +81,7 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
                 else:
                     parts.append(t)
             pop = "{\\fscx88\\fscy88\\t(0,90,\\fscx100\\fscy100)}" if wi == 0 else ""
-            ev.append(f"Dialogue: 0,{ts(s)},{ts(e)},Cap,,0,0,0,,{{\\pos(540,1268)}}{pop}{' '.join(parts)}")
+            ev.append(f"Dialogue: 0,{ts(s)},{ts(e)},Cap,,0,0,0,,{{\\pos(540,{y})}}{pop}{' '.join(parts)}")
     open(path, "w", encoding="utf-8").write(hdr + "\n".join(ev) + "\n")
 
 
@@ -128,6 +128,25 @@ def card_html(c):
         raise ValueError(k)
     ff = fonts_css()
     return f"<!doctype html><html><head><meta charset='utf-8'><style>{ff}html,body{{margin:0;background:transparent}}</style></head><body><div style='position:relative;width:{W}px;height:{HH}px;overflow:hidden'>{inner}</div></body></html>"
+
+
+def music_drop(path, win=0.05):
+    """instante do drop: maior salto de energia (média de 1 s depois contra 1 s antes) nos primeiros 20 s"""
+    import numpy as np
+    raw = subprocess.run(["ffmpeg", "-v", "error", "-i", path, "-t", "20", "-ac", "1", "-ar", "16000", "-f", "f32le", "-"],
+                         capture_output=True).stdout
+    x = np.frombuffer(raw, dtype=np.float32)
+    k = int(16000 * win); n = len(x) // k
+    if n < 60:
+        return 0.0
+    r = np.sqrt(np.mean(x[:n * k].reshape(n, k) ** 2, axis=1) + 1e-12)
+    m = int(1.0 / win)
+    best, bi = 0.0, 0
+    for i in range(m, n - m):
+        g = r[i:i + m].mean() / (r[i - m:i].mean() + 1e-6)
+        if g > best:
+            best, bi = g, i
+    return bi * win
 
 
 def render_cards(src, out):
@@ -232,7 +251,8 @@ def main():
         render_cards(os.path.join(work, "html"), os.path.join(work, "png"))
     hide = [(c["t0"], c["t1"]) for c in cards if c["full"] and not c.get("captions")]
     ass = os.path.join(work, "captions.ass")
-    write_ass(E["words"], hide, ass)
+    write_ass(E["words"], hide, ass, size=P.get("cap_size", 76), maxw=P.get("cap_words", 3), y=P.get("cap_y", 1268),
+              maxc=P.get("cap_chars", 16))
 
     # grafo do ffmpeg
     clips = E["clips"]; n = len(clips)
@@ -277,12 +297,21 @@ def main():
         ydist = 0 if (c["full"] or c.get("seq") or c.get("instant")) else 36
         f.append(f"[{last}][o{j}]overlay=x=0:y='if(lt(t-{c['t0']},0.18),{ydist}*(1-(t-{c['t0']})/0.18),0)':eof_action=pass:eval=frame:enable='between(t,{c['t0']},{c['t1']})'[b{j}]")
         last = f"b{j}"
+    for k, l in enumerate(P.get("flash_lines", [])):  # flash branco curto na entrada da linha (corte de impacto)
+        if l in LT:
+            tf = max(0.0, LT[l][0] - 0.1)
+            f.append(f"color=c=white:s={W}x{HH}:r={FPS}:d={total:.3f},format=rgba,colorchannelmixer=aa=0.55[fl{k}]")
+            f.append(f"[{last}][fl{k}]overlay=0:0:enable='between(t,{tf:.3f},{tf + 0.07:.3f})'[fx{k}]")
+            last = f"fx{k}"
     f.append(f"[{last}]ass={ass}:fontsdir={FONTS},format=yuv420p[vout]")
     # áudio: voz + efeitos + trilha (abaixa sozinha quando a voz entra)
     n_in = 1 + len(cards)
     f.append("[ca]aformat=sample_rates=48000:channel_layouts=stereo[cas]")
     voice, extra = "[cas]", []
     mus = P.get("music") or {}
+    if mus.get("src") and os.path.exists(mus["src"]) and mus.get("drop_at_line") in LT:
+        mus = dict(mus, ss=round(max(0.0, music_drop(mus["src"]) - (LT[mus["drop_at_line"]][0] - 0.05)), 3))
+        print("trilha: começa em", mus["ss"], "s para o drop cair na linha", mus["drop_at_line"])
     if mus.get("src") and os.path.exists(mus["src"]):
         inputs += ["-stream_loop", "-1", "-i", mus["src"]]
         mi = n_in; n_in += 1
