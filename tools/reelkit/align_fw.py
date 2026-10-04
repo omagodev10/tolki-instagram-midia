@@ -60,8 +60,19 @@ lt = {}
 for w in words:
     v = lt.setdefault(w["line"], [w["start"], w["end"]])
     v[0], v[1] = min(v[0], w["start"]), max(v[1], w["end"])
+# corta em cada troca de linha (ponto médio da pausa) para o zoom alternar por frase
+clips, cuts = [], [0.0]
+keys = sorted(lt)
+for a, b in zip(keys, keys[1:]):
+    cuts.append(round((lt[a][1] + lt[b][0]) / 2, 3))
+cuts.append(dur)
+for i in range(len(cuts) - 1):
+    if cuts[i + 1] - cuts[i] > 0.2:
+        clips.append({"src_start": cuts[i], "src_end": cuts[i + 1], "out_start": cuts[i], "seg": i})
+if os.environ.get("NO_SPLIT"):
+    clips = [{"src_start": 0.0, "src_end": dur, "out_start": 0.0, "seg": 0}]
 res = {"source": video, "source_duration": dur, "out_duration": dur,
-       "clips": [{"src_start": 0.0, "src_end": dur, "out_start": 0.0, "seg": 0}], "words": words, "lines": lines,
+       "clips": clips, "words": words, "lines": lines,
        "line_times": {str(k): v for k, v in sorted(lt.items())}, "missing_lines": [], "segments": [],
        "whisper": " ".join(t for t, _, _ in hw)}
 json.dump(res, open(os.path.join(out, "edit.json"), "w"), ensure_ascii=False, indent=1)

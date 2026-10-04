@@ -198,7 +198,7 @@ def main():
                  f"scale={zw}:{zh}:force_original_aspect_ratio=increase,crop={W}:{HH}:(iw-{W})/2:(ih-{HH})*{fy},setsar=1,fps={FPS}[v{i}]")
         d = c['src_end'] - c['src_start']
         f.append(f"[r{i}]atrim=start={c['src_start']}:end={c['src_end']},asetpts=PTS-STARTPTS,"
-                 f"afade=t=in:d=0.015,afade=t=out:st={max(0, d - 0.03):.3f}:d=0.03[a{i}]")
+                 f"afade=t=in:d=0.008,afade=t=out:st={max(0, d - 0.012):.3f}:d=0.012[a{i}]")
     f.append("".join(f"[v{i}][a{i}]" for i in range(n)) + f"concat=n={n}:v=1:a=1[cv][ca]")
     f.append(f"[cv]{eq}[base0]")
     inputs = ["-i", raw]
