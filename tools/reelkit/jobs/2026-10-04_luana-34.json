@@ -1,0 +1,34 @@
+{
+ "script": "roteiros_2026-10-04_luana-34.txt",
+ "plan": "plan_luana-34.json",
+ "whisper": "small",
+ "speed": 1.1,
+ "scenes": [
+  {
+   "video": "https://d8j0ntlcm91z4.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/hf_20261004_202040_1fdd52c6-3532-49b9-9a18-f3201c128555.mp4",
+   "audio": "https://d2ol7oe51mr4n9.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/b6762db2-75f5-438e-88a2-213454123916.mp3",
+   "mode": "own",
+   "match": true
+  },
+  {
+   "video": "https://d8j0ntlcm91z4.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/hf_20261004_202030_768eb69e-cb00-47a7-a92a-10472fc44922.mp4",
+   "audio": "https://d2ol7oe51mr4n9.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/2d6ef114-d039-49ea-85b2-18ab1e87f613.mp3",
+   "mode": "own",
+   "match": true
+  },
+  {
+   "video": "",
+   "audio": "https://d2ol7oe51mr4n9.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/602fc967-72cd-4abb-b42c-9d3be8b80a31.mp3",
+   "mode": "cover"
+  },
+  {
+   "video": "https://d8j0ntlcm91z4.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/hf_20261004_202030_d08f663a-9a54-46e8-8c3a-7d9b24f6c7a1.mp4",
+   "audio": "https://d2ol7oe51mr4n9.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/061d790a-6a93-468c-993d-36ad65f0e6c8.mp3",
+   "mode": "own",
+   "match": true
+  }
+ ],
+ "broll": {
+  "BROLL_CELULAR": "https://dnznrvs05pmza.cloudfront.net/seedance_2/cgt-20261005033725-m4v8c/Vertical_close_up_shot__A_smartphone_lying_on_a_bright_modern_dental_clinic_reception_desk__the_scre.mp4?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiYjQxN2QwZmQ0OGVkNTQ4NSIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MTI5NjUwOX0.WKFVXtZ9wRoW_I4kiLBpsnovsWnkonMjd3E7Sp2d7Vc"
+ }
+}
