@@ -14,5 +14,5 @@ Valores aproximados por mensagem, com impostos, conforme a tabela da Meta para o
 
 #whatsappbusiness #clinicas #gestaodeclinicas #odontologia #automacao
 
-# video v1: https://d2ol7oe51mr4n9.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/c107b5d3-8742-464e-ad7f-7113a5666873.mp4 (aguardando OK do Carlos; publicar com isAiGenerated)
+# video v2 (trilha + efeitos, tarja fora do rosto): https://d2ol7oe51mr4n9.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/b41376c1-216e-4e5b-8efe-bfce841c5bf6.mp4 (aguardando OK do Carlos; publicar com isAiGenerated)
 # Luana: foto a235828b; angulos a71b966e 84ce204b 569b1503; cenas 01655171 980ab102 66425525; voz Lara (Runway, eleven_multilingual_v2, 1.12)
