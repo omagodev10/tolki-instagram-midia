@@ -79,7 +79,9 @@ def main():
         pad = 0.06
     if pad == 0.0 and pv:  # respiro antes da 1ª e depois da última palavra
         pc[0][0] = max(0.0, pc[0][0] - 0.05); pv[0][0] = max(0.0, pv[0][0] - 0.05)
-        pc[-1][1] = min(dur(clean), pc[-1][1] + 0.12); pv[-1][1] = min(D, pv[-1][1] + 0.12)
+        # o Whisper marca o fim da última palavra cedo: estende os dois lados pelo mesmo tanto
+        ext = min(0.4, dur(clean) - pc[-1][1], D - pv[-1][1])
+        pc[-1][1] += ext; pv[-1][1] += ext
     fl, ins = [], ["-i", clean]
     for i, ((va, vb, _), (ca, cb, _)) in enumerate(zip(pv, pc)):
         ca, cb = max(0.0, ca - pad), min(dur(clean), cb + pad)
