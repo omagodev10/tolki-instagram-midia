@@ -106,7 +106,7 @@ def speech_segments(path, thr=None, gap=0.28, pad=0.1):
     return out
 
 
-def speech_segments_fw(path, gap=0.3, pad0=0.08, pad1=0.14):
+def speech_segments_fw(path, gap=0.3, pad0=0.08, pad1=0.2, tail=0.6):
     """trechos com fala pelas palavras do Whisper (robusto a ruído de fundo); pausas maiores que gap saem"""
     from faster_whisper import WhisperModel
     m = WhisperModel("small", compute_type="int8")
@@ -127,6 +127,8 @@ def speech_segments_fw(path, gap=0.3, pad0=0.08, pad1=0.14):
             res[-1] = (res[-1][0], b)
         else:
             res.append((a, b))
+    if res:  # o Whisper costuma marcar o fim da última palavra cedo demais: deixa a frase final respirar
+        res[-1] = (res[-1][0], min(D, res[-1][1] - pad1 + tail))
     return res
 
 
