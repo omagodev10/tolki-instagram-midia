@@ -42,6 +42,15 @@ def dur(path):
     return float(sh("ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", path).strip())
 
 
+def onset(x, sr=16000, db=-35.0):
+    """instante (s) em que a fala começa: primeira janela de 10 ms acima de -35 dBFS"""
+    k = int(sr * 0.01)
+    n = len(x) // k
+    rms = np.sqrt(np.mean(x[:n * k].reshape(n, k) ** 2, axis=1) + 1e-12)
+    idx = np.nonzero(20 * np.log10(rms) > db)[0]
+    return float(idx[0]) * 0.01 if len(idx) else 0.0
+
+
 def lag(ref, sig, sr=16000, maxlag=1.0):
     """atraso (s) de ref dentro de sig pela correlação cruzada do envelope"""
     def env(x):
@@ -65,7 +74,7 @@ def main():
     for k, sc in enumerate(man["scenes"]):
         v = fetch(sc["video"], f"v{k}.mp4")
         a = fetch(sc["audio"], f"a{k}.mp3")
-        la = lag(pcm(a), pcm(v))  # >0: a fala no vídeo começa depois
+        la = onset(pcm(v)) - onset(pcm(a))  # >0: a fala no vídeo começa depois
         da = dur(a)
         start = max(0.0, la)
         print(f"cena {k}: atraso {la:+.2f}s, fala {da:.2f}s, vídeo {dur(v):.2f}s")
