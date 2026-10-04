@@ -1,0 +1,40 @@
+{
+ "script": "roteiros_2026-10-04_viral-pare.txt",
+ "plan": "plan_viral-pare.json",
+ "whisper": "small",
+ "speed": 1.2,
+ "scenes": [
+  {
+   "video": "https://d2ol7oe51mr4n9.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/a6e2432e-30fa-4cc8-95fc-811ec3a429d3.mp4",
+   "audio": "",
+   "mode": "own"
+  },
+  {
+   "video": "",
+   "audio": "https://d8j0ntlcm91z4.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/hf_20261004_233038_4055fd16-7934-4b8e-8f48-4aa851757f19.mp3",
+   "mode": "cover"
+  },
+  {
+   "video": "https://d2ol7oe51mr4n9.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/786ba6b8-ce03-4d72-97d7-ac2493b22748.mp4",
+   "audio": "",
+   "mode": "own"
+  }
+ ],
+ "broll": {
+  "BROLL_CELULAR": "https://dnznrvs05pmza.cloudfront.net/seedance_2/cgt-20261005033725-m4v8c/Vertical_close_up_shot__A_smartphone_lying_on_a_bright_modern_dental_clinic_reception_desk__the_scre.mp4?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiYjQxN2QwZmQ0OGVkNTQ4NSIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MTI5NjUwOX0.WKFVXtZ9wRoW_I4kiLBpsnovsWnkonMjd3E7Sp2d7Vc",
+  "BROLL_MOEDAS": "https://dnznrvs05pmza.cloudfront.net/seedance_2/cgt-20261005033726-572mh/Vertical_slow_motion_shot__Brazilian_real_coins_slipping_through_a_person_s_open_fingers_and_falling.mp4?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiNWE1ODg2ZDdmZjkzMTFmMSIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MTI4MDcyN30.6hA0pLpaEFkIC5qeK8PJylReyGcy7CSqG6cMaDkMGvI"
+ },
+ "assets": {
+  "MUSIC": "https://dnznrvs05pmza.cloudfront.net/lyria3-pro/c94a6cfa-9d8c-4568-9b99-26dc332e1db5/Tolki_viral___phonk.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiMDQzZTkxZmUzZTM4Mjc4NCIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MTI2MDY3MH0.VEAf_A10L6_f7x8LrBrBpijdhlx5yUkR8lMApaIIzfk",
+  "SFX_WHOOSH": "https://d2ol7oe51mr4n9.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/8b3fca14-361b-49a0-aa2c-42d357b7336f.mp3",
+  "SFX_POP": "https://d2ol7oe51mr4n9.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/b6e5ada1-d993-485c-a979-1ee37bddd052.mp3",
+  "SFX_DING": "https://d2ol7oe51mr4n9.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/1a333ed8-cf47-4db7-81b5-f243d12375c7.mp3",
+  "SFX_CASH": "https://d2ol7oe51mr4n9.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/9652deaa-76b4-4d92-96cf-796ef5dbec26.mp3",
+  "SFX_COUNTER": "https://d2ol7oe51mr4n9.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/2949f162-7efc-48c9-91f7-942808a6cf8d.mp3",
+  "SFX_TYPING": "https://d2ol7oe51mr4n9.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/7e5b7980-c8da-4177-a102-c6e06c35556a.mp3",
+  "SFX_RISER": "https://d2ol7oe51mr4n9.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/cca2683a-2e19-407b-aa65-590d3f7e124f.mp3",
+  "SFX_BOOM": "https://d2ol7oe51mr4n9.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/980c06f2-68a0-42e4-bce9-9d8a027cc035.mp3"
+ },
+ "_voz": "Luana Tolki BR (clone ElevenLabs, voice_id 6023c405-cacc-42fd-b42b-c7d78f657c32). Cenas A e C: fala nativa do Seedance (900aac50, 45ea660f) + áudio limpo do clone alinhado por dub_align (TTS 68250d62 e 7a3c0535). Meio: TTS do clone (4055fd16) coberto por b-roll e cards.",
+ "_trilha": "phonk original gerado no Runway (lyria-3-pro, c94a6cfa), sem direito autoral de terceiros; drop alinhado ao fim do gancho"
+}

@@ -29,7 +29,7 @@
   "duck_thr": 0.04,
   "duck_ratio": 5,
   "fade_out": 0.6,
-  "drop_at_line": 0
+  "drop_at_line": 1
  },
  "card_sfx": "whoosh",
  "cards": [
