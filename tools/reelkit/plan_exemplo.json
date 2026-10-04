@@ -1,0 +1,17 @@
+{
+ "zoom": [1.0, 1.12],
+ "cards": [
+  {"line": 0, "until": 1, "kind": "top", "html": "Sua IA <span style='color:#1597D4'>agenda?</span>", "size": 84},
+  {"line": 2, "kind": "number", "kicker": "IA da Meta", "html": "R$ 59", "sub": "por mês, desde setembro no Brasil"},
+  {"line": 4, "kind": "top", "html": "3 perguntas <span style='color:#8A3FD1'>antes de ligar</span>"},
+  {"line": 5, "kind": "list", "n": 1, "title": "Antes de ligar", "items": ["Vê sua agenda real?", "Sabe quem é paciente?", "Chama quem faltou?"]},
+  {"line": 6, "kind": "list", "n": 2, "title": "Antes de ligar", "items": ["Vê sua agenda real?", "Sabe quem é paciente?", "Chama quem faltou?"]},
+  {"line": 7, "kind": "list", "n": 3, "title": "Antes de ligar", "items": ["Vê sua agenda real?", "Sabe quem é paciente?", "Chama quem faltou?"]},
+  {"line": 8, "kind": "top", "html": "Recepcionista que <span style='color:#1597D4'>não marca horário</span>"},
+  {"line": 9, "kind": "virada", "html": "Ciclo inteiro", "sub": "captura, resposta, qualificação, agendamento e recuperação"},
+  {"line": 10, "kind": "top", "html": "Do primeiro oi à <span style='color:#1597D4'>consulta marcada</span>"},
+  {"line": 11, "kind": "number", "kicker": "Odonto Excellence", "html": "15% → 45%", "size": 158, "sub": "taxa de agendamento depois da IA da Tolki"},
+  {"line": 12, "kind": "top", "bg": "#8A3FD1", "fg": "#FFFFFF", "html": "Comenta <span style='color:#FFFFFF;background:#1AA6E3;padding:0 14px;border-radius:10px'>AGENDA</span>", "size": 80},
+  {"line": 13, "kind": "top", "html": "Sua IA <span style='color:#1597D4'>agenda?</span>", "size": 84}
+ ]
+}
