@@ -14,5 +14,5 @@ Valores aproximados por mensagem, com impostos, conforme a tabela da Meta para o
 
 #whatsappbusiness #clinicas #gestaodeclinicas #odontologia #automacao
 
-# video v2 (trilha + efeitos, tarja fora do rosto): https://d2ol7oe51mr4n9.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/b41376c1-216e-4e5b-8efe-bfce841c5bf6.mp4 (aguardando OK do Carlos; publicar com isAiGenerated)
-# Luana: foto a235828b; angulos a71b966e 84ce204b 569b1503; cenas 01655171 980ab102 66425525; voz Lara (Runway, eleven_multilingual_v2, 1.12)
+# video v3 (voz brasileira Luana Tolki BR, 1,2x, trilha + efeitos): https://d2ol7oe51mr4n9.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/6254be41-74ac-4e17-af04-79815c0828e0.mp4 (aguardando OK do Carlos; publicar com isAiGenerated)
+# Luana: foto a235828b; angulos a71b966e 84ce204b 569b1503; cenas 01655171 980ab102 66425525; voz Luana Tolki BR (clone ElevenLabs no Higgsfield, voice_id 6023c405-cacc-42fd-b42b-c7d78f657c32)
