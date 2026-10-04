@@ -20,7 +20,7 @@
    "mode": "cover"
   },
   {
-   "video": "PENDENTE_D",
+   "video": "https://d2ol7oe51mr4n9.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/5fdbe4fc-a4b8-40b3-8bc2-12cfe9c8eba5.mp4",
    "audio": "",
    "mode": "own"
   }
@@ -39,5 +39,6 @@
   "SFX_RISER": "https://d2ol7oe51mr4n9.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/cca2683a-2e19-407b-aa65-590d3f7e124f.mp3",
   "SFX_BOOM": "https://d2ol7oe51mr4n9.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/980c06f2-68a0-42e4-bce9-9d8a027cc035.mp3"
  },
- "_voz": "Luana Tolki BR (clone ElevenLabs, voice_id 6023c405-cacc-42fd-b42b-c7d78f657c32); cenas com fala nativa do Seedance + voice_change"
+ "_voz": "Luana Tolki BR (clone ElevenLabs, voice_id 6023c405-cacc-42fd-b42b-c7d78f657c32); cenas com fala nativa do Seedance + voice_change",
+ "_cenaD": "Seedance c9784d2c (fala nativa) + áudio limpo do clone alinhado por dub_align"
 }
