@@ -127,9 +127,10 @@ def speech_segments_fw(path, gap=0.3, pad0=0.08, pad1=0.2, tail=0.6):
             res[-1] = (res[-1][0], b)
         else:
             res.append((a, b))
+    speech = sum(b - a for a, b in res)  # para casar a velocidade, sem contar a respiração final
     if res:  # o Whisper costuma marcar o fim da última palavra cedo demais: deixa a frase final respirar
         res[-1] = (res[-1][0], min(D, res[-1][1] - pad1 + tail))
-    return res
+    return res, speech
 
 
 def build_scene(k, sc, mode, speed, prev):
@@ -137,8 +138,7 @@ def build_scene(k, sc, mode, speed, prev):
     vf = "scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,fps=30,setsar=1"
     if mode == "own":
         v = fetch(sc["video"], f"v{k}.mp4")
-        segs = speech_segments_fw(v)
-        got = sum(b - a for a, b in segs)
+        segs, got = speech_segments_fw(v)
         if sc.get("match") and sc.get("audio"):
             # o Seedance costuma esticar a fala: acelera a cena até o ritmo do áudio limpo
             ref = sum(b - a for a, b in speech_segments(fetch(sc["audio"], f"ref{k}.mp3")))
