@@ -8,8 +8,8 @@
    "line": 0,
    "kind": "top",
    "instant": true,
-   "size": 80,
-   "html": "<span style='color:#E5484D'>R$ 0,34</span> ou <span style='color:#1597D4'>R$ 0,04</span>?<div style='font:600 26px Inter;text-transform:none;color:#5B6673;margin-top:14px;letter-spacing:0'>por mensagem no WhatsApp, valores aproximados com impostos</div>"
+   "size": 74,
+   "html": "<span style='color:#E5484D'>R$&nbsp;0,34</span><br>ou <span style='color:#1597D4'>R$&nbsp;0,04</span>?<div style='font:600 26px Inter;text-transform:none;color:#5B6673;margin-top:14px;letter-spacing:0'>por mensagem no WhatsApp, valores aproximados com impostos</div>"
   },
   {
    "line": 1,
@@ -114,7 +114,7 @@
    "line": 9,
    "kind": "top",
    "size": 74,
-   "html": "Ou continua pagando <span style='color:#E5484D'>R$ 0,34</span>?"
+   "html": "Ou continua pagando <span style='color:#E5484D'>R$&nbsp;0,34</span>?"
   }
  ]
 }

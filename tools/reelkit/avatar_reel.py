@@ -67,8 +67,21 @@ def lag(ref, sig, sr=16000, maxlag=1.0):
     return shift * 0.01
 
 
-def speech_segments(path, thr="-35dB", gap=0.28, pad=0.1):
+def noise_thr(path):
+    """limiar de silêncio adaptado ao ruído de fundo (o áudio do Seedance às vezes tem ambiente alto)"""
+    x = pcm(path)
+    k = 160
+    n = len(x) // k
+    if n < 10:
+        return "-35dB"
+    db = 20 * np.log10(np.sqrt(np.mean(x[:n * k].reshape(n, k) ** 2, axis=1)) + 1e-9)
+    lo, hi = np.percentile(db, 10), np.percentile(db, 95)
+    return f"{max(-45.0, min(-22.0, lo + 0.3 * (hi - lo))):.1f}dB"
+
+
+def speech_segments(path, thr=None, gap=0.28, pad=0.1):
     """trechos com fala pelo silencedetect; pausas maiores que gap saem"""
+    thr = thr or noise_thr(path)
     log = subprocess.run(["ffmpeg", "-v", "info", "-i", path, "-af", f"silencedetect=n={thr}:d={gap}", "-f", "null", "-"],
                          capture_output=True, text=True).stderr
     import re
@@ -103,7 +116,7 @@ def build_scene(k, sc, mode, speed, prev):
         if sc.get("match") and sc.get("audio"):
             # o Seedance costuma esticar a fala: acelera a cena até o ritmo do áudio limpo
             ref = sum(b - a for a, b in speech_segments(fetch(sc["audio"], f"ref{k}.mp3")))
-            speed = min(1.3, max(1.0, got / ref * speed)) if ref > 0 else speed
+            speed = min(1.25, max(1.0, got / ref * speed)) if ref > 0 else speed
         print(f"cena {k} (áudio do próprio vídeo): {len(segs)} trechos, {got:.2f}s de {dur(v):.2f}s, velocidade {speed:.3f}")
         fl = []
         for i, (a, b) in enumerate(segs):
@@ -146,10 +159,16 @@ def main():
            "-t", f"{da:.3f}", "-vf", "scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,fps=30,setsar=1,tpad=stop_mode=clone:stop_duration=1",
            "-c:v", "libx264", "-preset", "veryfast", "-crf", "15", "-pix_fmt", "yuv420p", "-c:a", "pcm_s16le", "-ar", "48000", "-ac", "2", p)
         parts.append(p)
-    lst = os.path.join(W, "list.txt")
-    open(lst, "w").write("".join(f"file '{p}'\n" for p in parts))
+    # emenda reencodando (o concat com -c copy deixava o áudio com tempos voltando e o render parava no meio)
     joined = os.path.join(W, "joined.mkv")
-    sh("ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", lst, "-c", "copy", joined)
+    ins = sum([["-i", p] for p in parts], [])
+    n = len(parts)
+    fl = "".join(f"[{i}:v]setpts=PTS-STARTPTS[v{i}];[{i}:a]aresample=48000,asetpts=PTS-STARTPTS[a{i}];" for i in range(n))
+    fl += "".join(f"[v{i}][a{i}]" for i in range(n)) + f"concat=n={n}:v=1:a=1[v][a]"
+    sh("ffmpeg", "-v", "error", "-y", *ins, "-filter_complex", fl, "-map", "[v]", "-map", "[a]",
+       "-c:v", "libx264", "-preset", "veryfast", "-crf", "14", "-pix_fmt", "yuv420p", "-r", "30",
+       "-c:a", "pcm_s16le", "-ar", "48000", "-ac", "2", joined)
+    print("emendado:", f"{dur(joined):.2f}s", "partes:", [round(dur(p), 2) for p in parts])
     # plano com os B-rolls baixados
     plan = json.load(open(man["plan"], encoding="utf-8"))
     for i, (key, url) in enumerate(man.get("broll", {}).items()):
