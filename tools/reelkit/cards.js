@@ -16,7 +16,7 @@ for(const f of fs.readdirSync(SRC).filter(f=>f.endsWith('.html')&&!f.startsWith(
  if(!m){const out=path.join(OUT,f.replace('.html','.png'));await p.screenshot({path:out,omitBackground:true});console.log(out);continue;}
  const name=m[1],N=+m[2],dir=path.join(OUT,name);fs.mkdirSync(dir,{recursive:true});
  for(let i=0;i<N;i++){const t=i*1000/FPS;
-  await p.evaluate(t=>{document.getAnimations().forEach(a=>{a.pause();a.currentTime=t;});},t);
+  await p.evaluate(t=>{document.getAnimations().forEach(a=>{a.pause();a.currentTime=t;});if(window.__tick)window.__tick(t/1000);},t);
   await p.screenshot({path:path.join(dir,String(i+1).padStart(4,'0')+'.png'),omitBackground:true});}
  console.log(dir,N);}
 fs.rmSync(path.join(SRC,'.tmp.html'),{force:true});await b.close();})();

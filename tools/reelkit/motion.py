@@ -131,18 +131,17 @@ def compare(c, D, a):
     rows = c.get("rows") or [["Como marketing", 340, 100, "#E5484D"], ["Como utilidade", 40, 12, BLUE]]
     starts = c.get("starts") or [0.05 * D] + [0.2 * D + i * 0.3 * D for i in range(len(rows))]
     pre = c.get("prefix", "R$ ")
-    css, body = [], []
+    css, body, ticks = [], [], []
     for i, (label, v, pct, col) in enumerate(rows):
         s = starts[i + 1] if i + 1 < len(starts) else starts[-1] + 0.8
         g = s + 0.15
-        css.append(f"@property --n{i}{{syntax:'<integer>';initial-value:0;inherits:false}}"
-                   f".n{i}{{counter-reset:n{i} var(--n{i});animation:c{i} .9s cubic-bezier(.2,.7,.2,1) {g:.2f}s both}}"
-                   f".n{i}::after{{content:'{pre}' counter(n{i})}}"
-                   f"@keyframes c{i}{{from{{--n{i}:0}}to{{--n{i}:{v}}}}}@keyframes g{i}{{from{{width:0}}to{{width:{pct}%}}}}")
+        # número formatado em pt-BR (1.700) via __tick, que o cards.js chama a cada quadro
+        ticks.append(f"{{id:'n{i}',v:{v},t:{g:.3f}}}")
+        css.append(f"@keyframes g{i}{{from{{width:0}}to{{width:{pct}%}}}}")
         body.append(f'<div class="pop" style="{_d(s)};margin-top:64px">'
                     f'<div style="display:flex;justify-content:space-between;align-items:flex-end">'
                     f'<div style="font:900 52px/1 Montserrat;color:{INK};text-transform:uppercase">{label}</div>'
-                    f'<div class="n{i}" style="font:900 100px/1 Montserrat;color:{col};letter-spacing:-3px"></div></div>'
+                    f'<div id="n{i}" style="font:900 100px/1 Montserrat;color:{col};letter-spacing:-3px"></div></div>'
                     f'<div style="height:58px;border-radius:29px;background:#EEF2F6;overflow:hidden;margin-top:20px">'
                     f'<div style="height:100%;border-radius:29px;background:{col};animation:g{i} .9s cubic-bezier(.3,.8,.3,1) {g:.2f}s both"></div></div></div>')
     grid = ""
@@ -157,6 +156,10 @@ def compare(c, D, a):
         pt = max(starts[-1] + 0.3, min(starts[-1] + 0.8, D - 0.8))
         pill = (f'<div class="pop" style="{_d(pt)};margin:80px auto 0;width:fit-content;background:#E6F6EE;color:#14935A;border-radius:999px;'
                 f'padding:24px 44px;font:900 54px Montserrat;text-transform:uppercase">{c["pill"]}</div>')
+    script = ("<script>const R=[" + ",".join(ticks) + "];const F=n=>String(n).replace(/\\B(?=(\\d{3})+(?!\\d))/g,'.');"
+              f"window.__tick=function(t){{for(const r of R){{const p=Math.max(0,Math.min(1,(t-r.t)/0.9));"
+              f"document.getElementById(r.id).textContent='{pre}'+F(Math.round(r.v*(1-Math.pow(1-p,3))));}}}};"
+              "window.__tick(0);</script>")
     return f"""<style>{''.join(css)}</style>
 <div style="position:absolute;inset:0;background:#fff;padding:0 90px">
 <img class="fade" src="file://{a['logo_dark']}" style="position:absolute;top:250px;left:50%;transform:translateX(-50%);height:56px">
@@ -164,7 +167,7 @@ def compare(c, D, a):
 <div class="pop" style="{_d(starts[0])};font:700 34px Inter;letter-spacing:4px;color:{PURPLE};text-transform:uppercase">{c.get('kicker','Faz a conta')}</div>
 <div class="pop" style="{_d(starts[0] + 0.06)};font:900 84px/1.05 Montserrat;color:{INK};text-transform:uppercase;margin-top:10px">{c.get('title','')}</div>
 {grid}{''.join(body)}{pill}</div>
-<div class="fade" style="{_d(starts[0])};position:absolute;left:90px;right:90px;top:1560px;font:600 28px Inter;color:#8A94A0;text-align:center">{c.get('note','')}</div></div>"""
+<div class="fade" style="{_d(starts[0])};position:absolute;left:90px;right:90px;top:1560px;font:600 28px Inter;color:#8A94A0;text-align:center">{c.get('note','')}</div></div>{script}"""
 
 
 def stamp(c, D, a):
@@ -181,8 +184,53 @@ def stamp(c, D, a):
 <div class="fade" style="{_d(t + 0.55)};font:800 50px/1.3 Montserrat;color:#fff;text-align:center;margin-top:70px">{c.get('sub','')}</div></div>"""
 
 
+def media(c, D, a):
+    """Mensagens de WhatsApp com vídeo, imagem e link entrando uma a uma, cada uma com etiqueta de preço.
+    starts = [vídeo, imagem, link, faixa final] em segundos."""
+    st = c.get("starts") or [0.1 * D, 0.3 * D, 0.5 * D, 0.7 * D]
+    price = c.get("price", "R$ 0,04")
+    hour = c.get("hour", "14:02")
+    ticks = (f'<div style="text-align:right;font:600 22px Inter;color:#667781;margin-top:8px">{hour} '
+             f'<span style="color:#53BDEB;font-weight:800">&#10003;&#10003;</span></div>')
+
+    def tag(t):
+        return (f'<div class="pop" style="{_d(t + 0.22)};position:absolute;left:-250px;top:50%;margin-top:-40px;transform:rotate(-6deg)">'
+                f'<div style="background:{BLUE};color:#fff;font:900 46px Montserrat;padding:14px 26px;border-radius:18px;'
+                f'box-shadow:0 10px 26px rgba(21,151,212,.35);white-space:nowrap">{price}</div></div>')
+
+    bub = "position:relative;align-self:flex-end;width:600px;background:#D9FDD3;border-radius:22px 6px 22px 22px;padding:12px;box-shadow:0 4px 14px rgba(14,26,43,.10)"
+    cap = f"font:600 34px/1.25 Inter;color:{INK};padding:12px 8px 0"
+    video = (f'<div class="pop" style="{_d(st[0])};{bub}">{tag(st[0])}'
+             f'<div style="position:relative;height:300px;border-radius:14px;background:linear-gradient(135deg,#0E1A2B,#1F4E79 60%,#1597D4)">'
+             f'<div style="position:absolute;left:50%;top:50%;width:110px;height:110px;margin:-55px 0 0 -55px;border-radius:50%;background:rgba(255,255,255,.92)">'
+             f'<div style="position:absolute;left:42px;top:30px;border-left:40px solid {INK};border-top:25px solid transparent;border-bottom:25px solid transparent"></div></div>'
+             f'<div style="position:absolute;left:18px;bottom:14px;font:700 26px Inter;color:#fff">&#9654; 0:32</div></div>'
+             f'<div style="{cap}">{c.get("video_cap", "Como se preparar para a sua consulta")}</div>{ticks}</div>')
+    image = (f'<div class="pop" style="{_d(st[1])};{bub}">{tag(st[1])}'
+             f'<div style="position:relative;height:250px;border-radius:14px;background:linear-gradient(135deg,#EAF6FD,#D8E9FB 50%,#EBDDF8);display:flex;align-items:center;justify-content:center;gap:26px">'
+             f'<div style="width:120px;height:130px;border-radius:18px;background:#fff;box-shadow:0 6px 16px rgba(14,26,43,.12);overflow:hidden">'
+             f'<div style="height:34px;background:{PURPLE}"></div><div style="font:900 60px/96px Montserrat;color:{INK};text-align:center">15</div></div>'
+             f'<div style="font:900 48px/1.1 Montserrat;color:{INK}">Amanhã<br><span style="color:{BLUE}">14h</span></div></div>'
+             f'<div style="{cap}">{c.get("image_cap", "Seu lembrete de consulta")}</div>{ticks}</div>')
+    link = (f'<div class="pop" style="{_d(st[2])};{bub}">{tag(st[2])}'
+            f'<div style="border-radius:14px;background:#F0F2F5;padding:20px 22px;border-left:8px solid {BLUE}">'
+            f'<div style="font:800 34px Inter;color:{INK}">{c.get("link_title", "Confirme sua presença")}</div>'
+            f'<div style="font:600 26px Inter;color:#667781;margin-top:6px">{c.get("link_domain", "suaclinica.com.br")}</div></div>'
+            f'<div style="{cap};color:#027EB5;text-decoration:underline">{c.get("link_url", "suaclinica.com.br/confirmar")}</div>{ticks}</div>')
+    final = ""
+    if len(st) > 3:
+        final = (f'<div class="pop" style="{_d(st[3])};position:absolute;left:0;right:0;top:1510px;display:flex;justify-content:center">'
+                 f'<div style="background:{INK};color:#fff;font:900 74px Montserrat;padding:22px 48px;border-radius:26px;text-transform:uppercase;'
+                 f'box-shadow:0 18px 40px rgba(14,26,43,.35)">{c.get("final", "Tudo a")} <span style="color:{LBLUE}">{price}</span></div></div>')
+    return f"""<div style="position:absolute;inset:0;background:#E9EEF3">
+<div class="fade" style="position:absolute;left:70px;right:70px;top:230px;background:#fff;border-radius:28px;padding:22px 28px;display:flex;align-items:center;gap:22px;box-shadow:0 8px 24px rgba(14,26,43,.08)">
+<div style="width:78px;height:78px;border-radius:50%;background:{PURPLE};display:flex;align-items:center;justify-content:center"><img src="file://{a['icon']}" style="width:54px"></div>
+<div><div style="font:800 36px Inter;color:{INK}">{c.get('title', 'Sua clínica')}</div><div style="font:600 24px Inter;color:#2BB673">online</div></div></div>
+<div style="position:absolute;left:70px;right:70px;top:400px;display:flex;flex-direction:column;gap:30px">{video}{image}{link}</div>{final}</div>"""
+
+
 TEMPLATES = {"checklist": (checklist, True), "chat": (chat, True), "counter": (counter, True), "cycle": (cycle, True),
-             "comment": (comment, False), "compare": (compare, True), "stamp": (stamp, True)}
+             "comment": (comment, False), "compare": (compare, True), "stamp": (stamp, True), "media": (media, True)}
 
 
 def anim_html(c, D, assets, fonts_css, W, H):

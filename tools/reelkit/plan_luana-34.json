@@ -1,0 +1,115 @@
+{
+ "zoom": [
+  1.0,
+  1.08
+ ],
+ "cards": [
+  {
+   "line": 0,
+   "kind": "top",
+   "instant": true,
+   "size": 74,
+   "html": "<span style='color:#E5484D'>R$&nbsp;0,34</span><br>ou <span style='color:#1597D4'>R$&nbsp;0,04</span>?<div style='font:600 26px Inter;text-transform:none;color:#5B6673;margin-top:14px;letter-spacing:0'>por mensagem no WhatsApp, valores aproximados com impostos</div>"
+  },
+  {
+   "line": 1,
+   "kind": "broll",
+   "src": "BROLL_CELULAR",
+   "ss": 0.6
+  },
+  {
+   "line": 2,
+   "kind": "anim",
+   "tpl": "media",
+   "starts_at": [
+    [
+     2,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     2,
+     5
+    ]
+   ],
+   "final": "Tudo a"
+  },
+  {
+   "line": 3,
+   "kind": "top",
+   "size": 70,
+   "html": "<span style='color:#1597D4'>Utilidade</span>, não <span style='color:#E5484D'>marketing</span>"
+  },
+  {
+   "line": 4,
+   "until": 5,
+   "kind": "anim",
+   "tpl": "compare",
+   "kicker": "Faz a conta",
+   "title": "5.000 mensagens",
+   "rows": [
+    [
+     "Como marketing",
+     1700,
+     100,
+     "#E5484D"
+    ],
+    [
+     "Na Tolki",
+     200,
+     12,
+     "#1597D4"
+    ]
+   ],
+   "grid": 30,
+   "starts_at": [
+    [
+     4,
+     0
+    ],
+    [
+     5,
+     0
+    ],
+    [
+     5,
+     4
+    ]
+   ],
+   "pill": "R$ 1.500 a menos",
+   "note": "valores aproximados por mensagem, com impostos"
+  },
+  {
+   "line": 6,
+   "kind": "anim",
+   "tpl": "counter",
+   "from": 0,
+   "to": 45,
+   "prefix": "+R$ ",
+   "suffix": " mil",
+   "size": 150,
+   "kicker": "Orthodontic",
+   "sub": "economizados em disparos"
+  },
+  {
+   "line": 7,
+   "kind": "anim",
+   "tpl": "comment",
+   "word": "DISPARO",
+   "label": "Comenta aqui embaixo"
+  },
+  {
+   "line": 8,
+   "kind": "top",
+   "size": 74,
+   "html": "Ou continua pagando <span style='color:#E5484D'>R$&nbsp;0,34</span>?"
+  }
+ ]
+}
