@@ -3,7 +3,7 @@ const fs=require('fs'),path=require('path');const {chromium}=require('playwright
 const SRC=path.resolve(process.argv[2]),OUT=path.resolve(process.argv[3]);
 const F=path.resolve(__dirname,'node_modules/@fontsource');
 const ff=(fam,d,w)=>`@font-face{font-family:'${fam}';font-weight:${w};src:url('file://${F}/${d}/files/${d}-latin-${w}-normal.woff2') format('woff2')}`;
-const css=[700,800,900].map(w=>ff('Montserrat','montserrat',w)).join('')+[400,500,600,700,800].map(w=>ff('Inter','inter',w)).join('');
+const css=!fs.existsSync(F)?'':[700,800,900].map(w=>ff('Montserrat','montserrat',w)).join('')+[400,500,600,700,800].map(w=>ff('Inter','inter',w)).join('');
 (async()=>{const X='/opt/pw-browsers/chromium';const b=await chromium.launch(fs.existsSync(X)?{executablePath:X}:{});
 const p=await b.newPage({viewport:{width:1080,height:1920}});fs.mkdirSync(OUT,{recursive:true});
 for(const f of fs.readdirSync(SRC).filter(f=>f.endsWith('.html')&&!f.startsWith('.')).sort()){

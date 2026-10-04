@@ -4,8 +4,6 @@ Uso: python3 analyze.py raw.mp4 script.txt out_dir
 Gera out_dir/edit.json com os trechos mantidos (retakes e silencios fora),
 palavras com tempo na timeline final e inicio/fim de cada linha do roteiro."""
 import json, os, re, subprocess, sys, unicodedata, difflib
-import numpy as np
-import sherpa_onnx
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 M = os.path.join(HERE, "models")
@@ -38,12 +36,14 @@ def toks(text):
 
 
 def load_audio(path, sr=16000):
+    import numpy as np
     pcm = subprocess.run(["ffmpeg", "-v", "error", "-i", path, "-ac", "1", "-ar", str(sr), "-f", "f32le", "-"],
                          capture_output=True, check=True).stdout
     return np.frombuffer(pcm, dtype=np.float32).copy()
 
 
 def vad_segments(a, sr=16000):
+    import sherpa_onnx
     cfg = sherpa_onnx.VadModelConfig()
     cfg.silero_vad.model = os.path.join(M, "silero_vad.onnx")
     cfg.silero_vad.threshold = 0.45
@@ -69,6 +69,7 @@ def vad_segments(a, sr=16000):
 
 
 def recognizer():
+    import sherpa_onnx
     d = os.path.join(M, "sherpa-onnx-whisper-small")
     return sherpa_onnx.OfflineRecognizer.from_whisper(
         encoder=os.path.join(d, "small-encoder.int8.onnx"), decoder=os.path.join(d, "small-decoder.int8.onnx"),
