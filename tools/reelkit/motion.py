@@ -166,7 +166,8 @@ def stamp(c, D, a):
     t = c.get("at", 0.35 * D)
     return f"""<style>@keyframes slam{{0%{{opacity:0;transform:rotate(-7deg) scale(2.6)}}55%{{opacity:1;transform:rotate(-7deg) scale(.92)}}78%{{transform:rotate(-7deg) scale(1.05)}}100%{{opacity:1;transform:rotate(-7deg) scale(1)}}}}
 @keyframes shake{{0%,100%{{transform:none}}20%{{transform:translate(-14px,8px)}}40%{{transform:translate(10px,-8px)}}60%{{transform:translate(-8px,5px)}}80%{{transform:translate(5px,-3px)}}}}</style>
-<div style="position:absolute;inset:0;background:{bg};display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 80px;animation:shake .32s ease-out {t + 0.26:.2f}s both">
+<div style="position:absolute;inset:0;background:{bg}"></div>
+<div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 80px;animation:shake .32s ease-out {t + 0.26:.2f}s both">
 <img class="pop" src="file://{a['icon']}" style="width:130px;margin-bottom:46px">
 <div class="pop" style="{_d(0.05)};font:700 46px/1.3 Inter;color:#F1E6FB;text-align:center">{c.get('kicker','')}</div>
 <div style="margin-top:56px;border:14px solid #fff;border-radius:26px;padding:22px 50px 16px;font:900 {c.get('size',120)}px/1 Montserrat;color:#fff;letter-spacing:1px;text-transform:uppercase;animation:slam .5s cubic-bezier(.2,.9,.3,1) {t:.2f}s both">{c.get('word','UTILIDADE')}</div>

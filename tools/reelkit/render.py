@@ -232,7 +232,12 @@ def main():
             f.append(f"[{idx}:v]scale={int(W*1.06)}:{int(HH*1.06)}:force_original_aspect_ratio=increase,crop={W}:{HH},setsar=1,fps={FPS},"
                      f"eq=contrast=1.04:saturation=1.05,format=rgba,setpts=PTS-STARTPTS+{c['t0']}/TB[o{j}]")
         elif c.get("seq"):
-            inputs += ["-framerate", str(FPS), "-start_number", "1", "-i", os.path.join(work, "png", c["name"], "%04d.png")]
+            # a sequência vira um vídeo RGBA à parte: se um PNG sair sem alfa (tela toda opaca), o ffmpeg
+            # reconfiguraria o grafo principal no meio e o Reel terminaria ali
+            mov = os.path.join(work, "png", c["name"] + ".mkv")
+            run(["ffmpeg", "-v", "error", "-y", "-framerate", str(FPS), "-start_number", "1", "-i",
+                 os.path.join(work, "png", c["name"], "%04d.png"), "-vf", "format=rgba", "-c:v", "png", mov])
+            inputs += ["-i", mov]
             fo = "" if (c.get("cut") or c["full"]) else f",fade=t=out:st={max(0, d - 0.14):.3f}:d=0.14:alpha=1"
             f.append(f"[{idx}:v]format=rgba{fo},setpts=PTS-STARTPTS+{c['t0']}/TB[o{j}]")
         else:

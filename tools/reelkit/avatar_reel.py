@@ -106,12 +106,36 @@ def speech_segments(path, thr=None, gap=0.28, pad=0.1):
     return out
 
 
+def speech_segments_fw(path, gap=0.3, pad0=0.08, pad1=0.14):
+    """trechos com fala pelas palavras do Whisper (robusto a ruído de fundo); pausas maiores que gap saem"""
+    from faster_whisper import WhisperModel
+    m = WhisperModel("small", compute_type="int8")
+    segs, _ = m.transcribe(path, language="pt", word_timestamps=True, vad_filter=False,
+                           condition_on_previous_text=False, beam_size=5)
+    out = []
+    for s in segs:
+        for w in s.words:
+            if out and w.start - out[-1][1] < gap:
+                out[-1][1] = max(out[-1][1], w.end)
+            else:
+                out.append([w.start, w.end])
+    D = dur(path)
+    res = []
+    for a, b in out:
+        a, b = max(0.0, a - pad0), min(D, b + pad1)
+        if res and a <= res[-1][1]:
+            res[-1] = (res[-1][0], b)
+        else:
+            res.append((a, b))
+    return res
+
+
 def build_scene(k, sc, mode, speed, prev):
     p = os.path.join(W, f"p{k}.mkv")
     vf = "scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,fps=30,setsar=1"
     if mode == "own":
         v = fetch(sc["video"], f"v{k}.mp4")
-        segs = speech_segments(v)
+        segs = speech_segments_fw(v)
         got = sum(b - a for a, b in segs)
         if sc.get("match") and sc.get("audio"):
             # o Seedance costuma esticar a fala: acelera a cena até o ritmo do áudio limpo
