@@ -162,6 +162,8 @@ def main():
         if a not in LT or b not in LT:
             print("aviso: linha sem tempo, cartão ignorado:", c.get("html", "")[:40]); continue
         t0 = max(0, LT[a][0] - 0.12)
+        if c.get("instant") and a == 0:
+            t0 = 0.0  # gancho já visível no primeiro quadro (capa do Reel)
         nxt = min([v[0] for k, v in LT.items() if k > b] or [total])
         t1 = min(total, max(LT[b][1] + 0.15, min(nxt, LT[b][1] + 0.6)))
         if "t1_pad" in c:
@@ -176,12 +178,23 @@ def main():
             N = int(math.ceil((t1 - t0) * FPS)) + 1
             if c.get("starts_lines"):
                 c = dict(c, starts=[max(0.0, LT[l][0] - 0.1 - t0) for l in c["starts_lines"] if l in LT])
+            if c.get("starts_at"):  # [[linha, índice da palavra], ...] → início exato daquela palavra
+                st = []
+                for l, k in c["starts_at"]:
+                    ws = sorted([w for w in E["words"] if w["line"] == l], key=lambda w: w["start"])
+                    st.append(max(0.0, (ws[min(k, len(ws) - 1)]["start"] if ws else LT[l][0]) - 0.1 - t0))
+                c = dict(c, starts=st)
+            if c.get("at_word"):
+                l, k = c["at_word"]
+                ws = sorted([w for w in E["words"] if w["line"] == l], key=lambda w: w["start"])
+                c = dict(c, at=max(0.0, (ws[min(k, len(ws) - 1)]["start"] if ws else LT[l][0]) - 0.05 - t0))
             html, full = motion.anim_html(c, t1 - t0, {"icon": ICON, "logo_dark": LOGO_D, "logo_white": LOGO_W}, fonts_css(), W, HH)
             open(os.path.join(work, "html", f"{name}__{N}.seq.html"), "w", encoding="utf-8").write(html)
             cards.append({"name": name, "t0": round(t0, 3), "t1": round(t1, 3), "full": full, "seq": True})
             continue
         open(os.path.join(work, "html", name + ".html"), "w", encoding="utf-8").write(card_html(c))
-        cards.append({"name": name, "t0": round(t0, 3), "t1": round(t1, 3), "full": c["kind"] in ("number", "virada")})
+        cards.append({"name": name, "t0": round(t0, 3), "t1": round(t1, 3), "full": c["kind"] in ("number", "virada"),
+                      "instant": bool(c.get("instant"))})
     # cartões em sequência na mesma área: o anterior termina quando o próximo começa
     tops = sorted([c for c in cards if not c["full"]], key=lambda c: c["t0"])
     for x, y in zip(tops, tops[1:]):
@@ -226,8 +239,9 @@ def main():
             png = os.path.join(work, "png", c["name"] + ".png")
             inputs += ["-loop", "1", "-t", f"{d:.3f}", "-framerate", str(FPS), "-i", png]
             fo = "" if c.get("cut") else f",fade=t=out:st={max(0, d - 0.14):.3f}:d=0.14:alpha=1"
-            f.append(f"[{idx}:v]format=rgba,fade=t=in:st=0:d=0.16:alpha=1{fo},setpts=PTS-STARTPTS+{c['t0']}/TB[o{j}]")
-        ydist = 0 if (c["full"] or c.get("seq")) else 36
+            fi = "" if c.get("instant") else ",fade=t=in:st=0:d=0.16:alpha=1"
+            f.append(f"[{idx}:v]format=rgba{fi}{fo},setpts=PTS-STARTPTS+{c['t0']}/TB[o{j}]")
+        ydist = 0 if (c["full"] or c.get("seq") or c.get("instant")) else 36
         f.append(f"[{last}][o{j}]overlay=x=0:y='if(lt(t-{c['t0']},0.18),{ydist}*(1-(t-{c['t0']})/0.18),0)':eof_action=pass:eval=frame:enable='between(t,{c['t0']},{c['t1']})'[b{j}]")
         last = f"b{j}"
     f.append(f"[{last}]ass={ass}:fontsdir={FONTS},format=yuv420p[vout]")

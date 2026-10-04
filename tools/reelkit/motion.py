@@ -125,7 +125,56 @@ def checklist(c, D, a):
 {rows}</div></div>"""
 
 
-TEMPLATES = {"checklist": (checklist, True), "chat": (chat, True), "counter": (counter, True), "cycle": (cycle, True), "comment": (comment, False)}
+def compare(c, D, a):
+    """Faz a conta: duas barras (ex.: marketing x utilidade) com valores contando e um selo de economia.
+    starts = [título, linha 1, linha 2, ...] em segundos a partir do início do cartão."""
+    rows = c.get("rows") or [["Como marketing", 340, 100, "#E5484D"], ["Como utilidade", 40, 12, BLUE]]
+    starts = c.get("starts") or [0.05 * D] + [0.2 * D + i * 0.3 * D for i in range(len(rows))]
+    pre = c.get("prefix", "R$ ")
+    css, body = [], []
+    for i, (label, v, pct, col) in enumerate(rows):
+        s = starts[i + 1] if i + 1 < len(starts) else starts[-1] + 0.8
+        g = s + 0.15
+        css.append(f"@property --n{i}{{syntax:'<integer>';initial-value:0;inherits:false}}"
+                   f".n{i}{{counter-reset:n{i} var(--n{i});animation:c{i} .9s cubic-bezier(.2,.7,.2,1) {g:.2f}s both}}"
+                   f".n{i}::after{{content:'{pre}' counter(n{i})}}"
+                   f"@keyframes c{i}{{from{{--n{i}:0}}to{{--n{i}:{v}}}}}@keyframes g{i}{{from{{width:0}}to{{width:{pct}%}}}}")
+        body.append(f'<div class="pop" style="{_d(s)};margin-top:64px">'
+                    f'<div style="display:flex;justify-content:space-between;align-items:flex-end">'
+                    f'<div style="font:900 52px/1 Montserrat;color:{INK};text-transform:uppercase">{label}</div>'
+                    f'<div class="n{i}" style="font:900 100px/1 Montserrat;color:{col};letter-spacing:-3px"></div></div>'
+                    f'<div style="height:58px;border-radius:29px;background:#EEF2F6;overflow:hidden;margin-top:20px">'
+                    f'<div style="height:100%;border-radius:29px;background:{col};animation:g{i} .9s cubic-bezier(.3,.8,.3,1) {g:.2f}s both"></div></div></div>')
+    pill = ""
+    if c.get("pill"):
+        pt = max(starts[-1] + 0.3, min(starts[-1] + 0.8, D - 0.8))
+        pill = (f'<div class="pop" style="{_d(pt)};margin:80px auto 0;width:fit-content;background:#E6F6EE;color:#14935A;border-radius:999px;'
+                f'padding:24px 44px;font:900 54px Montserrat;text-transform:uppercase">{c["pill"]}</div>')
+    return f"""<style>{''.join(css)}</style>
+<div style="position:absolute;inset:0;background:#fff;padding:0 90px">
+<img class="fade" src="file://{a['logo_dark']}" style="position:absolute;top:250px;left:50%;transform:translateX(-50%);height:56px">
+<div style="position:absolute;left:90px;right:90px;top:430px">
+<div class="pop" style="{_d(starts[0])};font:700 34px Inter;letter-spacing:4px;color:{PURPLE};text-transform:uppercase">{c.get('kicker','Faz a conta')}</div>
+<div class="pop" style="{_d(starts[0] + 0.06)};font:900 80px/1.05 Montserrat;color:{INK};text-transform:uppercase;margin-top:10px">{c.get('title','')}</div>
+{''.join(body)}{pill}</div>
+<div class="fade" style="{_d(starts[0])};position:absolute;left:90px;right:90px;top:1560px;font:600 28px Inter;color:#8A94A0;text-align:center">{c.get('note','')}</div></div>"""
+
+
+def stamp(c, D, a):
+    """Carimbo: palavra grande cai girada e trava a tela (ex.: UTILIDADE)."""
+    bg = c.get("bg", PURPLE)
+    t = c.get("at", 0.35 * D)
+    return f"""<style>@keyframes slam{{0%{{opacity:0;transform:rotate(-7deg) scale(2.6)}}55%{{opacity:1;transform:rotate(-7deg) scale(.92)}}78%{{transform:rotate(-7deg) scale(1.05)}}100%{{opacity:1;transform:rotate(-7deg) scale(1)}}}}
+@keyframes shake{{0%,100%{{transform:none}}20%{{transform:translate(-14px,8px)}}40%{{transform:translate(10px,-8px)}}60%{{transform:translate(-8px,5px)}}80%{{transform:translate(5px,-3px)}}}}</style>
+<div style="position:absolute;inset:0;background:{bg};display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 80px;animation:shake .32s ease-out {t + 0.26:.2f}s both">
+<img class="pop" src="file://{a['icon']}" style="width:130px;margin-bottom:46px">
+<div class="pop" style="{_d(0.05)};font:700 46px/1.3 Inter;color:#F1E6FB;text-align:center">{c.get('kicker','')}</div>
+<div style="margin-top:56px;border:14px solid #fff;border-radius:26px;padding:22px 50px 16px;font:900 {c.get('size',120)}px/1 Montserrat;color:#fff;letter-spacing:1px;text-transform:uppercase;animation:slam .5s cubic-bezier(.2,.9,.3,1) {t:.2f}s both">{c.get('word','UTILIDADE')}</div>
+<div class="fade" style="{_d(t + 0.55)};font:800 50px/1.3 Montserrat;color:#fff;text-align:center;margin-top:70px">{c.get('sub','')}</div></div>"""
+
+
+TEMPLATES = {"checklist": (checklist, True), "chat": (chat, True), "counter": (counter, True), "cycle": (cycle, True),
+             "comment": (comment, False), "compare": (compare, True), "stamp": (stamp, True)}
 
 
 def anim_html(c, D, assets, fonts_css, W, H):
