@@ -1,19 +1,98 @@
 {
- "zoom": [1.0, 1.1],
+ "zoom": [
+  1.0,
+  1.1
+ ],
  "cards": [
-  {"line": 0, "kind": "top", "html": "Sua IA <span style='color:#1597D4'>agenda?</span>", "size": 84},
-  {"line": 1, "kind": "anim", "tpl": "chat", "title": "Sua clínica"},
-  {"line": 2, "kind": "anim", "tpl": "counter", "from": 0, "to": 59, "prefix": "R$ ", "kicker": "IA da Meta", "sub": "por mês, no Brasil desde setembro"},
-  {"line": 3, "kind": "broll", "src": "BROLL_NOITE"},
-  {"line": 4, "kind": "top", "html": "3 perguntas <span style='color:#8A3FD1'>antes de ligar</span>"},
-  {"line": 5, "kind": "list", "n": 1, "title": "Antes de ligar", "items": ["Vê sua agenda real?", "Sabe quem é paciente?", "Chama quem faltou?"]},
-  {"line": 6, "kind": "list", "n": 2, "title": "Antes de ligar", "items": ["Vê sua agenda real?", "Sabe quem é paciente?", "Chama quem faltou?"]},
-  {"line": 7, "kind": "list", "n": 3, "title": "Antes de ligar", "items": ["Vê sua agenda real?", "Sabe quem é paciente?", "Chama quem faltou?"]},
-  {"line": 8, "kind": "broll", "src": "BROLL_RECEPCAO"},
-  {"line": 9, "kind": "anim", "tpl": "cycle", "html": "Ciclo inteiro"},
-  {"line": 10, "kind": "broll", "src": "BROLL_AGENDA"},
-  {"line": 11, "kind": "anim", "tpl": "counter", "from": 15, "to": 45, "suffix": "%", "bar": true, "size": 230, "kicker": "Odonto Excellence", "sub": "taxa de agendamento depois da IA da Tolki"},
-  {"line": 12, "kind": "anim", "tpl": "comment", "word": "AGENDA", "label": "Comenta aqui embaixo"},
-  {"line": 13, "kind": "top", "html": "Sua IA <span style='color:#1597D4'>agenda?</span>", "size": 84}
+  {
+   "line": 0,
+   "kind": "top",
+   "html": "Sua IA <span style='color:#1597D4'>agenda?</span>",
+   "size": 84
+  },
+  {
+   "line": 1,
+   "kind": "anim",
+   "tpl": "chat",
+   "title": "Sua clínica"
+  },
+  {
+   "line": 2,
+   "kind": "anim",
+   "tpl": "counter",
+   "from": 0,
+   "to": 59,
+   "prefix": "R$ ",
+   "kicker": "IA da Meta",
+   "sub": "por mês, no Brasil desde setembro"
+  },
+  {
+   "line": 3,
+   "kind": "broll",
+   "src": "BROLL_NOITE"
+  },
+  {
+   "line": 4,
+   "kind": "top",
+   "html": "3 perguntas <span style='color:#8A3FD1'>antes de ligar</span>"
+  },
+  {
+   "line": 5,
+   "until": 7,
+   "kind": "anim",
+   "tpl": "checklist",
+   "title": "Antes de ligar, pergunte:",
+   "items": [
+    "Ela vê sua agenda real?",
+    "Sabe quem já é paciente?",
+    "Chama de volta quem faltou?"
+   ],
+   "starts_lines": [
+    5,
+    6,
+    7
+   ]
+  },
+  {
+   "line": 8,
+   "kind": "broll",
+   "src": "BROLL_RECEPCAO"
+  },
+  {
+   "line": 9,
+   "kind": "anim",
+   "tpl": "cycle",
+   "html": "Ciclo inteiro"
+  },
+  {
+   "line": 10,
+   "kind": "broll",
+   "src": "BROLL_AGENDA"
+  },
+  {
+   "line": 11,
+   "kind": "anim",
+   "tpl": "counter",
+   "from": 15,
+   "to": 45,
+   "suffix": "%",
+   "bar": true,
+   "size": 230,
+   "kicker": "Odonto Excellence",
+   "sub": "taxa de agendamento depois da IA da Tolki"
+  },
+  {
+   "line": 12,
+   "kind": "anim",
+   "tpl": "comment",
+   "word": "AGENDA",
+   "label": "Comenta aqui embaixo"
+  },
+  {
+   "line": 13,
+   "kind": "top",
+   "html": "Sua IA <span style='color:#1597D4'>agenda?</span>",
+   "size": 84
+  }
  ]
 }

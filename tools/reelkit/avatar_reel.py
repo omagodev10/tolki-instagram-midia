@@ -67,11 +67,69 @@ def lag(ref, sig, sr=16000, maxlag=1.0):
     return shift * 0.01
 
 
+def speech_segments(path, thr="-35dB", gap=0.28, pad=0.1):
+    """trechos com fala pelo silencedetect; pausas maiores que gap saem"""
+    log = subprocess.run(["ffmpeg", "-v", "info", "-i", path, "-af", f"silencedetect=n={thr}:d={gap}", "-f", "null", "-"],
+                         capture_output=True, text=True).stderr
+    import re
+    ss = [float(x) for x in re.findall(r"silence_start: ([0-9.]+)", log)]
+    se = [float(x) for x in re.findall(r"silence_end: ([0-9.]+)", log)]
+    D = dur(path)
+    sil = list(zip(ss, se + [D] * (len(ss) - len(se))))
+    keep, cur = [], 0.0
+    for a, b in sil:
+        if a > cur:
+            keep.append((max(0.0, cur - pad), min(D, a + pad)))
+        cur = b
+    if cur < D - 0.05:
+        keep.append((max(0.0, cur - pad), D))
+    # junta trechos que se encostam
+    out = []
+    for a, b in keep:
+        if out and a <= out[-1][1]:
+            out[-1] = (out[-1][0], max(out[-1][1], b))
+        elif b - a > 0.15:
+            out.append((a, b))
+    return out
+
+
+def build_scene(k, sc, mode, speed, prev):
+    p = os.path.join(W, f"p{k}.mkv")
+    vf = "scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,fps=30,setsar=1"
+    if mode == "own":
+        v = fetch(sc["video"], f"v{k}.mp4")
+        segs = speech_segments(v)
+        print(f"cena {k} (áudio do próprio vídeo): {len(segs)} trechos, {sum(b-a for a,b in segs):.2f}s de {dur(v):.2f}s")
+        fl = []
+        for i, (a, b) in enumerate(segs):
+            fl.append(f"[0:v]trim={a:.3f}:{b:.3f},setpts=PTS-STARTPTS,{vf}[v{i}];[0:a]atrim={a:.3f}:{b:.3f},asetpts=PTS-STARTPTS,"
+                      f"afade=t=in:d=0.01,afade=t=out:st={max(0,b-a-0.02):.3f}:d=0.02[a{i}]")
+        fl.append("".join(f"[v{i}][a{i}]" for i in range(len(segs))) + f"concat=n={len(segs)}:v=1:a=1[cv][ca]")
+        fl.append(f"[cv]setpts=PTS/{speed}[vo];[ca]atempo={speed},aresample=48000[ao]")
+        sh("ffmpeg", "-v", "error", "-y", "-i", v, "-filter_complex", ";".join(fl), "-map", "[vo]", "-map", "[ao]",
+           "-c:v", "libx264", "-preset", "veryfast", "-crf", "15", "-pix_fmt", "yuv420p", "-r", "30", "-c:a", "pcm_s16le", "-ac", "2", p)
+    else:  # cover: áudio limpo sobre o último quadro da cena anterior (fica coberto por cartões e B-roll)
+        a = fetch(sc["audio"], f"a{k}.mp3")
+        last = os.path.join(W, f"last{k}.png")
+        sh("ffmpeg", "-v", "error", "-y", "-sseof", "-0.1", "-i", prev, "-frames:v", "1", "-update", "1", last)
+        da = dur(a) / speed
+        sh("ffmpeg", "-v", "error", "-y", "-loop", "1", "-framerate", "30", "-i", last, "-i", a, "-t", f"{da:.3f}",
+           "-filter:a", f"atempo={speed},aresample=48000", "-vf", vf, "-c:v", "libx264", "-preset", "veryfast", "-crf", "18",
+           "-pix_fmt", "yuv420p", "-c:a", "pcm_s16le", "-ac", "2", p)
+        print(f"cena {k} (coberta por gráficos): {da:.2f}s")
+    return p
+
+
 def main():
     man = json.load(open(sys.argv[1], encoding="utf-8"))
     out = os.path.abspath(sys.argv[2])
     parts = []
+    speed = float(man.get("speed", 1.0))
     for k, sc in enumerate(man["scenes"]):
+        mode = sc.get("mode", "clean")
+        if mode in ("own", "cover"):
+            parts.append(build_scene(k, sc, mode, speed, parts[-1] if parts else None))
+            continue
         v = fetch(sc["video"], f"v{k}.mp4")
         a = fetch(sc["audio"], f"a{k}.mp3")
         la = onset(pcm(v)) - onset(pcm(a))  # >0: a fala no vídeo começa depois

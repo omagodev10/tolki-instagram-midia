@@ -109,7 +109,23 @@ def comment(c, D, a):
 </div></div>"""
 
 
-TEMPLATES = {"chat": (chat, True), "counter": (counter, True), "cycle": (cycle, True), "comment": (comment, False)}
+def checklist(c, D, a):
+    """Perguntas surgindo uma a uma, tela cheia branca. Cada item entra no tempo da sua linha."""
+    items = c.get("items", [])
+    starts = c.get("starts") or [i * D / max(len(items), 1) for i in range(len(items))]
+    rows = "".join(
+        f'<div class="pop" style="{_d(s)};display:flex;align-items:center;gap:30px;background:#F4F7FA;border-radius:26px;padding:34px 36px;margin-top:30px">'
+        f'<div style="flex:0 0 92px;height:92px;border-radius:50%;background:{BLUE};color:#fff;font:900 48px Montserrat;display:flex;align-items:center;justify-content:center">{i+1}</div>'
+        f'<div style="font:900 58px/1.08 Montserrat;color:{INK};text-transform:uppercase">{t}</div></div>'
+        for i, (t, s) in enumerate(zip(items, starts)))
+    return f"""<div style="position:absolute;inset:0;background:#fff;padding:0 70px">
+<img class="fade" src="file://{a['logo_dark']}" style="position:absolute;top:250px;left:50%;transform:translateX(-50%);height:56px">
+<div style="position:absolute;left:70px;right:70px;top:400px">
+<div class="pop" style="font:700 34px Inter;letter-spacing:4px;color:{PURPLE};text-transform:uppercase;margin-bottom:10px">{c.get('title','')}</div>
+{rows}</div></div>"""
+
+
+TEMPLATES = {"checklist": (checklist, True), "chat": (chat, True), "counter": (counter, True), "cycle": (cycle, True), "comment": (comment, False)}
 
 
 def anim_html(c, D, assets, fonts_css, W, H):

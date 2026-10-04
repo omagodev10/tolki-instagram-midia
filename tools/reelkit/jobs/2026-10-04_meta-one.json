@@ -5,24 +5,29 @@
  "scenes": [
   {
    "video": "https://d8j0ntlcm91z4.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/hf_20261004_190529_f85af658-de88-4174-ab51-fb7159fb004d.mp4",
-   "audio": "https://d2ol7oe51mr4n9.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/c6f5bb95-7763-4701-b698-cc5140bd3536.mp3"
+   "audio": "https://d2ol7oe51mr4n9.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/c6f5bb95-7763-4701-b698-cc5140bd3536.mp3",
+   "mode": "own"
   },
   {
    "video": "https://d8j0ntlcm91z4.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/hf_20261004_190529_8a60c072-bed6-4332-8cb2-c55320a00dd9.mp4",
-   "audio": "https://d2ol7oe51mr4n9.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/e864c9af-00e4-4a20-8acf-570c0a815958.mp3"
+   "audio": "https://d2ol7oe51mr4n9.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/e864c9af-00e4-4a20-8acf-570c0a815958.mp3",
+   "mode": "own"
   },
   {
-   "video": "CENA3",
-   "audio": "https://d2ol7oe51mr4n9.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/447a8beb-2a8c-45b7-b529-19747643fb78.mp3"
+   "video": "",
+   "audio": "https://d2ol7oe51mr4n9.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/447a8beb-2a8c-45b7-b529-19747643fb78.mp3",
+   "mode": "cover"
   },
   {
-   "video": "CENA4",
-   "audio": "https://d2ol7oe51mr4n9.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/05949fe7-9759-4092-af37-4ea239230ea8.mp3"
+   "video": "https://d8j0ntlcm91z4.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/hf_20261004_191057_689cbd9b-782f-442e-b286-c229b6cc28c1.mp4",
+   "audio": "https://d2ol7oe51mr4n9.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/05949fe7-9759-4092-af37-4ea239230ea8.mp3",
+   "mode": "own"
   }
  ],
  "broll": {
   "BROLL_NOITE": "https://d8j0ntlcm91z4.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/hf_20261004_190529_98309d99-e1d3-4d72-9849-9ef676e90906.mp4",
   "BROLL_RECEPCAO": "https://d8j0ntlcm91z4.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/hf_20261004_190529_4fea1fb1-44bf-4b7b-93b0-bc9cab6e4197.mp4",
   "BROLL_AGENDA": "https://d8j0ntlcm91z4.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/hf_20261004_190529_9c905070-4f22-41e9-8ea8-073c4256df3a.mp4"
- }
+ },
+ "speed": 1.06
 }

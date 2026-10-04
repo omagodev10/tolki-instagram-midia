@@ -174,6 +174,8 @@ def main():
         if c["kind"] == "anim":
             import math, motion
             N = int(math.ceil((t1 - t0) * FPS)) + 1
+            if c.get("starts_lines"):
+                c = dict(c, starts=[max(0.0, LT[l][0] - 0.1 - t0) for l in c["starts_lines"] if l in LT])
             html, full = motion.anim_html(c, t1 - t0, {"icon": ICON, "logo_dark": LOGO_D, "logo_white": LOGO_W}, fonts_css(), W, HH)
             open(os.path.join(work, "html", f"{name}__{N}.seq.html"), "w", encoding="utf-8").write(html)
             cards.append({"name": name, "t0": round(t0, 3), "t1": round(t1, 3), "full": full, "seq": True})
