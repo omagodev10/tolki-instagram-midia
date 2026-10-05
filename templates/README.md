@@ -19,7 +19,7 @@ Regra de ouro: intercalar **elaborados** com o **padrão** anterior. Cores chapa
 | foto/mao-celular | mão com celular no escuro | foto escura | manhã |
 | foto/agenda-papel | mesa com agenda de papel + post-it escrito à mão | foto navy | manhã |
 
-Fotos em `assets/fotos/` (geradas com IA no Higgsfield, sem pessoas identificáveis). Foto nova: gerar no Higgsfield (gpt_image_2_5, 4:5, quality high, 2k, sem texto, sem rosto, com espaço vazio para o título) e salvar em 1080x1350. Post com foto gerada por IA: marcar isAiGenerated true no Metricool.
+Fotos em `assets/fotos/` (geradas com IA, sem pessoas identificáveis). Regra: no máximo 1 foto a cada 5 ou 6 posts, só como capa da manhã, nunca duas fotos lado a lado nem na mesma coluna da grade. Reaproveite as fotos de `assets/fotos/` antes de gerar nova. Foto nova: Higgsfield (gpt_image_2_5, 4:5, quality high, 2k) ou Runway, sem texto, sem rosto, com espaço vazio para o título; salve em 1080x1350 em `assets/fotos/`. No Metricool, isAiGenerated fica false (decisão do Carlos).
 
 Previews em `previas/` (`_grade.png` mostra o feed intercalado).
 
