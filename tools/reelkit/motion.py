@@ -156,7 +156,9 @@ def compare(c, D, a):
         pt = max(starts[-1] + 0.3, min(starts[-1] + 0.8, D - 0.8))
         pill = (f'<div class="pop" style="{_d(pt)};margin:80px auto 0;width:fit-content;background:#E6F6EE;color:#14935A;border-radius:999px;'
                 f'padding:24px 44px;font:900 54px Montserrat;text-transform:uppercase">{c["pill"]}</div>')
-    script = ("<script>const R=[" + ",".join(ticks) + "];const F=n=>String(n).replace(/\\B(?=(\\d{3})+(?!\\d))/g,'.');"
+    pad = int(c.get("pad", 0))  # centavos: pad 2 + prefix "R$ 0," mostra R$ 0,04 em vez de R$ 0,4
+    script = ("<script>const R=[" + ",".join(ticks) + "];const F=n=>" + (f"String(n).padStart({pad},'0')" if pad else
+              "String(n).replace(/\\B(?=(\\d{3})+(?!\\d))/g,'.')") + ";"
               f"window.__tick=function(t){{for(const r of R){{const p=Math.max(0,Math.min(1,(t-r.t)/0.9));"
               f"document.getElementById(r.id).textContent='{pre}'+F(Math.round(r.v*(1-Math.pow(1-p,3))));}}}};"
               "window.__tick(0);</script>")
@@ -250,9 +252,83 @@ def media(c, D, a):
 <div style="position:absolute;left:70px;right:70px;top:400px;display:flex;flex-direction:column;gap:30px">{video}{image}{link}</div>{final}</div>"""
 
 
+WA_ICON = ('<svg width="{s}" height="{s}" viewBox="0 0 24 24"><path fill="{c}" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.1z"/></svg>')
+
+
+def button(c, D, a):
+    """Disparo com botão: o lembrete chega, o paciente toca em 'Falar no WhatsApp' e a conversa segue no WhatsApp Business.
+    starts = [disparo, toque, WhatsApp Business] em segundos."""
+    st = c.get("starts") or [0.05 * D, 0.4 * D, 0.55 * D]
+    t0, tap = st[0], st[1]
+    t2 = st[2] if len(st) > 2 else tap + 0.35
+    hdr = ("position:absolute;left:70px;right:70px;background:#fff;border-radius:28px;padding:20px 26px;display:flex;align-items:center;gap:20px;"
+           "box-shadow:0 8px 24px rgba(14,26,43,.08)")
+    return f"""<style>@keyframes ripple{{0%{{opacity:.55;transform:scale(.2)}}100%{{opacity:0;transform:scale(2.4)}}}}
+@keyframes press{{0%,100%{{transform:none}}40%{{transform:scale(.94)}}}}
+@keyframes down{{from{{height:0}}to{{height:120px}}}}</style>
+<div style="position:absolute;inset:0;background:#E9EEF3">
+<div class="pop" style="{_d(t0)};{hdr};top:240px">
+<div style="width:72px;height:72px;border-radius:50%;background:{PURPLE};display:flex;align-items:center;justify-content:center"><img src="file://{a['icon']}" style="width:50px"></div>
+<div><div style="font:800 34px Inter;color:{INK}">{c.get('title', 'Sua clínica')}</div><div style="font:600 24px Inter;color:#8A94A0">{c.get('from', 'número de disparo')}</div></div></div>
+<div class="pop" style="{_d(t0 + 0.12)};position:absolute;left:70px;right:150px;top:380px;background:#fff;border-radius:6px 26px 26px 26px;box-shadow:0 6px 18px rgba(14,26,43,.10);overflow:hidden">
+<div style="padding:28px 30px 10px;font:600 40px/1.3 Inter;color:{INK}">{c.get('msg', 'Oi, Ana! Sua consulta é amanhã às 14h.')}</div>
+<div style="padding:0 30px 18px;text-align:right;font:600 22px Inter;color:#667781">{c.get('hour', '09:00')}</div>
+<div style="position:relative;border-top:2px solid #E9EDEF;padding:26px 0;display:flex;align-items:center;justify-content:center;gap:14px;font:800 38px Inter;color:#027EB5;overflow:hidden;animation:press .3s ease-out {tap:.2f}s both">
+{WA_ICON.format(s=46, c='#027EB5')}{c.get('btn', 'Falar no WhatsApp')}
+<div style="position:absolute;left:50%;top:50%;width:300px;height:300px;margin:-150px 0 0 -150px;border-radius:50%;background:#53BDEB;animation:ripple .6s ease-out {tap:.2f}s both"></div></div></div>
+<div style="position:absolute;left:50%;top:880px;width:10px;margin-left:-5px;border-radius:5px;background:#25D366;animation:down .3s ease-out {tap + 0.15:.2f}s both"></div>
+<div class="pop" style="{_d(t2)};{hdr};top:1030px;border:4px solid #25D366">
+<div style="width:72px;height:72px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center">{WA_ICON.format(s=46, c='#fff')}</div>
+<div><div style="font:800 34px Inter;color:{INK}">WhatsApp Business</div><div style="font:600 24px Inter;color:#2BB673">{c.get('wa_sub', 'atendimento')}</div></div></div>
+<div class="pop" style="{_d(t2 + 0.2)};position:absolute;right:70px;top:1180px;max-width:760px;background:#D9FDD3;border-radius:26px 6px 26px 26px;padding:24px 30px;font:600 40px/1.3 Inter;color:{INK};box-shadow:0 6px 18px rgba(14,26,43,.10)">{c.get('reply', 'Oi! Confirmo sim, obrigada!')}</div>
+<div class="pop" style="{_d(t2 + 0.45)};position:absolute;left:0;right:0;top:1400px;display:flex;justify-content:center">
+<div style="background:{INK};color:#fff;font:900 56px Montserrat;padding:20px 40px;border-radius:24px;text-transform:uppercase">{c.get('final', 'Conversa sem custo extra')}</div></div></div>"""
+
+
+def merge(c, D, a):
+    """Dois WhatsApps, um inbox: dispara por um, atende no outro, tudo na mesma conversa.
+    starts = [números, inbox, frase final] em segundos."""
+    st = c.get("starts") or [0.05 * D, 0.35 * D, 0.7 * D]
+    t0, t1 = st[0], st[1] if len(st) > 1 else 0.35 * D
+    t2 = st[2] if len(st) > 2 else t1 + 0.8
+    pill = ("width:400px;background:#fff;border-radius:28px;padding:26px;display:flex;align-items:center;gap:18px;"
+            "box-shadow:0 8px 24px rgba(14,26,43,.10)")
+
+    def num(label, sub, col, d):
+        return (f'<div class="pop" style="{_d(d)};{pill}"><div style="flex:0 0 76px;height:76px;border-radius:50%;background:{col};'
+                f'display:flex;align-items:center;justify-content:center">{WA_ICON.format(s=48, c="#fff")}</div>'
+                f'<div><div style="font:900 38px Montserrat;color:{INK}">{label}</div><div style="font:700 28px Inter;color:#5B6673">{sub}</div></div></div>')
+
+    def row(who, txt, via, col, d, me=False):
+        al = "flex-end" if me else "flex-start"
+        bg = "#D9FDD3" if me else "#F0F2F5"
+        return (f'<div class="pop" style="{_d(d)};align-self:{al};max-width:640px;background:{bg};border-radius:22px;padding:18px 24px">'
+                f'<div style="font:600 34px/1.25 Inter;color:{INK}">{txt}</div>'
+                f'<div style="margin-top:8px;font:800 20px Inter;letter-spacing:1px;color:{col};text-transform:uppercase">{via}</div></div>')
+
+    return f"""<style>@keyframes draw{{to{{stroke-dashoffset:0}}}}</style>
+<div style="position:absolute;inset:0;background:#fff">
+<div style="position:absolute;left:70px;right:70px;top:250px;display:flex;justify-content:space-between">
+{num(c.get('n1', 'WhatsApp 1'), c.get('s1', 'dispara'), BLUE, t0)}{num(c.get('n2', 'WhatsApp 2'), c.get('s2', 'atende'), '#25D366', t0 + 0.12)}</div>
+<svg style="position:absolute;left:0;top:380px" width="1080" height="220" viewBox="0 0 1080 220">
+<path d="M270 0 C270 120 540 90 540 210" fill="none" stroke="{BLUE}" stroke-width="10" stroke-linecap="round" stroke-dasharray="400" stroke-dashoffset="400" style="animation:draw .35s ease-out {t1 - 0.25:.2f}s forwards"/>
+<path d="M810 0 C810 120 540 90 540 210" fill="none" stroke="#25D366" stroke-width="10" stroke-linecap="round" stroke-dasharray="400" stroke-dashoffset="400" style="animation:draw .35s ease-out {t1 - 0.2:.2f}s forwards"/></svg>
+<div class="pop" style="{_d(t1)};position:absolute;left:70px;right:70px;top:610px;border:5px solid {INK};border-radius:34px;padding:26px;background:#fff;box-shadow:0 18px 50px rgba(14,26,43,.12)">
+<div style="display:flex;align-items:center;gap:18px;padding-bottom:20px;border-bottom:2px solid #E9EDEF">
+<img src="file://{a['logo_dark']}" style="height:44px"><div style="font:900 40px Montserrat;color:{INK}">INBOX</div>
+<div style="margin-left:auto;font:800 26px Inter;color:#fff;background:{PURPLE};padding:8px 18px;border-radius:14px">1 conversa</div></div>
+<div style="font:800 34px Inter;color:{INK};margin:20px 0 14px">{c.get('patient', 'Ana Souza')}</div>
+<div style="display:flex;flex-direction:column;gap:16px">
+{row('', c.get('m1', 'Lembrete: consulta amanhã às 14h'), 'enviado pelo WhatsApp 1', BLUE, t1 + 0.25, me=True)}
+{row('', c.get('m2', 'Oi! Posso mudar pra 15h?'), 'chegou no WhatsApp 2', '#1FA855', t1 + 0.55)}
+{row('', c.get('m3', 'Claro, Ana! Remarcado pra 15h.'), 'respondido no WhatsApp 2', '#1FA855', t1 + 0.85, me=True)}</div></div>
+<div class="pop" style="{_d(t2)};position:absolute;left:0;right:0;top:1440px;display:flex;justify-content:center">
+<div style="background:{INK};color:#fff;font:900 54px Montserrat;padding:20px 40px;border-radius:24px;text-transform:uppercase">{c.get('final', 'O atendente nem percebe')}</div></div></div>"""
+
+
 TEMPLATES = {"checklist": (checklist, True), "chat": (chat, True), "counter": (counter, True), "cycle": (cycle, True),
              "comment": (comment, False), "compare": (compare, True), "stamp": (stamp, True), "media": (media, True),
-             "slash": (slash, True)}
+             "slash": (slash, True), "button": (button, True), "merge": (merge, True)}
 
 
 def anim_html(c, D, assets, fonts_css, W, H):

@@ -1,0 +1,27 @@
+{
+ "script": "roteiros_2026-10-05_janela.txt",
+ "plan": "plan_janela.json",
+ "whisper": "small",
+ "speed": 1.2,
+ "scenes": [
+  {"video": "https://d2ol7oe51mr4n9.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/e132a3ed-45db-4fdc-b3eb-251f5cb0b0f0.mp4", "audio": "", "mode": "own"},
+  {"video": "", "audio": "https://d8j0ntlcm91z4.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/hf_20261005_163719_8963ddeb-1668-446c-b66e-91af136c11ad.mp3", "mode": "cover"},
+  {"video": "https://d2ol7oe51mr4n9.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/bb66b89f-189a-470d-b948-c18e338f138b.mp4", "audio": "", "mode": "own"},
+  {"video": "", "audio": "https://d8j0ntlcm91z4.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/hf_20261005_163511_10d328d6-c91a-422b-8043-941af6de9d83.mp3", "mode": "cover"},
+  {"video": "https://d2ol7oe51mr4n9.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/dc3f7483-216d-4f03-bcbf-a3a8a252cf80.mp4", "audio": "", "mode": "own"}
+ ],
+ "broll": {},
+ "assets": {
+  "MUSIC": "https://dnznrvs05pmza.cloudfront.net/lyria3-pro/c94a6cfa-9d8c-4568-9b99-26dc332e1db5/Tolki_viral___phonk.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiMDQzZTkxZmUzZTM4Mjc4NCIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MTI2MDY3MH0.VEAf_A10L6_f7x8LrBrBpijdhlx5yUkR8lMApaIIzfk",
+  "SFX_WHOOSH": "https://d2ol7oe51mr4n9.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/8b3fca14-361b-49a0-aa2c-42d357b7336f.mp3",
+  "SFX_POP": "https://d2ol7oe51mr4n9.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/b6e5ada1-d993-485c-a979-1ee37bddd052.mp3",
+  "SFX_DING": "https://d2ol7oe51mr4n9.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/1a333ed8-cf47-4db7-81b5-f243d12375c7.mp3",
+  "SFX_CASH": "https://d2ol7oe51mr4n9.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/9652deaa-76b4-4d92-96cf-796ef5dbec26.mp3",
+  "SFX_COUNTER": "https://d2ol7oe51mr4n9.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/2949f162-7efc-48c9-91f7-942808a6cf8d.mp3",
+  "SFX_TYPING": "https://d2ol7oe51mr4n9.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/7e5b7980-c8da-4177-a102-c6e06c35556a.mp3",
+  "SFX_RISER": "https://d2ol7oe51mr4n9.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/cca2683a-2e19-407b-aa65-590d3f7e124f.mp3",
+  "SFX_BOOM": "https://d2ol7oe51mr4n9.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/980c06f2-68a0-42e4-bce9-9d8a027cc035.mp3"
+ },
+ "_voz": "Luana Tolki BR (clone 6023c405). A: Seedance 15404e6a + TTS 8f0a9bac (dub_align). Meio: TTS 8963ddeb. B: Seedance ef0b64c4 + TTS b6b7aa6a. Conta: TTS 10d328d6. C: Seedance acdcd6ce + TTS 4e1e4c6d.",
+ "_copy": "copy do Carlos (05/10): nova cobrança da Meta + estratégia Tolki (anúncio pela API = janela de 7 dias, botão pro WhatsApp Business no disparo, origem do lead, dois números num inbox)"
+}
