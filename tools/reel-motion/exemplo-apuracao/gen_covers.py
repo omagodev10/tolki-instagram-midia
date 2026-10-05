@@ -1,8 +1,9 @@
 import os
-W = os.path.dirname(os.path.abspath(__file__))
-NB = '/tmp/claude-0/-home-claude-tolki-instagram-midia/3da1e8ac-fdd4-5d65-bb02-a0eb10d52cec/scratchpad/noite'
-CF = '/root/.claude/skills/synced/bf6da4dc-ca23-4736-a0eb-c1837c9b7e91_e4ef817b-ed22-4555-92b5-ecd36c327b8c/canvas-design/canvas-fonts'
-ICON = 'file://' + NB + '/1ad8e04cdc2248e24a886f3aa1a7882f.png'
+W = os.getcwd()  # rode na pasta de trabalho; grava covers/*.html (render: templates/render.js covers covers_out 1920)
+HERE = os.path.dirname(os.path.abspath(__file__))
+REPO = os.path.abspath(os.path.join(HERE, '..', '..', '..'))
+CF = REPO + '/templates/fonts'
+ICON = 'file://' + REPO + '/templates/assets/icone.png'
 FONTS = f"""<style>@font-face{{font-family:Serif;font-style:italic;src:url('file://{CF}/InstrumentSerif-Italic.ttf')}}@font-face{{font-family:Mono;src:url('file://{CF}/DMMono-Regular.ttf')}}</style>"""
 def cover(bg, fg, acc, kicker, title, serif, num):
     return f"""<!doctype html><html><head><meta charset="utf-8">{FONTS}</head><body><div style="width:1080px;height:1920px;background:{bg};position:relative;overflow:hidden;font-family:Inter">
