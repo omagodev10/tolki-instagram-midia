@@ -99,7 +99,7 @@ def comment(c, D, a):
     tw = min(0.9, 0.45 * D)
     return f"""<style>@keyframes type{{from{{width:0}}to{{width:{n}ch}}}}@keyframes caret{{50%{{border-color:transparent}}}}
 @keyframes heart{{0%{{opacity:0;transform:scale(.3)}}60%{{opacity:1;transform:scale(1.25)}}100%{{opacity:1;transform:scale(1)}}}}</style>
-<div style="position:absolute;left:80px;right:80px;top:250px">
+<div style="position:absolute;left:80px;right:80px;top:{c.get('top', 250)}px">
 <div class="pop" style="background:#fff;border-radius:28px;padding:30px 34px;box-shadow:0 18px 50px rgba(0,0,0,.28);display:flex;align-items:center;gap:26px">
 <div style="flex:0 0 86px;height:86px;border-radius:50%;background:#E8EEF4;display:flex;align-items:center;justify-content:center;font:800 34px Inter;color:#8A94A0">{c.get('initial','V')}</div>
 <div style="flex:1">
