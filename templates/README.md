@@ -14,6 +14,13 @@ Regra de ouro: intercalar **elaborados** com o **padrão** anterior. Cores chapa
 | padrao/numero-grande | número com fonte ou prova permitida | branco | noite |
 | padrao/notas | lista estilo Notas + Comente PALAVRA | preto | noite |
 
+| foto/recepcao-noite | foto da recepção vazia à noite + notificação | foto escura | manhã |
+| foto/cadeira-vazia | cadeira de dentista vazia + cartão "Faltou" | foto clara | manhã |
+| foto/mao-celular | mão com celular no escuro | foto escura | manhã |
+| foto/agenda-papel | mesa com agenda de papel + post-it escrito à mão | foto navy | manhã |
+
+Fotos em `assets/fotos/` (geradas com IA no Higgsfield, sem pessoas identificáveis). Foto nova: gerar no Higgsfield (gpt_image_2_5, 4:5, quality high, 2k, sem texto, sem rosto, com espaço vazio para o título) e salvar em 1080x1350. Post com foto gerada por IA: marcar isAiGenerated true no Metricool.
+
 Previews em `previas/` (`_grade.png` mostra o feed intercalado).
 
 ## Como usar
