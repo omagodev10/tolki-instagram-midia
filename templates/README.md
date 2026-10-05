@@ -17,9 +17,10 @@ Regra de ouro: intercalar **elaborados** com o **padrão** anterior. Cores chapa
 | foto/recepcao-noite | foto da recepção vazia à noite + notificação | foto escura | manhã |
 | foto/cadeira-vazia | cadeira de dentista vazia + cartão "Faltou" | foto clara | manhã |
 | foto/mao-celular | mão com celular no escuro | foto escura | manhã |
+| foto/recepcao-cheia | balcão da recepção lotado (telefone, papéis, celular) | foto clara | manhã |
 | foto/agenda-papel | mesa com agenda de papel + post-it escrito à mão | foto navy | manhã |
 
-Fotos em `assets/fotos/` (geradas com IA, sem pessoas identificáveis). Regra: no máximo 1 foto a cada 5 ou 6 posts, só como capa da manhã, nunca duas fotos lado a lado nem na mesma coluna da grade. Reaproveite as fotos de `assets/fotos/` antes de gerar nova. Foto nova: Higgsfield (gpt_image_2_5, 4:5, quality high, 2k) ou Runway, sem texto, sem rosto, com espaço vazio para o título; salve em 1080x1350 em `assets/fotos/`. No Metricool, isAiGenerated fica false (decisão do Carlos).
+Fotos em `assets/fotos/` (geradas com IA, sem pessoas identificáveis). Regra: no máximo 1 foto a cada 5 ou 6 posts, só como capa da manhã, nunca duas fotos lado a lado nem na mesma coluna da grade. Reaproveite as fotos de `assets/fotos/` antes de gerar nova. Foto nova: Higgsfield (gpt_image_2_5, 4:5, quality high, 2k) ou Runway (o download direto do Runway é bloqueado nesta rede; use a cópia que a ferramenta get_task salva em tool-results, em 1536x1920), sem texto, sem rosto, com espaço vazio para o título; salve em 1080x1350 em `assets/fotos/`. No Metricool, isAiGenerated fica false (decisão do Carlos).
 
 Previews em `previas/` (`_grade.png` mostra o feed intercalado).
 
