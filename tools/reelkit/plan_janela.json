@@ -1,89 +1,367 @@
 {
- "zoom": [1.0, 1.16],
+ "zoom": [
+  1.0,
+  1.16
+ ],
  "cap_size": 92,
  "cap_words": 2,
  "cap_chars": 13,
  "cap_y": 1240,
- "flash_lines": [2, 3, 4, 5, 6, 7, 8],
+ "flash_lines": [
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8
+ ],
  "sfx_lib": {
-  "whoosh": "SFX_WHOOSH", "pop": "SFX_POP", "ding": "SFX_DING", "cash": "SFX_CASH",
-  "counter": "SFX_COUNTER", "typing": "SFX_TYPING", "riser": "SFX_RISER", "boom": "SFX_BOOM"
+  "whoosh": "SFX_WHOOSH",
+  "pop": "SFX_POP",
+  "ding": "SFX_DING",
+  "cash": "SFX_CASH",
+  "counter": "SFX_COUNTER",
+  "typing": "SFX_TYPING",
+  "riser": "SFX_RISER",
+  "boom": "SFX_BOOM"
  },
- "music": {"src": "MUSIC", "gain": 0.5, "duck_thr": 0.05, "duck_ratio": 4, "fade_out": 0.6, "drop_at_line": 1},
+ "music": {
+  "src": "MUSIC",
+  "gain": 0.5,
+  "duck_thr": 0.05,
+  "duck_ratio": 4,
+  "fade_out": 0.6,
+  "drop_at_line": 1
+ },
  "card_sfx": "whoosh",
  "cards": [
   {
-   "line": 0, "kind": "top", "instant": true, "size": 80, "sfx": "boom", "sfx_gain": 0.7,
+   "line": 0,
+   "kind": "top",
+   "instant": true,
+   "size": 80,
+   "sfx": "boom",
+   "sfx_gain": 0.7,
    "html": "A Meta agora cobra<br><span style='color:#E5484D;font-size:104px'>cada mensagem</span><div style='font:800 36px Inter;text-transform:none;color:#5B6673;margin-top:10px;letter-spacing:0'>desde 1º de outubro</div>"
   },
   {
-   "line": 1, "kind": "top", "size": 76, "sfx": "pop", "sfx_gain": 0.45,
+   "line": 1,
+   "kind": "top",
+   "size": 76,
+   "sfx": "pop",
+   "sfx_gain": 0.45,
    "html": "Na Tolki você não paga<br><span style='color:#14935A;font-size:104px'>nada a mais</span>"
   },
   {
-   "line": 2, "kind": "anim", "tpl": "stamp", "at_word": [2, 9],
-   "kicker": "Anúncio pela API", "word": "7 dias grátis", "size": 104, "sub": "de conversa com o paciente",
+   "line": 2,
+   "kind": "anim",
+   "tpl": "stamp",
+   "at_word": [
+    2,
+    9
+   ],
+   "kicker": "Anúncio pela API",
+   "word": "7 dias grátis",
+   "size": 78,
+   "sub": "de conversa com o paciente",
    "sfx_gain": 0.35
   },
   {
-   "line": 3, "kind": "anim", "tpl": "button", "starts_at": [[3, 0], [3, 4], [3, 7]],
+   "line": 3,
+   "kind": "anim",
+   "tpl": "button",
+   "starts_at": [
+    [
+     3,
+     0
+    ],
+    [
+     3,
+     4
+    ],
+    [
+     3,
+     7
+    ]
+   ],
    "sfx_gain": 0.3,
-   "sfx_at": [{"name": "ding", "i": 0, "offset": 0.1, "gain": 0.4}, {"name": "pop", "i": 1, "gain": 0.55}, {"name": "whoosh", "i": 2, "gain": 0.35}]
+   "sfx_at": [
+    {
+     "name": "ding",
+     "i": 0,
+     "offset": 0.1,
+     "gain": 0.4
+    },
+    {
+     "name": "pop",
+     "i": 1,
+     "gain": 0.55
+    },
+    {
+     "name": "whoosh",
+     "i": 2,
+     "gain": 0.35
+    }
+   ]
   },
   {
-   "line": 4, "kind": "anim", "tpl": "checklist", "starts_at": [[4, 3], [4, 9], [4, 15]],
+   "line": 4,
+   "kind": "anim",
+   "tpl": "checklist",
+   "starts_at": [
+    [
+     4,
+     3
+    ],
+    [
+     4,
+     9
+    ],
+    [
+     4,
+     15
+    ]
+   ],
    "title": "O sistema sabe",
-   "items": ["De onde o lead veio", "Qual anúncio agenda", "Qual anúncio vende"],
+   "items": [
+    "De onde o lead veio",
+    "Qual anúncio agenda",
+    "Qual anúncio vende"
+   ],
    "sfx_gain": 0.3,
-   "sfx_at": [{"name": "pop", "i": 0, "gain": 0.4}, {"name": "pop", "i": 1, "gain": 0.4}, {"name": "cash", "i": 2, "offset": 0.1, "gain": 0.5}]
+   "sfx_at": [
+    {
+     "name": "pop",
+     "i": 0,
+     "gain": 0.4
+    },
+    {
+     "name": "pop",
+     "i": 1,
+     "gain": 0.4
+    },
+    {
+     "name": "cash",
+     "i": 2,
+     "offset": 0.1,
+     "gain": 0.5
+    }
+   ]
   },
   {
-   "line": 5, "kind": "anim", "tpl": "merge", "starts_at": [[5, 0], [5, 3], [5, 14]],
+   "line": 5,
+   "kind": "anim",
+   "tpl": "merge",
+   "starts_at": [
+    [
+     5,
+     0
+    ],
+    [
+     5,
+     3
+    ],
+    [
+     5,
+     14
+    ]
+   ],
    "sfx_gain": 0.3,
-   "sfx_at": [{"name": "pop", "i": 0, "gain": 0.4}, {"name": "whoosh", "i": 1, "offset": -0.2, "gain": 0.4}, {"name": "ding", "i": 2, "gain": 0.45}]
+   "sfx_at": [
+    {
+     "name": "pop",
+     "i": 0,
+     "gain": 0.4
+    },
+    {
+     "name": "whoosh",
+     "i": 1,
+     "offset": -0.2,
+     "gain": 0.4
+    },
+    {
+     "name": "ding",
+     "i": 2,
+     "gain": 0.45
+    }
+   ]
   },
   {
-   "line": 6, "kind": "top", "y": 960, "size": 74, "sfx_gain": 0.35,
+   "line": 6,
+   "kind": "top",
+   "y": 860,
+   "size": 74,
+   "sfx_gain": 0.35,
    "html": "Só na Tolki<br><span style='color:#1597D4;font-size:112px'>R$&nbsp;0,04</span> <span style='color:#E5484D;font-size:58px;text-decoration:line-through'>R$&nbsp;0,34</span><div style='font:800 30px Inter;text-transform:none;color:#5B6673;margin-top:10px;letter-spacing:0'>por disparo de utilidade, valor aproximado com impostos</div>"
   },
   {
-   "line": 7, "kind": "anim", "tpl": "compare", "starts_at": [[7, 0], [7, 5], [7, 12]],
-   "kicker": "Faz a conta", "title": "Conversa de 10 interações",
-   "prefix": "R$ 0,", "pad": 2,
-   "rows": [["Disparo + 10 respostas", 74, 100, "#E5484D"], ["Com a Tolki", 4, 6, "#1597D4"]],
+   "line": 7,
+   "kind": "anim",
+   "tpl": "compare",
+   "starts_at": [
+    [
+     7,
+     0
+    ],
+    [
+     7,
+     5
+    ],
+    [
+     7,
+     12
+    ]
+   ],
+   "kicker": "Faz a conta",
+   "title": "Conversa de 10 interações",
+   "prefix": "R$ 0,",
+   "pad": 2,
+   "rows": [
+    [
+     "Disparo + 10 respostas",
+     74,
+     100,
+     "#E5484D"
+    ],
+    [
+     "Com a Tolki",
+     4,
+     6,
+     "#1597D4"
+    ]
+   ],
    "pill": "Fica nos R$ 0,04",
    "note": "R$ 0,34 (marketing) + 10 respostas a cerca de R$ 0,04 com impostos, após as 1.000 grátis do mês por número",
    "sfx_gain": 0.35,
-   "sfx_at": [{"name": "counter", "i": 1, "offset": 0.15, "gain": 0.35}, {"name": "cash", "i": 2, "offset": 0.8, "gain": 0.6}]
+   "sfx_at": [
+    {
+     "name": "counter",
+     "i": 1,
+     "offset": 0.15,
+     "gain": 0.35
+    },
+    {
+     "name": "cash",
+     "i": 2,
+     "offset": 0.8,
+     "gain": 0.6
+    }
+   ]
   },
   {
-   "line": 8, "kind": "anim", "tpl": "comment", "word": "JANELA", "label": "Comenta aqui embaixo", "at_word": [8, 7],
+   "line": 8,
+   "kind": "anim",
+   "tpl": "comment",
+   "word": "JANELA",
+   "label": "Comenta aqui embaixo",
+   "at_word": [
+    8,
+    7
+   ],
    "sfx_gain": 0.25,
-   "sfx_at": [{"name": "typing", "t": 0.3, "gain": 0.45}, {"name": "pop", "t": 1.0, "gain": 0.5}]
+   "sfx_at": [
+    {
+     "name": "typing",
+     "t": 0.3,
+     "gain": 0.45
+    },
+    {
+     "name": "pop",
+     "t": 1.0,
+     "gain": 0.5
+    }
+   ]
   }
  ],
  "sfx_events": [
-  {"name": "boom", "line": 2, "word": 9, "offset": 0.2, "gain": 0.6},
-  {"name": "riser", "line": 8, "offset": -1.0, "gain": 0.3},
-  {"name": "boom", "line": 7, "word": 15, "gain": 0.4}
+  {
+   "name": "boom",
+   "line": 2,
+   "word": 9,
+   "offset": 0.2,
+   "gain": 0.6
+  },
+  {
+   "name": "riser",
+   "line": 8,
+   "offset": -1.0,
+   "gain": 0.3
+  },
+  {
+   "name": "boom",
+   "line": 7,
+   "word": 15,
+   "gain": 0.4
+  }
  ],
  "fx": {
   "center_y": 0.4,
-  "glitch_lines": [2, 5, 6, 7, 8],
+  "glitch_lines": [
+   2,
+   5,
+   6,
+   7,
+   8
+  ],
   "glitch_dur": 0.16,
   "punch_numbers": 0.09,
-  "glitch": [{"abs": 0.05, "dur": 0.22, "rgb": 30, "invert": true}],
+  "glitch": [
+   {
+    "abs": 0.05,
+    "dur": 0.22,
+    "rgb": 30,
+    "invert": true
+   }
+  ],
   "punch": [
-   {"line": 0, "word": 3, "amt": 0.1},
-   {"line": 1, "word": 10, "amt": 0.1},
-   {"line": 6, "word": 0, "amt": 0.08},
-   {"line": 8, "word": 8, "amt": 0.1}
+   {
+    "line": 0,
+    "word": 3,
+    "amt": 0.1
+   },
+   {
+    "line": 1,
+    "word": 10,
+    "amt": 0.1
+   },
+   {
+    "line": 6,
+    "word": 0,
+    "amt": 0.08
+   },
+   {
+    "line": 8,
+    "word": 8,
+    "amt": 0.1
+   }
   ],
   "shake": [
-   {"line": 0, "word": 3, "dur": 0.28, "amp": 14},
-   {"line": 2, "word": 9, "offset": 0.25, "dur": 0.35, "amp": 20},
-   {"line": 6, "word": 2, "dur": 0.25, "amp": 12},
-   {"line": 7, "word": 15, "dur": 0.35, "amp": 16}
+   {
+    "line": 0,
+    "word": 3,
+    "dur": 0.28,
+    "amp": 14
+   },
+   {
+    "line": 2,
+    "word": 9,
+    "offset": 0.25,
+    "dur": 0.35,
+    "amp": 20
+   },
+   {
+    "line": 6,
+    "word": 2,
+    "dur": 0.25,
+    "amp": 12
+   },
+   {
+    "line": 7,
+    "word": 15,
+    "dur": 0.35,
+    "amp": 16
+   }
   ]
  }
 }

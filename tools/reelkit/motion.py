@@ -182,7 +182,7 @@ def stamp(c, D, a):
 <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 80px;animation:shake .32s ease-out {t + 0.26:.2f}s both">
 <img class="pop" src="file://{a['icon']}" style="width:130px;margin-bottom:46px">
 <div class="pop" style="{_d(0.05)};font:800 62px/1.15 Montserrat;color:#fff;text-align:center">{c.get('kicker','')}</div>
-<div style="margin-top:56px;border:14px solid #fff;border-radius:26px;padding:22px 50px 16px;font:900 {c.get('size',120)}px/1 Montserrat;color:#fff;letter-spacing:1px;text-transform:uppercase;animation:slam .5s cubic-bezier(.2,.9,.3,1) {t:.2f}s both">{c.get('word','UTILIDADE')}</div>
+<div style="margin-top:56px;border:14px solid #fff;border-radius:26px;padding:22px 50px 16px;font:900 {c.get('size',120)}px/1 Montserrat;color:#fff;letter-spacing:1px;white-space:nowrap;text-transform:uppercase;animation:slam .5s cubic-bezier(.2,.9,.3,1) {t:.2f}s both">{c.get('word','UTILIDADE')}</div>
 <div class="fade" style="{_d(t + 0.55)};font:800 50px/1.3 Montserrat;color:#fff;text-align:center;margin-top:70px">{c.get('sub','')}</div></div>"""
 
 
@@ -291,13 +291,13 @@ def merge(c, D, a):
     st = c.get("starts") or [0.05 * D, 0.35 * D, 0.7 * D]
     t0, t1 = st[0], st[1] if len(st) > 1 else 0.35 * D
     t2 = st[2] if len(st) > 2 else t1 + 0.8
-    pill = ("width:400px;background:#fff;border-radius:28px;padding:26px;display:flex;align-items:center;gap:18px;"
+    pill = ("width:450px;background:#fff;border-radius:28px;padding:24px 22px;display:flex;align-items:center;gap:18px;"
             "box-shadow:0 8px 24px rgba(14,26,43,.10)")
 
     def num(label, sub, col, d):
         return (f'<div class="pop" style="{_d(d)};{pill}"><div style="flex:0 0 76px;height:76px;border-radius:50%;background:{col};'
                 f'display:flex;align-items:center;justify-content:center">{WA_ICON.format(s=48, c="#fff")}</div>'
-                f'<div><div style="font:900 38px Montserrat;color:{INK}">{label}</div><div style="font:700 28px Inter;color:#5B6673">{sub}</div></div></div>')
+                f'<div><div style="font:900 34px Montserrat;color:{INK};white-space:nowrap">{label}</div><div style="font:700 28px Inter;color:#5B6673">{sub}</div></div></div>')
 
     def row(who, txt, via, col, d, me=False):
         al = "flex-end" if me else "flex-start"
