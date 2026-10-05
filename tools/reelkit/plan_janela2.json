@@ -1,69 +1,157 @@
 {
- "zoom": [1.0, 1.12],
+ "zoom": [
+  1.0,
+  1.12
+ ],
  "face_y": 0.3,
  "cap_size": 84,
  "cap_words": 3,
  "cap_chars": 16,
  "cap_y": 1170,
- "flash_lines": [2, 6],
+ "flash_lines": [
+  2,
+  6
+ ],
  "sfx_lib": {
-  "whoosh": "SFX_WHOOSH", "pop": "SFX_POP", "ding": "SFX_DING", "cash": "SFX_CASH",
-  "counter": "SFX_COUNTER", "typing": "SFX_TYPING", "riser": "SFX_RISER", "boom": "SFX_BOOM"
+  "whoosh": "SFX_WHOOSH",
+  "pop": "SFX_POP",
+  "ding": "SFX_DING",
+  "cash": "SFX_CASH",
+  "counter": "SFX_COUNTER",
+  "typing": "SFX_TYPING",
+  "riser": "SFX_RISER",
+  "boom": "SFX_BOOM"
  },
  "card_sfx": "pop",
  "cards": [
   {
-   "line": 0, "kind": "top", "instant": true, "y": 1380, "size": 58, "sfx": "boom", "sfx_gain": 0.45,
+   "line": 0,
+   "kind": "top",
+   "instant": true,
+   "y": 1380,
+   "size": 58,
+   "sfx": "boom",
+   "sfx_gain": 0.45,
    "html": "A Meta agora cobra <span style='color:#E5484D'>cada mensagem</span>"
   },
   {
-   "line": 1, "kind": "top", "y": 1380, "size": 58, "sfx_gain": 0.3,
+   "line": 1,
+   "kind": "top",
+   "y": 1380,
+   "size": 58,
+   "sfx_gain": 0.3,
    "html": "Na Tolki: <span style='color:#14935A'>nada a mais</span>"
   },
   {
-   "line": 2, "kind": "top", "y": 1380, "size": 58, "sfx_gain": 0.3,
-   "html": "Anúncio pela API: <span style='color:#14935A'>7 dias grátis</span>"
+   "line": 2,
+   "kind": "top",
+   "y": 1380,
+   "size": 50,
+   "sfx_gain": 0.3,
+   "html": "Anúncio pela API:<br><span style='color:#14935A'>7 dias grátis</span>"
   },
   {
-   "line": 3, "kind": "top", "y": 1380, "size": 52, "sfx_gain": 0.3,
+   "line": 3,
+   "kind": "top",
+   "y": 1380,
+   "size": 52,
+   "sfx_gain": 0.3,
    "html": "Disparo com botão pro <span style='color:#14935A'>WhatsApp Business</span>"
   },
   {
-   "line": 4, "kind": "top", "y": 1380, "size": 52, "sfx_gain": 0.3,
+   "line": 4,
+   "kind": "top",
+   "y": 1380,
+   "size": 52,
+   "sfx_gain": 0.3,
    "html": "De onde veio + <span style='color:#1597D4'>qual anúncio vende</span>"
   },
   {
-   "line": 5, "kind": "top", "y": 1380, "size": 58, "sfx_gain": 0.3,
+   "line": 5,
+   "kind": "top",
+   "y": 1380,
+   "size": 58,
+   "sfx_gain": 0.3,
    "html": "2 WhatsApps, <span style='color:#1597D4'>1 inbox</span>"
   },
   {
-   "line": 6, "kind": "top", "y": 1380, "size": 58, "sfx_gain": 0.3,
+   "line": 6,
+   "kind": "top",
+   "y": 1380,
+   "size": 58,
+   "sfx_gain": 0.3,
    "html": "Disparo <span style='color:#1597D4'>R$&nbsp;0,04</span> <span style='color:#E5484D;font-size:40px;text-decoration:line-through'>R$&nbsp;0,34</span><div style='font:700 24px Inter;text-transform:none;color:#5B6673;margin-top:6px;letter-spacing:0'>mensagem de utilidade, valor aproximado com impostos</div>"
   },
   {
-   "line": 7, "kind": "top", "y": 1380, "size": 58, "sfx_gain": 0.3,
-   "html": "10 interações: <span style='color:#E5484D'>R$&nbsp;0,74</span> → <span style='color:#1597D4'>R$&nbsp;0,04</span>",
-   "sfx_at": [{"name": "cash", "t": 0.9, "gain": 0.4}]
+   "line": 7,
+   "kind": "top",
+   "y": 1380,
+   "size": 50,
+   "sfx_gain": 0.3,
+   "html": "10 interações:<br><span style='color:#E5484D'>R$&nbsp;0,74</span> → <span style='color:#1597D4'>R$&nbsp;0,04</span>",
+   "sfx_at": [
+    {
+     "name": "cash",
+     "t": 0.9,
+     "gain": 0.4
+    }
+   ]
   },
   {
-   "line": 8, "kind": "anim", "tpl": "comment", "word": "JANELA", "label": "Comenta aqui embaixo", "top": 1360,
+   "line": 8,
+   "kind": "anim",
+   "tpl": "comment",
+   "word": "JANELA",
+   "label": "Comenta aqui embaixo",
+   "top": 1360,
    "sfx_gain": 0.2,
-   "sfx_at": [{"name": "typing", "t": 0.3, "gain": 0.35}, {"name": "pop", "t": 1.0, "gain": 0.4}]
+   "sfx_at": [
+    {
+     "name": "typing",
+     "t": 0.3,
+     "gain": 0.35
+    },
+    {
+     "name": "pop",
+     "t": 1.0,
+     "gain": 0.4
+    }
+   ]
   }
  ],
  "sfx_events": [],
  "fx": {
   "center_y": 0.33,
-  "glitch_lines": [2, 6],
+  "glitch_lines": [
+   2,
+   6
+  ],
   "glitch_dur": 0.14,
   "punch_numbers": 0.07,
   "punch": [
-   {"line": 0, "word": 3, "amt": 0.08},
-   {"line": 1, "word": 10, "amt": 0.08},
-   {"line": 8, "word": 8, "amt": 0.08}
+   {
+    "line": 0,
+    "word": 3,
+    "amt": 0.08
+   },
+   {
+    "line": 1,
+    "word": 10,
+    "amt": 0.08
+   },
+   {
+    "line": 8,
+    "word": 8,
+    "amt": 0.08
+   }
   ],
   "shake": [
-   {"line": 7, "word": 8, "dur": 0.25, "amp": 10}
+   {
+    "line": 7,
+    "word": 8,
+    "dur": 0.25,
+    "amp": 10
+   }
   ]
  }
 }

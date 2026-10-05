@@ -1,0 +1,37 @@
+{
+ "script": "roteiros_2026-10-05_janela2.txt",
+ "plan": "plan_janela2.json",
+ "whisper": "small",
+ "speed": 1.2,
+ "scenes": [
+  {
+   "video": "https://d8j0ntlcm91z4.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/hf_20261005_185024_7f934ed9-f1b4-482b-b9f5-a1f753a3e0cf.mp4",
+   "audio": "",
+   "mode": "own"
+  },
+  {
+   "video": "/root/jan2/rua2_cut.mp4",
+   "audio": "",
+   "mode": "own"
+  },
+  {
+   "video": "/root/jan2/clin_cut.mp4",
+   "audio": "",
+   "mode": "own"
+  }
+ ],
+ "broll": {},
+ "assets": {
+  "SFX_WHOOSH": "https://d2ol7oe51mr4n9.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/8b3fca14-361b-49a0-aa2c-42d357b7336f.mp3",
+  "SFX_POP": "https://d2ol7oe51mr4n9.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/b6e5ada1-d993-485c-a979-1ee37bddd052.mp3",
+  "SFX_DING": "https://d2ol7oe51mr4n9.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/1a333ed8-cf47-4db7-81b5-f243d12375c7.mp3",
+  "SFX_CASH": "https://d2ol7oe51mr4n9.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/9652deaa-76b4-4d92-96cf-796ef5dbec26.mp3",
+  "SFX_COUNTER": "https://d2ol7oe51mr4n9.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/2949f162-7efc-48c9-91f7-942808a6cf8d.mp3",
+  "SFX_TYPING": "https://d2ol7oe51mr4n9.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/7e5b7980-c8da-4177-a102-c6e06c35556a.mp3",
+  "SFX_RISER": "https://d2ol7oe51mr4n9.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/cca2683a-2e19-407b-aa65-590d3f7e124f.mp3",
+  "SFX_BOOM": "https://d2ol7oe51mr4n9.cloudfront.net/user_3KEx6alzaYwd2kPWXcljucC2yVC/980c06f2-68a0-42e4-bce9-9d8a027cc035.mp3"
+ },
+ "_voz": "voz natural do Seedance em tomada única por cenário, sem TTS e sem esticar palavra; clínica com corte de um '4 centavos' repetido",
+ "_cenas": "carro 7f934ed9 (still d77812bf), rua 7acda7f7 com corte de um 'sete dias' repetido (still bd9d90f7), clínica 68c8950e com corte de um '4 centavos' repetido (still def4889e)",
+ "_trilha": "sem trilha: Carlos coloca áudio em alta no app"
+}
