@@ -1,0 +1,182 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:Montserrat;font-weight:900;src:url('__F__/montserrat/files/montserrat-latin-900-normal.woff2')}
+@font-face{font-family:Inter;font-weight:400;src:url('__F__/inter/files/inter-latin-400-normal.woff2')}
+@font-face{font-family:Inter;font-weight:600;src:url('__F__/inter/files/inter-latin-600-normal.woff2')}
+@font-face{font-family:Inter;font-weight:700;src:url('__F__/inter/files/inter-latin-700-normal.woff2')}
+@font-face{font-family:Serif;font-style:italic;src:url('__CF__/InstrumentSerif-Italic.ttf')}
+@font-face{font-family:Mono;src:url('__CF__/DMMono-Regular.ttf')}
+body{margin:0}#R{width:1080px;height:1920px;position:relative;overflow:hidden;font-family:Inter}
+.sc{position:absolute;inset:0;opacity:0}.ab{position:absolute}
+.M{font-family:Montserrat;font-weight:900;text-transform:uppercase;letter-spacing:-2px;line-height:.95}
+.S{font-family:Serif;font-style:italic;line-height:1}.mono{font-family:Mono;letter-spacing:3px;text-transform:uppercase}
+.dot{position:absolute;width:58px;height:58px;margin:-29px 0 0 -29px;border-radius:50%;background:#8A3FD1;color:#fff;font:700 26px Inter;display:flex;align-items:center;justify-content:center}
+.row{display:flex;align-items:center;gap:30px;height:220px;box-sizing:border-box;padding:0 40px;background:#F2F4F7;border-radius:22px;margin-bottom:30px}
+.ic{width:120px;height:120px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:none}
+.cnt{margin-left:auto;min-width:110px;height:110px;border-radius:55px;color:#fff;font:700 50px Inter;display:flex;align-items:center;justify-content:center;padding:0 20px;box-sizing:border-box}
+.lane{background:#111A21;border-radius:22px;padding:30px 36px;box-sizing:border-box}
+.chk{display:flex;align-items:center;gap:30px;height:130px}
+.chk .bx{width:96px;height:96px;border-radius:16px;background:#fff;display:flex;align-items:center;justify-content:center;flex:none}
+.chip{font:700 40px Inter;color:#8A3FD1;background:#fff;padding:20px 30px;border-radius:10px}
+.tile{display:flex;align-items:center;gap:30px;height:230px;box-sizing:border-box;padding:0 44px;border-radius:24px}
+</style></head><body><div id="R">
+
+<!-- s0: placar + campo, 11 viram 1 -->
+<div class="sc" id="s0" style="background:#0A1322">
+ <div class="ab mono" style="left:90px;top:290px;font-size:28px;color:#1AA6E3">Seleção feminina · amistoso</div>
+ <div class="ab" id="score" style="left:90px;right:90px;top:345px;display:flex;align-items:center;justify-content:space-between">
+  <span class="M" style="font-size:118px;color:#fff;letter-spacing:-3px">BRA</span>
+  <span style="display:flex;gap:16px;align-items:center"><span class="M" style="font-size:96px;color:#0A1322;background:#fff;border-radius:12px;padding:10px 26px;letter-spacing:0">0</span><span class="mono" style="font-size:40px;color:#8C9AAE">x</span><span class="M" style="font-size:96px;color:#0A1322;background:#fff;border-radius:12px;padding:10px 26px;letter-spacing:0">0</span></span>
+  <span class="M" style="font-size:118px;color:#fff;letter-spacing:-3px">ARG</span>
+ </div>
+ <div class="ab mono" style="left:90px;right:90px;top:510px;font-size:28px;color:#8C9AAE;text-align:center">Sáb 10/10 · 16h30 · Beira-Rio</div>
+ <div class="ab" id="field" style="left:90px;top:590px;width:900px;height:620px;box-sizing:border-box;border:4px solid #23344D;border-radius:8px">
+  <div style="position:absolute;left:446px;top:0;bottom:0;width:4px;background:#23344D"></div>
+  <div style="position:absolute;left:358px;top:220px;width:172px;height:172px;border:4px solid #23344D;border-radius:50%;box-sizing:border-box"></div>
+  <div style="position:absolute;left:0;top:170px;width:120px;height:272px;border:4px solid #23344D;border-left:0;box-sizing:border-box"></div>
+  <div style="position:absolute;right:0;top:170px;width:120px;height:272px;border:4px solid #23344D;border-right:0;box-sizing:border-box"></div>
+  <div id="dots"></div>
+  <div id="lone" class="mono" style="position:absolute;left:470px;top:250px;font-size:26px;color:#1AA6E3;opacity:0;white-space:nowrap">sua recepção</div>
+  <div id="emcampo" class="mono" style="position:absolute;right:24px;top:20px;font-size:24px;color:#8C9AAE">em campo: 0</div>
+ </div>
+ <div class="ab S" id="s0a" style="left:90px;right:90px;top:1270px;font-size:104px;color:#C9A6F4">Ninguém joga sozinha.</div>
+ <div class="ab M" id="s0b" style="left:90px;right:60px;top:1260px;font-size:100px;color:#fff;opacity:0">Sua recepção<br>joga.</div>
+</div>
+
+<!-- s1: três frentes com contadores -->
+<div class="sc" id="s1" style="background:#FFFFFF">
+ <div class="ab M" id="s1a" style="left:90px;right:90px;top:270px;font-size:92px;color:#0E1A2B">Uma pessoa,</div>
+ <div class="ab S" id="s1b" style="left:90px;right:90px;top:365px;font-size:112px;color:#8A3FD1">três frentes.</div>
+ <div class="ab" id="rows" style="left:90px;right:90px;top:540px">
+  <div class="row" id="r0"><div class="ic" style="background:#8A3FD1"><svg width="64" height="64" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" fill="#fff"/></svg></div><div><div style="font:700 50px Inter;color:#0E1A2B">Telefone</div><div class="mono" id="r0s" style="font-size:24px;color:#8A94A0;margin-top:6px">tocando</div></div><div class="cnt" id="c0" style="background:#8A3FD1">0</div></div>
+  <div class="row" id="r1"><div class="ic" style="background:#1597D4"><svg width="64" height="64" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="#fff"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7z" fill="#fff"/></svg></div><div><div style="font:700 50px Inter;color:#0E1A2B">Balcão</div><div class="mono" style="font-size:24px;color:#8A94A0;margin-top:6px">fila</div></div><div class="cnt" id="c1" style="background:#1597D4">0</div></div>
+  <div class="row" id="r2"><div class="ic" style="background:#0A1322"><svg width="64" height="64" viewBox="0 0 24 24"><path d="M4 4h16c.6 0 1 .4 1 1v11c0 .6-.4 1-1 1H9l-5 4V5c0-.6.4-1 1-1z" fill="#fff"/></svg></div><div><div style="font:700 50px Inter;color:#0E1A2B">WhatsApp</div><div class="mono" style="font-size:24px;color:#8A94A0;margin-top:6px">não lidas</div></div><div class="cnt" id="c2" style="background:#0A1322">0</div></div>
+ </div>
+ <div class="ab mono" style="left:90px;top:1300px;font-size:22px;color:#8A94A0">exemplo ilustrativo</div>
+</div>
+
+<!-- s2: corrida de resposta + carimbo -->
+<div class="sc" id="s2" style="background:#000">
+ <div class="ab mono" style="left:90px;top:290px;font-size:26px;color:#8E8E93">WhatsApp · paciente novo</div>
+ <div class="ab" id="bub2" style="left:90px;top:350px;max-width:800px;background:#1F2C34;color:#E9EDEF;border-radius:30px 30px 30px 8px;padding:30px 38px;font-size:48px;line-height:1.3">Oi! Tem horário pra semana que vem?</div>
+ <div class="ab lane" id="ln0" style="left:90px;right:90px;top:640px">
+  <div style="display:flex;justify-content:space-between;align-items:center"><span style="font:700 40px Inter;color:#fff">Sua clínica</span><span class="mono" id="w0" style="font-size:26px;color:#8E8E93">aguardando</span></div>
+  <div style="height:22px;background:#26343E;border-radius:4px;margin-top:22px;overflow:hidden"><div id="b0" style="height:100%;width:0;background:#5A5A5E"></div></div>
+ </div>
+ <div class="ab lane" id="ln1" style="left:90px;right:90px;top:830px">
+  <div style="display:flex;justify-content:space-between;align-items:center"><span style="font:700 40px Inter;color:#fff">A clínica do lado</span><span class="mono" id="w1" style="font-size:26px;color:#1AA6E3"></span></div>
+  <div style="height:22px;background:#26343E;border-radius:4px;margin-top:22px;overflow:hidden"><div id="b1" style="height:100%;width:0;background:#1AA6E3"></div></div>
+ </div>
+ <div class="ab M" id="s2t" style="left:90px;right:90px;top:1060px;font-size:130px;color:#fff">Cansa.</div>
+ <div class="ab M" id="stamp" style="left:120px;top:1230px;font-size:60px;white-space:nowrap;color:#fff;background:#8A3FD1;padding:22px 36px;border-radius:10px;letter-spacing:0">Agendou na outra</div>
+ <div class="ab mono" style="left:90px;top:1440px;font-size:22px;color:#5A5A5E">exemplo ilustrativo</div>
+</div>
+
+<!-- s3: placa de substituição -->
+<div class="sc" id="s3" style="background:#8A3FD1">
+ <div class="ab" id="board" style="left:90px;right:90px;top:290px;height:290px;background:#000;border-radius:24px;box-sizing:border-box;padding:40px 48px;display:flex;align-items:center;gap:40px">
+  <div style="width:180px;height:180px;border-radius:50%;background:#8A3FD1;display:flex;align-items:center;justify-content:center;flex:none"><img src="__ICON__" style="width:136px"></div>
+  <div><div class="mono" style="font-size:30px;color:#1AA6E3">entra no time</div><div class="M" id="led" style="font-size:150px;color:#fff;letter-spacing:-4px;margin-top:8px">TOLKI</div></div>
+ </div>
+ <div class="ab S" id="s3s" style="left:90px;right:90px;top:620px;font-size:96px;color:#F1E6FB">pelo WhatsApp:</div>
+ <div class="ab" style="left:90px;right:90px;top:760px">
+  <div class="chk" id="k0"><div class="bx"><svg width="62" height="62" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" stroke="#8A3FD1" stroke-width="3.4" fill="none" stroke-linecap="round"/></svg></div><span class="M" style="font-size:96px;color:#fff">Responde</span></div>
+  <div class="chk" id="k1"><div class="bx"><svg width="62" height="62" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" stroke="#8A3FD1" stroke-width="3.4" fill="none" stroke-linecap="round"/></svg></div><span class="M" style="font-size:96px;color:#fff">Qualifica</span></div>
+  <div class="chk" id="k2"><div class="bx"><svg width="62" height="62" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" stroke="#8A3FD1" stroke-width="3.4" fill="none" stroke-linecap="round"/></svg></div><span class="M" style="font-size:96px;color:#fff">Agenda</span></div>
+ </div>
+ <div class="ab" style="left:90px;right:90px;top:1250px;display:flex;gap:20px">
+  <span class="chip" id="p0">De dia</span><span class="chip" id="p1">De noite</span><span class="chip" id="p2">Sábado do jogo</span>
+ </div>
+</div>
+
+<!-- s4: divisão de tarefas -->
+<div class="sc" id="s4" style="background:#1597D4">
+ <div class="ab tile" id="t0" style="left:90px;right:90px;top:300px;background:#fff">
+  <div style="width:110px;height:110px;border-radius:50%;background:#8A3FD1;display:flex;align-items:center;justify-content:center;flex:none"><img src="__ICON__" style="width:82px"></div>
+  <div><div class="mono" style="font-size:26px;color:#8A94A0">WhatsApp</div><div style="font:700 56px Inter;color:#0E1A2B;margin-top:4px">com a Tolki</div></div>
+ </div>
+ <div class="ab tile" id="t1" style="left:90px;right:90px;top:560px;background:#0A1322">
+  <div style="width:110px;height:110px;border-radius:50%;background:#1AA6E3;display:flex;align-items:center;justify-content:center;flex:none"><svg width="60" height="60" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="#fff"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7z" fill="#fff"/></svg></div>
+  <div><div class="mono" style="font-size:26px;color:#8C9AAE">Balcão</div><div style="font:700 56px Inter;color:#fff;margin-top:4px">com a sua equipe</div></div>
+ </div>
+ <div class="ab M" id="s4a" style="left:90px;right:90px;top:900px;font-size:104px;color:#fff">Sua recepção volta</div>
+ <div class="ab S" id="s4b" style="left:90px;right:90px;top:1110px;font-size:104px;color:#0A1322">pra quem tá na frente dela.</div>
+</div>
+
+<!-- s5: campo de comentário -->
+<div class="sc" id="s5" style="background:#7A32C4">
+ <div class="ab M" id="s5a" style="left:90px;right:90px;top:430px;font-size:130px;color:#fff">Comenta</div>
+ <div class="ab" id="cbox" style="left:90px;right:90px;top:620px;height:240px;box-sizing:border-box;background:#fff;border-radius:24px;padding:0 40px;display:flex;align-items:center;gap:30px">
+  <div style="width:110px;height:110px;border-radius:50%;background:#E7EAEE;flex:none"></div>
+  <span id="ph" style="font:400 40px Inter;color:#8A94A0">Adicione um comentário...</span>
+  <span id="typed" class="M" style="font-size:150px;color:#0E1A2B;letter-spacing:-4px"></span><span id="caret" style="width:8px;height:130px;background:#8A3FD1;display:block"></span>
+  <span id="pub" style="margin-left:auto;font:700 38px Inter;color:#1597D4;opacity:.3">Publicar</span>
+ </div>
+ <div class="ab S" id="s5b" style="left:90px;right:90px;top:940px;font-size:104px;color:#F1E6FB">que eu te mostro como funciona.</div>
+</div>
+
+<div class="ab" id="chrome" style="left:90px;right:90px;top:150px;display:flex;justify-content:space-between;align-items:center;font-family:Mono;font-size:24px;letter-spacing:3px;color:#fff"><span style="display:flex;align-items:center;gap:14px"><span style="width:52px;height:52px;border-radius:50%;background:#8A3FD1;display:flex;align-items:center;justify-content:center"><img src="__ICON__" style="width:38px"></span>TOLKI</span><span>@tolkibrasil</span></div>
+<div class="ab" style="left:90px;right:90px;top:1540px;text-align:center"><span id="capt" style="display:inline-block;font:700 58px/1.15 Inter;padding:14px 26px;border-radius:12px"></span></div>
+</div>
+<script>
+const SC=__SCENES__, TOTAL=__TOTAL__;
+const $=id=>document.getElementById(id);
+const cl=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
+const eo=x=>1-Math.pow(1-cl(x),3);
+const eb=x=>{x=cl(x);const c=1.7;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2)};
+function rise(el,t,t0,d,dy){d=d||.45;dy=dy||60;const p=eb((t-t0)/d);el.style.opacity=cl((t-t0)/(d*.6));el.style.transform='translateY('+((1-p)*dy)+'px)';}
+function pop(el,t,t0,d){d=d||.3;el.style.opacity=t>t0?1:0;el.style.transform='scale('+(t>t0?eb((t-t0)/d):0)+')';}
+// formação 1-4-4-2 (x,y em px dentro do campo 900x620)
+const F=[[60,310],[190,110],[190,240],[190,380],[190,510],[310,90],[310,230],[310,390],[310,530],[400,210],[400,410]];
+$('dots').innerHTML=F.map((p,i)=>'<div class="dot" id="d'+i+'" style="left:'+p[0]+'px;top:'+p[1]+'px">'+(i+1)+'</div>').join('');
+const chunks=[];SC.forEach(s=>{const w=s.text.split(' ');const groups=[];let cur=[];w.forEach(x=>{cur.push(x);if(cur.join(' ').length>=14||/[.,:?!]$/.test(x)){groups.push(cur.join(' '));cur=[];}});if(cur.length)groups.push(cur.join(' '));const tot=groups.reduce((a,b)=>a+b.length,0);let t=s.start;groups.forEach(gp=>{const d=s.dur*gp.length/tot;chunks.push([t,t+d,gp]);t+=d;});});
+window.__tick=function(t){
+ const B=SC.map((s,i)=>[i==0?0:s.start-0.15,i<SC.length-1?SC[i+1].start-0.15:TOTAL+1]);
+ const V=SC.map(s=>s.start);
+ let cur=0;B.forEach((b,i)=>{const on=t>=b[0]&&t<b[1];const el=$('s'+i);el.style.opacity=on?1:0;if(on){cur=i;const p=eo((t-b[0])/.3);el.style.transform='scale('+(1.04-.04*p)+')';}});
+ const dark=[1,0,1,1,1,1];
+ $('chrome').style.color=dark[cur]?'#fff':'#0E1A2B';
+ // s0
+ const v0=V[0];rise($('score'),t,0,.4,40);
+ let on=0;const tGone=v0+4.6;
+ for(let i=0;i<11;i++){const ti=v0+0.3+i*0.11;const e=$('d'+i);const keep=(i==0);
+  let sc=t>ti?eb((t-ti)/.25):0, op=t>ti?1:0;
+  if(t>ti)on++;
+  if(!keep&&t>tGone+i*0.03){const q=eo((t-tGone-i*0.03)/.3);op=1-q;sc=1-.6*q;if(q>=1)on--;}
+  if(keep){const q=eo((t-tGone)/.4);e.style.background=q>0?'#1AA6E3':'#8A3FD1';const x=60+(380-60)*q,y=310;e.style.left=x+'px';e.style.top=y+'px';sc*=1+.5*q;}
+  e.style.opacity=op;e.style.transform='scale('+sc+')';}
+ $('emcampo').textContent='em campo: '+on;
+ const lq=eo((t-tGone-0.35)/.3);$('lone').style.opacity=lq;$('lone').style.transform='translateX('+(1-lq)*20+'px)';
+ rise($('s0a'),t,v0+2.95,.45,50);if(t>v0+4.55){const q=eo((t-v0-4.55)/.25);$('s0a').style.opacity=1-q;}
+ rise($('s0b'),t,v0+4.65,.45,70);
+ // s1
+ const v1=V[1];rise($('s1a'),t,v1-0.1);rise($('s1b'),t,v1+0.15);
+ const rt=[v1+0.25,v1+1.25,v1+2.35];
+ for(let i=0;i<3;i++){rise($('r'+i),t,rt[i],.4,80);const n=Math.floor(Math.max(0,t-rt[i]-.2)*[2.2,1.4,7][i]);$('c'+i).textContent=t>rt[i]+.2?Math.max(1,n+1):'';$('c'+i).style.transform='scale('+(1+.12*Math.max(0,Math.sin((t-rt[i])*14))*(t>rt[i]?1:0))+')';}
+ const sh=t>v1+3.6&&t<B[1][1]?Math.sin(t*70)*6*cl((t-v1-3.6)/.4):0;$('rows').style.transform='translateX('+sh+'px)';
+ // s2
+ const v2=V[2];rise($('bub2'),t,v2-0.1);rise($('ln0'),t,v2+0.25,.4,60);rise($('ln1'),t,v2+0.45,.4,60);
+ $('b0').style.width=(18*eo((t-v2-0.5)/1.0))+'%';
+ const wm=Math.floor(Math.max(0,t-(v2+0.6))*60);$('w0').textContent=t>v2+0.6?('sem resposta há '+Math.floor(wm/60)+'h'+String(wm%60).padStart(2,'0')):'aguardando';
+ $('b1').style.width=(100*eo((t-v2-0.6)/1.7))+'%';$('w1').textContent=t>v2+2.35?'respondeu':'';
+ rise($('s2t'),t,v2+2.05,.4,70);
+ const ts=v2+4.45,sp=eb((t-ts)/.3),st=$('stamp');st.style.opacity=t>ts?1:0;st.style.transform='rotate(-6deg) scale('+(t>ts?2.2-1.2*sp:2.2)+')';
+ // s3
+ const v3=V[3];const bp=eb((t-v3+0.1)/.45);$('board').style.opacity=cl((t-v3+0.1)/.2);$('board').style.transform='scale('+(.6+.4*bp)+')';
+ $('led').style.opacity=(t>v3+0.3&&t<v3+1.1&&Math.floor(t*8)%2)?.35:1;
+ rise($('s3s'),t,v3+0.9);
+ [1.55,2.45,3.25].forEach((d,i)=>{const e=$('k'+i);rise(e,t,v3+d,.35,40);e.firstChild.style.transform='scale('+(t>v3+d?eb((t-v3-d)/.3):0)+')';});
+ [4.8,5.6,6.4].forEach((d,i)=>pop($('p'+i),t,v3+d,.3));
+ // s4
+ const v4=V[4];const a0=eo((t-v4+0.1)/.45),a1=eo((t-v4-0.15)/.45);
+ $('t0').style.opacity=cl(a0*2);$('t0').style.transform='translateX('+(-1-(-1)*a0)*700+'px)';
+ $('t1').style.opacity=cl(a1*2);$('t1').style.transform='translateX('+(1-a1)*700+'px)';
+ rise($('s4a'),t,v4+0.3);rise($('s4b'),t,v4+1.3);
+ // s5
+ const v5=V[5];rise($('s5a'),t,v5-0.1);rise($('cbox'),t,v5+0.15);
+ const n=cl(Math.floor((t-(v5+0.55))/0.12)+1,0,4);$('typed').textContent=t>v5+0.55?'TIME'.slice(0,n):'';$('ph').style.display=t>v5+0.55?'none':'inline';
+ $('caret').style.opacity=(Math.floor(t*2.5)%2)?0:1;$('pub').style.opacity=n>=4?1:.3;
+ rise($('s5b'),t,v5+1.3);
+ const c=chunks.find(c=>t>=c[0]&&t<c[1]+0.05);const cap=$('capt');cap.textContent=c?c[2]:'';cap.style.opacity=c?1:0;
+ cap.style.background=dark[cur]?'#FFFFFF':'#0E1A2B';cap.style.color=dark[cur]?'#0E1A2B':'#FFFFFF';
+};
+</script></body></html>

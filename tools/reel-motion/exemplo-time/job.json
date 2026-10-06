@@ -1,0 +1,144 @@
+{
+ "lines": [
+  {
+   "text": "Brasil e Argentina, sábado, no Beira-Rio: ninguém joga sozinha. Sua recepção joga.",
+   "audio": "a/l1.mp3"
+  },
+  {
+   "text": "Telefone tocando, paciente no balcão e o WhatsApp apitando sem parar.",
+   "audio": "a/l2.mp3"
+  },
+  {
+   "text": "Quem mandou mensagem espera. Cansa. E marca na clínica que respondeu primeiro.",
+   "audio": "a/l3.mp3"
+  },
+  {
+   "text": "A Tolki entra no time: responde, qualifica e agenda pelo WhatsApp, de dia, de noite e até no sábado do jogo.",
+   "audio": "a/l4.mp3"
+  },
+  {
+   "text": "E a sua recepção volta pra quem tá na frente dela.",
+   "audio": "a/l5.mp3"
+  },
+  {
+   "text": "Comenta TIME que eu te mostro como funciona.",
+   "audio": "a/l6.mp3"
+  }
+ ],
+ "gap_first": 0.2,
+ "gap": 0.3,
+ "tail": 1.6,
+ "music": "musica.mp3",
+ "music_gain": 0.22,
+ "sfx_dir": "lib",
+ "sfx": [
+  {
+   "name": "SFX_COUNTER",
+   "scene": 0,
+   "at": 0.5,
+   "gain": 0.3
+  },
+  {
+   "name": "SFX_BOOM",
+   "scene": 0,
+   "at": 4.9,
+   "gain": 0.45
+  },
+  {
+   "name": "SFX_WHOOSH",
+   "scene": 1,
+   "at": -0.05,
+   "gain": 0.5
+  },
+  {
+   "name": "SFX_POP",
+   "scene": 1,
+   "at": 0.35,
+   "gain": 0.4
+  },
+  {
+   "name": "SFX_POP",
+   "scene": 1,
+   "at": 1.35,
+   "gain": 0.4
+  },
+  {
+   "name": "SFX_POP",
+   "scene": 1,
+   "at": 2.45,
+   "gain": 0.4
+  },
+  {
+   "name": "SFX_WHOOSH",
+   "scene": 2,
+   "at": -0.05,
+   "gain": 0.5
+  },
+  {
+   "name": "SFX_TYPING",
+   "scene": 2,
+   "at": 0.6,
+   "gain": 0.25
+  },
+  {
+   "name": "SFX_DING",
+   "scene": 2,
+   "at": 2.4,
+   "gain": 0.3
+  },
+  {
+   "name": "SFX_STAMP",
+   "scene": 2,
+   "at": 4.3,
+   "gain": 0.8
+  },
+  {
+   "name": "SFX_WHOOSH",
+   "scene": 3,
+   "at": -0.05,
+   "gain": 0.5
+  },
+  {
+   "name": "SFX_CASH",
+   "scene": 3,
+   "at": 0.5,
+   "gain": 0.25
+  },
+  {
+   "name": "SFX_DING",
+   "scene": 3,
+   "at": 1.75,
+   "gain": 0.3
+  },
+  {
+   "name": "SFX_DING",
+   "scene": 3,
+   "at": 2.65,
+   "gain": 0.3
+  },
+  {
+   "name": "SFX_DING",
+   "scene": 3,
+   "at": 3.45,
+   "gain": 0.3
+  },
+  {
+   "name": "SFX_WHOOSH",
+   "scene": 4,
+   "at": -0.05,
+   "gain": 0.5
+  },
+  {
+   "name": "SFX_RISER",
+   "scene": 5,
+   "at": -1.0,
+   "gain": 0.3
+  },
+  {
+   "name": "SFX_TYPING",
+   "scene": 5,
+   "at": 0.7,
+   "gain": 0.45
+  }
+ ]
+}
