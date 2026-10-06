@@ -1,0 +1,82 @@
+{
+ "id": "C_recepcao",
+ "angle": "dor: recepção sobrecarregada / mão de obra",
+ "lines": [
+  "Sua recepcionista não dá conta de quarenta conversas no WhatsApp. Ninguém dá.",
+  "Ela atende o telefone, o paciente no balcão e ainda tem que responder lead.",
+  "Não é falta de esforço. É trabalho demais pra uma pessoa só.",
+  "A Tolki assume o WhatsApp: responde, qualifica e agenda. Sua equipe cuida de quem está na clínica.",
+  "Toque no botão e veja como isso funciona na sua clínica."
+ ],
+ "scenes": [
+  {
+   "type": "stack",
+   "bg": "#F2F4F7",
+   "title": "40 conversas. Uma recepcionista.",
+   "n": 40,
+   "size": 84,
+   "illus": "exemplo ilustrativo",
+   "pileTop": 700
+  },
+  {
+   "type": "list",
+   "bg": "#0A1322",
+   "title": "Ao mesmo tempo:",
+   "items": [
+    "Telefone tocando",
+    "Paciente no balcão",
+    "Lead esperando"
+   ],
+   "accent": "#FF4D4D",
+   "listTop": 520
+  },
+  {
+   "type": "text",
+   "bg": "#000000",
+   "title": "Não é falta de esforço.",
+   "sub": "É trabalho demais pra uma pessoa só.",
+   "accent": "#C9A6F4",
+   "subTop": 760
+  },
+  {
+   "type": "reply",
+   "bg": "#1597D4",
+   "name": "Sua clínica",
+   "msgs": [
+    {
+     "from": "p",
+     "text": "Vocês atendem sábado?",
+     "time": "10:41",
+     "at": 0.1
+    },
+    {
+     "from": "t",
+     "text": "Atendemos sim! Sábado às 9h ou às 11h?",
+     "time": "10:41",
+     "at": 1.0
+    },
+    {
+     "from": "p",
+     "text": "Quero avaliar implante. Como funciona?",
+     "time": "10:42",
+     "at": 2.0
+    },
+    {
+     "from": "t",
+     "text": "Te explico! É pra você ou pra alguém da família?",
+     "time": "10:42",
+     "at": 2.8
+    }
+   ],
+   "badge": "a equipe cuida do balcão",
+   "badgeAt": 4.2
+  },
+  {
+   "type": "cta",
+   "bg": "#7A32C4",
+   "title": "Veja funcionando na sua clínica",
+   "button": "Agendar diagnóstico",
+   "sub": "gratuito, com um especialista"
+  }
+ ]
+}

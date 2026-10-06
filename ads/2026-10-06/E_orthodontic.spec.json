@@ -1,0 +1,76 @@
+{
+ "id": "E_orthodontic",
+ "angle": "prova: Orthodontic 54 contratos",
+ "lines": [
+  "Recorde de faturamento: cinquenta e quatro contratos em um mês.",
+  "Foi o que a Orthodontic fez com o Ciclo de Vendas Automático da Tolki.",
+  "A inteligência artificial responde, qualifica, agenda e chama de volta quem sumiu.",
+  "E ainda economizou mais de quarenta e cinco mil reais em disparos.",
+  "Toque no botão e agende um diagnóstico comercial gratuito."
+ ],
+ "scenes": [
+  {
+   "type": "big",
+   "bg": "#0A1322",
+   "kicker": "recorde de faturamento",
+   "from": 0,
+   "to": 54,
+   "suffix": "",
+   "size": 420,
+   "accent": "#25D366",
+   "sub": "contratos em um mês.",
+   "subColor": "#C9A6F4",
+   "countDur": 1.8
+  },
+  {
+   "type": "text",
+   "bg": "#FFFFFF",
+   "kicker": "caso real",
+   "title": "Orthodontic",
+   "sub": "com o Ciclo de Vendas Automático.",
+   "accent": "#8A3FD1",
+   "size": 104,
+   "subTop": 600
+  },
+  {
+   "type": "list",
+   "bg": "#7A32C4",
+   "title": "A IA da Tolki",
+   "items": [
+    "Responde",
+    "Qualifica",
+    "Agenda",
+    "Recupera quem sumiu"
+   ],
+   "accent": "#25D366",
+   "listTop": 520,
+   "at": [
+    0.4,
+    1.2,
+    1.9,
+    2.6
+   ]
+  },
+  {
+   "type": "big",
+   "bg": "#FFFFFF",
+   "kicker": "economia em disparos",
+   "from": 0,
+   "to": 45,
+   "prefix": "+R$ ",
+   "suffix": " mil",
+   "size": 170,
+   "accent": "#1597D4",
+   "sub": "economizados em disparos.",
+   "subColor": "#0E1A2B",
+   "countDur": 1.6
+  },
+  {
+   "type": "cta",
+   "bg": "#8A3FD1",
+   "title": "Diagnóstico comercial gratuito",
+   "button": "Agendar diagnóstico",
+   "sub": "toque no botão abaixo"
+  }
+ ]
+}

@@ -1,0 +1,60 @@
+{
+ "id": "B_excellence",
+ "angle": "prova: Odonto Excellence 15% para 45%",
+ "lines": [
+  "De quinze para quarenta e cinco por cento de agendamento.",
+  "Foi o que a Odonto Excellence viu depois que a inteligência artificial da Tolki assumiu o WhatsApp.",
+  "Os leads eram os mesmos. O que mudou foi a resposta.",
+  "Ela atende na hora, faz as perguntas certas e marca na agenda.",
+  "Toque no botão e descubra quanto a sua clínica está deixando na mesa."
+ ],
+ "scenes": [
+  {
+   "type": "beforeafter",
+   "bg": "#FFFFFF",
+   "kicker": "taxa de agendamento",
+   "before": "15%",
+   "after": "45%",
+   "accent": "#1597D4",
+   "sub": "no mesmo WhatsApp."
+  },
+  {
+   "type": "text",
+   "bg": "#0A1322",
+   "kicker": "caso real",
+   "title": "Odonto Excellence",
+   "sub": "depois que a IA da Tolki assumiu o WhatsApp.",
+   "accent": "#1AA6E3",
+   "size": 130,
+   "subTop": 620
+  },
+  {
+   "type": "text",
+   "bg": "#000000",
+   "title": "Mesmos leads.",
+   "sub": "Outra resposta.",
+   "accent": "#C9A6F4",
+   "size": 140,
+   "subTop": 700
+  },
+  {
+   "type": "list",
+   "bg": "#7A32C4",
+   "title": "A IA da Tolki",
+   "items": [
+    "Atende na hora",
+    "Faz as perguntas certas",
+    "Marca na agenda"
+   ],
+   "accent": "#25D366",
+   "listTop": 560
+  },
+  {
+   "type": "cta",
+   "bg": "#8A3FD1",
+   "title": "Quanto sua clínica deixa na mesa?",
+   "button": "Agendar diagnóstico",
+   "sub": "diagnóstico comercial gratuito"
+  }
+ ]
+}

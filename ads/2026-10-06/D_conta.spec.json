@@ -1,0 +1,106 @@
+{
+ "id": "D_conta",
+ "angle": "lógica: a conta do lead perdido",
+ "lines": [
+  "Você paga cinquenta reais por lead. Faz essa conta comigo.",
+  "Se metade some porque ninguém respondeu a tempo, cada lead de verdade custou cem.",
+  "E quem esfriou nunca mais recebeu uma mensagem.",
+  "O problema não é o anúncio. É o que acontece depois dele.",
+  "A Tolki responde em segundos e recupera quem sumiu, pelo WhatsApp oficial.",
+  "Toque no botão e descubra quanto a sua clínica está perdendo."
+ ],
+ "scenes": [
+  {
+   "type": "big",
+   "bg": "#FFFFFF",
+   "kicker": "custo por lead",
+   "from": 0,
+   "to": 50,
+   "prefix": "R$ ",
+   "size": 280,
+   "accent": "#1597D4",
+   "sub": "faz essa conta comigo.",
+   "subColor": "#8A3FD1",
+   "countDur": 1.2
+  },
+  {
+   "type": "calc",
+   "bg": "#0A1322",
+   "kicker": "conta ilustrativa",
+   "rows": [
+    [
+     "Lead pago",
+     "R$ 50"
+    ],
+    [
+     "Some sem resposta",
+     "metade"
+    ],
+    [
+     "Lead real",
+     "R$ 100"
+    ]
+   ],
+   "accent": "#FF4D4D",
+   "at": [
+    0.1,
+    1.2,
+    2.6
+   ]
+  },
+  {
+   "type": "chat",
+   "bg": "#000000",
+   "time": "ontem",
+   "msg": "Oi, ainda tem horário essa semana?",
+   "waitLabel": "sem retorno há ",
+   "speed": 2000,
+   "waitAt": 0.4,
+   "title": "Esfriou.",
+   "titleAt": 1.2,
+   "illus": "exemplo ilustrativo"
+  },
+  {
+   "type": "text",
+   "bg": "#7A32C4",
+   "title": "O problema não é o anúncio.",
+   "sub": "É o que acontece depois dele.",
+   "accent": "#F1E6FB",
+   "subTop": 720
+  },
+  {
+   "type": "reply",
+   "bg": "#1597D4",
+   "name": "Sua clínica",
+   "msgs": [
+    {
+     "from": "t",
+     "text": "Oi, Ana! Vi que você queria horário essa semana. Ainda tenho quinta às 15h, posso reservar?",
+     "time": "09:00",
+     "at": 0.2
+    },
+    {
+     "from": "p",
+     "text": "Pode sim!",
+     "time": "09:04",
+     "at": 1.6
+    },
+    {
+     "from": "t",
+     "text": "Reservado ✓ Te mando a confirmação um dia antes.",
+     "time": "09:04",
+     "at": 2.4
+    }
+   ],
+   "badge": "lead recuperado",
+   "badgeAt": 3.0
+  },
+  {
+   "type": "cta",
+   "bg": "#7A32C4",
+   "title": "Quanto sua clínica está perdendo?",
+   "button": "Agendar diagnóstico",
+   "sub": "diagnóstico comercial gratuito"
+  }
+ ]
+}

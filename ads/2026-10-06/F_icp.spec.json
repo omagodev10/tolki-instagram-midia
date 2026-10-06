@@ -1,0 +1,69 @@
+{
+ "id": "F_icp",
+ "angle": "chamada ICP: depende só de tráfego",
+ "lines": [
+  "Se a sua clínica fatura mais de trinta mil e depende só de anúncio, presta atenção.",
+  "Todo mês o lead fica mais caro.",
+  "E a saída não é gastar mais. É converter mais de quem já chega no seu WhatsApp.",
+  "É isso que o Ciclo de Vendas Automático faz: responde, qualifica, agenda e recupera.",
+  "Toque no botão e agende um diagnóstico comercial gratuito."
+ ],
+ "scenes": [
+  {
+   "type": "text",
+   "bg": "#FFFFFF",
+   "kicker": "donos de clínica",
+   "title": "Fatura +30 mil e depende só de anúncio?",
+   "sub": "presta atenção.",
+   "accent": "#8A3FD1",
+   "size": 104,
+   "subTop": 900
+  },
+  {
+   "type": "text",
+   "bg": "#0A1322",
+   "kicker": "tráfego pago",
+   "title": "Todo mês o lead fica mais caro.",
+   "sub": "e a agenda depende dele.",
+   "accent": "#FF8A8A",
+   "size": 124,
+   "subTop": 820
+  },
+  {
+   "type": "text",
+   "bg": "#000000",
+   "title": "Não é gastar mais.",
+   "sub": "É converter mais de quem já chega no WhatsApp.",
+   "accent": "#1AA6E3",
+   "subTop": 620,
+   "subSize": 96
+  },
+  {
+   "type": "list",
+   "bg": "#7A32C4",
+   "title": "Ciclo de Vendas Automático",
+   "items": [
+    "Responde",
+    "Qualifica",
+    "Agenda",
+    "Recupera"
+   ],
+   "accent": "#25D366",
+   "size": 84,
+   "listTop": 560,
+   "at": [
+    1.6,
+    2.3,
+    2.9,
+    3.5
+   ]
+  },
+  {
+   "type": "cta",
+   "bg": "#8A3FD1",
+   "title": "Diagnóstico comercial gratuito",
+   "button": "Agendar diagnóstico",
+   "sub": "toque no botão abaixo"
+  }
+ ]
+}
