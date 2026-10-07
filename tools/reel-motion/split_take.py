@@ -76,7 +76,7 @@ def main():
     for k in range(len(L)):
         a, b = bnds[k], bnds[k + 1]; w = np.where(on[a:b])[0]
         if not len(w): sys.exit(f'fala {k + 1} ficou vazia: confira "bounds"')
-        a2, b2 = a + max(0, w[0] - 3), a + min(b - a, w[-1] + 6)
+        a2, b2 = a + max(0, w[0] - 5), a + min(b - a, w[-1] + 15)   # keep soft word endings (-ção, -te)
         keep = np.ones(b2 - a2, bool); oo = on[a2:b2]; i = 0
         while i < len(oo):                              # pauses over 0.38 s shrink to 0.30 s
             if not oo[i]:
