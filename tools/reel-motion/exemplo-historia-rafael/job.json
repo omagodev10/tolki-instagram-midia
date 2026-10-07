@@ -1,0 +1,203 @@
+{
+ "lines": [
+  {
+   "text": "Esse é o Rafael. Terça, sete e meia da noite, ele pediu orçamento de clareamento.",
+   "audio": "a/l1.wav"
+  },
+  {
+   "text": "A clínica respondeu na quarta, às dez da manhã, com um animado \"oi, tudo bem?\".",
+   "audio": "a/l2.wav"
+  },
+  {
+   "text": "O Rafael? Já tinha marcado na clínica que respondeu primeiro. Às sete e trinta e um.",
+   "audio": "a/l3.wav"
+  },
+  {
+   "text": "Moral da história: lead não some. Lead vai pra quem responde primeiro.",
+   "audio": "a/l4.wav"
+  },
+  {
+   "text": "Com a Tolki, sua clínica responde em segundos, tira as dúvidas e agenda pelo WhatsApp, até de madrugada.",
+   "audio": "a/l5.wav"
+  },
+  {
+   "text": "Comenta RÁPIDO que a gente te mostra como funciona.",
+   "audio": "a/l6.wav"
+  }
+ ],
+ "gap_first": 0.2,
+ "gap": 0.25,
+ "tail": 1.6,
+ "music": {
+  "song": "songs/timeless",
+  "rel_db": -15,
+  "cues": [
+   {
+    "scene": 3,
+    "at": 1.1,
+    "kind": "break"
+   },
+   {
+    "scene": 4,
+    "kind": "drop"
+   },
+   {
+    "scene": 5,
+    "at": -0.15,
+    "kind": "break"
+   },
+   {
+    "scene": 5,
+    "at": 1.3,
+    "kind": "hit"
+   }
+  ]
+ },
+ "sfx_dir": "lib",
+ "sfx": [
+  {
+   "name": "SFX_POP",
+   "scene": 0,
+   "at": 0.15,
+   "gain": 0.35
+  },
+  {
+   "name": "SFX_POP",
+   "scene": 0,
+   "at": 1.35,
+   "gain": 0.4
+  },
+  {
+   "name": "SFX_DING",
+   "scene": 0,
+   "at": 2.75,
+   "gain": 0.3
+  },
+  {
+   "name": "SFX_WHOOSH",
+   "scene": 1,
+   "at": -0.05,
+   "gain": 0.5
+  },
+  {
+   "name": "SFX_COUNTER",
+   "scene": 1,
+   "at": 0.35,
+   "gain": 0.3
+  },
+  {
+   "name": "SFX_POP",
+   "scene": 1,
+   "at": 3.05,
+   "gain": 0.4
+  },
+  {
+   "name": "SFX_STAMP",
+   "scene": 1,
+   "at": 3.55,
+   "gain": 0.6
+  },
+  {
+   "name": "SFX_WHOOSH",
+   "scene": 2,
+   "at": -0.05,
+   "gain": 0.5
+  },
+  {
+   "name": "SFX_DING",
+   "scene": 2,
+   "at": 0.5,
+   "gain": 0.3
+  },
+  {
+   "name": "SFX_STAMP",
+   "scene": 2,
+   "at": 2.75,
+   "gain": 0.7
+  },
+  {
+   "name": "SFX_POP",
+   "scene": 2,
+   "at": 3.45,
+   "gain": 0.35
+  },
+  {
+   "name": "SFX_WHOOSH",
+   "scene": 3,
+   "at": -0.05,
+   "gain": 0.5
+  },
+  {
+   "name": "SFX_POP",
+   "scene": 3,
+   "at": 1.35,
+   "gain": 0.4
+  },
+  {
+   "name": "SFX_POP",
+   "scene": 3,
+   "at": 1.65,
+   "gain": 0.4
+  },
+  {
+   "name": "SFX_POP",
+   "scene": 3,
+   "at": 1.95,
+   "gain": 0.4
+  },
+  {
+   "name": "SFX_BOOM",
+   "scene": 4,
+   "at": 0.1,
+   "gain": 0.35
+  },
+  {
+   "name": "SFX_DING",
+   "scene": 4,
+   "at": 1.75,
+   "gain": 0.3
+  },
+  {
+   "name": "SFX_DING",
+   "scene": 4,
+   "at": 2.75,
+   "gain": 0.3
+  },
+  {
+   "name": "SFX_DING",
+   "scene": 4,
+   "at": 3.55,
+   "gain": 0.3
+  },
+  {
+   "name": "SFX_POP",
+   "scene": 4,
+   "at": 4.45,
+   "gain": 0.3
+  },
+  {
+   "name": "SFX_POP",
+   "scene": 4,
+   "at": 4.65,
+   "gain": 0.3
+  },
+  {
+   "name": "SFX_POP",
+   "scene": 4,
+   "at": 4.85,
+   "gain": 0.3
+  },
+  {
+   "name": "SFX_RISER",
+   "scene": 5,
+   "at": -1.0,
+   "gain": 0.3
+  },
+  {
+   "name": "SFX_TYPING",
+   "scene": 5,
+   "at": 0.7,
+   "gain": 0.45
+  }
+ ]
+}

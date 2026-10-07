@@ -1,0 +1,174 @@
+{
+ "lines": [
+  {
+   "text": "Essa é a Doutora Camila: dona de clínica, mãe de dois e, nas horas vagas, recepcionista.",
+   "audio": "a/l1.wav"
+  },
+  {
+   "text": "Onze da noite, e lá estava ela no WhatsApp, respondendo \"qual o valor?\" pela décima vez.",
+   "audio": "a/l2.wav"
+  },
+  {
+   "text": "Porque paciente não manda mensagem em horário comercial. Paciente manda quando lembra.",
+   "audio": "a/l3.wav"
+  },
+  {
+   "text": "Até que ela colocou a Tolki pra atender: responde na hora, tira as dúvidas e já marca o horário.",
+   "audio": "a/l4.wav"
+  },
+  {
+   "text": "E a Doutora Camila? Finalmente dormindo. Pelo menos até o bebê acordar.",
+   "audio": "a/l5.wav"
+  },
+  {
+   "text": "Comenta NOITE que a gente te mostra como funciona.",
+   "audio": "a/l6.wav"
+  }
+ ],
+ "gap_first": 0.2,
+ "gap": 0.25,
+ "tail": 1.6,
+ "music": {
+  "song": "songs/sna",
+  "cues": [
+   {
+    "scene": 3,
+    "kind": "drop"
+   },
+   {
+    "scene": 5,
+    "at": -0.15,
+    "kind": "break"
+   },
+   {
+    "scene": 5,
+    "at": 1.2,
+    "kind": "hit"
+   }
+  ],
+  "rel_db": -15
+ },
+ "sfx_dir": "lib",
+ "sfx": [
+  {
+   "name": "SFX_POP",
+   "scene": 0,
+   "at": 1.25,
+   "gain": 0.4
+  },
+  {
+   "name": "SFX_POP",
+   "scene": 0,
+   "at": 2.15,
+   "gain": 0.4
+  },
+  {
+   "name": "SFX_STAMP",
+   "scene": 0,
+   "at": 4.45,
+   "gain": 0.7
+  },
+  {
+   "name": "SFX_WHOOSH",
+   "scene": 1,
+   "at": -0.05,
+   "gain": 0.5
+  },
+  {
+   "name": "SFX_COUNTER",
+   "scene": 1,
+   "at": 2.05,
+   "gain": 0.22
+  },
+  {
+   "name": "SFX_DING",
+   "scene": 1,
+   "at": 4.9,
+   "gain": 0.25
+  },
+  {
+   "name": "SFX_WHOOSH",
+   "scene": 2,
+   "at": -0.05,
+   "gain": 0.5
+  },
+  {
+   "name": "SFX_POP",
+   "scene": 2,
+   "at": 1.4,
+   "gain": 0.35
+  },
+  {
+   "name": "SFX_POP",
+   "scene": 2,
+   "at": 1.9,
+   "gain": 0.35
+  },
+  {
+   "name": "SFX_POP",
+   "scene": 2,
+   "at": 2.4,
+   "gain": 0.35
+  },
+  {
+   "name": "SFX_WHOOSH",
+   "scene": 3,
+   "at": -0.05,
+   "gain": 0.5
+  },
+  {
+   "name": "SFX_DING",
+   "scene": 3,
+   "at": 2.15,
+   "gain": 0.3
+  },
+  {
+   "name": "SFX_DING",
+   "scene": 3,
+   "at": 3.05,
+   "gain": 0.3
+  },
+  {
+   "name": "SFX_DING",
+   "scene": 3,
+   "at": 3.85,
+   "gain": 0.3
+  },
+  {
+   "name": "SFX_CASH",
+   "scene": 3,
+   "at": 4.3,
+   "gain": 0.2
+  },
+  {
+   "name": "SFX_WHOOSH",
+   "scene": 4,
+   "at": -0.05,
+   "gain": 0.5
+  },
+  {
+   "name": "SFX_POP",
+   "scene": 4,
+   "at": 0.55,
+   "gain": 0.35
+  },
+  {
+   "name": "SFX_POP",
+   "scene": 4,
+   "at": 1.05,
+   "gain": 0.35
+  },
+  {
+   "name": "SFX_RISER",
+   "scene": 5,
+   "at": -1.0,
+   "gain": 0.3
+  },
+  {
+   "name": "SFX_TYPING",
+   "scene": 5,
+   "at": 0.7,
+   "gain": 0.45
+  }
+ ]
+}
