@@ -1,0 +1,102 @@
+{
+ "id": "A2_resposta_v2",
+ "angulo": "resposta rápida",
+ "angle": "resposta rápida: ironia da clínica que responde no dia seguinte (variação de gancho de A_resposta)",
+ "voz": "6 Sandra",
+ "musica": "sem música",
+ "scenes": [
+  {
+   "type": "chat",
+   "bg": "#000000",
+   "time": "21:04",
+   "msg": "Oi! Vocês têm horário pra avaliação essa semana?",
+   "waitLabel": "sem resposta há ",
+   "speed": 190,
+   "waitAt": 0.3,
+   "title": "Respondeu às 9h.",
+   "titleAt": 2.6,
+   "illus": "exemplo ilustrativo"
+  },
+  {
+   "type": "chat",
+   "bg": "#0A1322",
+   "time": "21:04",
+   "msg": "Oi! Vocês têm horário pra avaliação essa semana?",
+   "waitLabel": "visto há ",
+   "speed": 600,
+   "stamp": "Agendou no concorrente",
+   "stampAt": 0.9
+  },
+  {
+   "type": "text",
+   "bg": "#FFFFFF",
+   "kicker": "e aí",
+   "title": "A culpa vai pro anúncio.",
+   "accent": "#8A3FD1",
+   "size": 124
+  },
+  {
+   "type": "reply",
+   "bg": "#7A32C4",
+   "name": "Sua clínica",
+   "msgs": [
+    {
+     "from": "p",
+     "text": "Oi! Vocês têm horário pra avaliação essa semana?",
+     "time": "21:04",
+     "at": 0.1
+    },
+    {
+     "from": "t",
+     "text": "Oi! Temos sim. Prefere quinta às 10h ou sexta às 15h?",
+     "time": "21:04",
+     "at": 1.2
+    },
+    {
+     "from": "p",
+     "text": "Sexta 15h!",
+     "time": "21:05",
+     "at": 2.3
+    },
+    {
+     "from": "t",
+     "text": "Agendado ✓ Te mando a confirmação na véspera.",
+     "time": "21:05",
+     "at": 3.0
+    }
+   ],
+   "badge": "respondido em segundos",
+   "badgeAt": 3.5
+  },
+  {
+   "type": "grid",
+   "bg": "#FFFFFF",
+   "title": "Agenda cheia",
+   "sub": "de dia, de noite e no domingo.",
+   "accent": "#8A3FD1",
+   "fill": "#1597D4",
+   "step": 0.12,
+   "subSize": 78,
+   "subTop": 420,
+   "gridTop": 620
+  },
+  {
+   "type": "cta",
+   "bg": "#0A1322",
+   "title": "Pare de perder paciente na demora.",
+   "button": "Agendar diagnóstico",
+   "sub": "diagnóstico gratuito",
+   "accent": "#C9A6F4",
+   "size": 92,
+   "btnTop": 860
+  }
+ ],
+ "lines": [
+  "O paciente mandou mensagem às nove da noite. A clínica respondeu às nove da manhã.",
+  "Ele já tinha marcado no concorrente, que respondeu na hora.",
+  "E aí a culpa vai pro anúncio.",
+  "A Tolki responde em segundos, tira a dúvida e agenda direto no WhatsApp.",
+  "De dia, de noite e no domingo.",
+  "Toque no botão e agende um diagnóstico comercial gratuito."
+ ]
+}

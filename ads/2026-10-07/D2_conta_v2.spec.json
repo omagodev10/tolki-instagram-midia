@@ -1,0 +1,109 @@
+{
+ "id": "D2_conta_v2",
+ "angulo": "conta",
+ "angle": "conta: custo do lead que some (variação de gancho de D_conta)",
+ "voz": "1 Bernard",
+ "musica": "Seven Nation Army (sna) remix",
+ "scenes": [
+  {
+   "type": "big",
+   "bg": "#0A1322",
+   "kicker": "dos leads que você paga",
+   "from": 0,
+   "to": 50,
+   "suffix": "%",
+   "size": 300,
+   "accent": "#1AA6E3",
+   "sub": "nunca vira conversa.",
+   "subColor": "#C9A6F4",
+   "countDur": 1.2
+  },
+  {
+   "type": "calc",
+   "bg": "#FFFFFF",
+   "kicker": "conta ilustrativa",
+   "rows": [
+    [
+     "Lead pago",
+     "R$ 50"
+    ],
+    [
+     "Sumiu sem resposta",
+     "metade"
+    ],
+    [
+     "Cada conversa",
+     "R$ 100"
+    ]
+   ],
+   "accent": "#FF4D4D",
+   "at": [
+    0.1,
+    1.4,
+    3.0
+   ]
+  },
+  {
+   "type": "chat",
+   "bg": "#000000",
+   "time": "ontem",
+   "msg": "Oi, vocês têm horário pra avaliação?",
+   "waitLabel": "sem retorno há ",
+   "speed": 2000,
+   "waitAt": 0.3,
+   "title": "Esfriou.",
+   "titleAt": 0.9,
+   "illus": "exemplo ilustrativo"
+  },
+  {
+   "type": "text",
+   "bg": "#7A32C4",
+   "kicker": "antes de aumentar a verba",
+   "title": "Conserta o que vem depois do clique.",
+   "accent": "#F1E6FB",
+   "size": 112
+  },
+  {
+   "type": "reply",
+   "bg": "#1597D4",
+   "name": "Sua clínica",
+   "msgs": [
+    {
+     "from": "t",
+     "text": "Oi, Carla! Vi que você queria avaliação. Ainda tenho quinta às 15h, posso reservar?",
+     "time": "09:00",
+     "at": 0.2
+    },
+    {
+     "from": "p",
+     "text": "Pode sim!",
+     "time": "09:03",
+     "at": 1.6
+    },
+    {
+     "from": "t",
+     "text": "Reservado ✓ Te mando a confirmação um dia antes.",
+     "time": "09:03",
+     "at": 2.4
+    }
+   ],
+   "badge": "lead recuperado",
+   "badgeAt": 3.0
+  },
+  {
+   "type": "cta",
+   "bg": "#7A32C4",
+   "title": "Quanto sua clínica está perdendo?",
+   "button": "Agendar diagnóstico",
+   "sub": "diagnóstico comercial gratuito"
+  }
+ ],
+ "lines": [
+  "Metade dos leads que você paga nunca vira conversa.",
+  "Pagou cinquenta reais no lead e metade sumiu sem resposta? Cada conversa custou cem.",
+  "E ninguém chamou de volta quem esfriou.",
+  "Antes de aumentar a verba, conserta o que vem depois do clique.",
+  "A Tolki responde em segundos e recupera quem sumiu, pelo WhatsApp oficial.",
+  "Toque no botão e descubra quanto a sua clínica está perdendo."
+ ]
+}

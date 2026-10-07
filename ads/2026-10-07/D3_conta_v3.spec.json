@@ -1,0 +1,110 @@
+{
+ "id": "D3_conta_v3",
+ "angulo": "conta",
+ "angle": "conta: lead pago entregue ao concorrente (variação de gancho de D_conta)",
+ "voz": "4 Brooks",
+ "musica": "Timeless remix",
+ "scenes": [
+  {
+   "type": "text",
+   "bg": "#1597D4",
+   "kicker": "para donos de clínica",
+   "title": "Você não precisa de mais lead.",
+   "sub": "Precisa responder os que já chegam.",
+   "accent": "#F1E6FB",
+   "subTop": 800,
+   "subSize": 92,
+   "size": 112
+  },
+  {
+   "type": "stack",
+   "bg": "#F2F4F7",
+   "title": "Enquanto a recepção atendia o balcão...",
+   "size": 70,
+   "n": 14,
+   "step": 0.2,
+   "countDur": 2.4,
+   "illus": "exemplo ilustrativo",
+   "pileTop": 640
+  },
+  {
+   "type": "chat",
+   "bg": "#000000",
+   "time": "10:42",
+   "msg": "Oi, como funciona a avaliação de vocês?",
+   "waitLabel": "sem resposta há ",
+   "speed": 600,
+   "title": "Lead pago. Lead perdido.",
+   "titleAt": 0.8,
+   "size": 100,
+   "stamp": "Foi pro concorrente",
+   "stampAt": 2.4,
+   "illus": "exemplo ilustrativo"
+  },
+  {
+   "type": "reply",
+   "bg": "#7A32C4",
+   "name": "Sua clínica",
+   "msgs": [
+    {
+     "from": "p",
+     "text": "Oi, como funciona a avaliação de vocês?",
+     "time": "10:42",
+     "at": 0.1
+    },
+    {
+     "from": "t",
+     "text": "Oi! A avaliação é com o dentista e leva 30 minutos. Tenho amanhã às 11h, quer?",
+     "time": "10:42",
+     "at": 1.2
+    },
+    {
+     "from": "p",
+     "text": "Quero!",
+     "time": "10:43",
+     "at": 2.4
+    },
+    {
+     "from": "t",
+     "text": "Agendado ✓",
+     "time": "10:43",
+     "at": 3.0
+    }
+   ],
+   "badge": "respondido em segundos",
+   "badgeAt": 3.3
+  },
+  {
+   "type": "list",
+   "bg": "#FFFFFF",
+   "title": "Sua equipe recebe o paciente:",
+   "size": 84,
+   "items": [
+    "Respondido",
+    "Qualificado",
+    "Agendado"
+   ],
+   "accent": "#8A3FD1",
+   "at": [
+    0.5,
+    1.0,
+    1.5
+   ]
+  },
+  {
+   "type": "cta",
+   "bg": "#1597D4",
+   "title": "Responda todo lead em segundos.",
+   "button": "Agendar diagnóstico",
+   "sub": "diagnóstico comercial gratuito"
+  }
+ ],
+ "lines": [
+  "Sua clínica não precisa de mais lead. Precisa responder os que já chegam.",
+  "Olha quantas mensagens chegaram enquanto a recepção atendia o balcão.",
+  "Cada uma que fica pra depois é um lead que você pagou e entregou pro concorrente.",
+  "A Tolki responde todas em segundos, qualifica e agenda no WhatsApp.",
+  "Sua equipe só recebe o paciente pronto pra vir.",
+  "Toque no botão e agende um diagnóstico comercial gratuito pra sua clínica."
+ ]
+}
