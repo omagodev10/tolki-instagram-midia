@@ -108,7 +108,7 @@ def arrange(src, ana, cues_p, dur, out):
         v = [b['db'] for b in bars if t0 <= b['t'] < t1]
         return float(np.mean(v)) if v else -60.0
     for i, c in enumerate(cues):
-        cs = cands(c['kind'])
+        cs = [c['song_t']] if c.get('song_t') is not None else cands(c['kind'])   # a cue may pin the exact song moment
         if i == 0:
             ok = [s for s in cs if s - c['t'] >= 0] or cs
             if c['kind'] == 'drop':    # the intro before the first drop should be quieter, so the drop lands
