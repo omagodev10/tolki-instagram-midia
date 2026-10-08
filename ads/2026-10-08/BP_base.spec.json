@@ -1,0 +1,95 @@
+{
+ "id": "BP_base_1008",
+ "angulo": "base parada",
+ "angle": "base parada: agenda cheia com quem já é paciente (versão honesta do adclaude 6, H11), gancho de curiosidade",
+ "voz": "1 Bernard",
+ "musica": "Seven Nation Army (sna) remix",
+ "lines": [
+  "Sua agenda cheia pode já estar no seu WhatsApp.",
+  "São os pacientes que já passaram pela clínica e ninguém chamou de novo.",
+  "A Gou Odonto dobrou os agendamentos no primeiro disparo para a própria base.",
+  "O Instituto Victor Santos mandou duzentas mil mensagens em seis meses e economizou sessenta mil reais.",
+  "A Tolki chama essa base pelo WhatsApp oficial e agenda quem responde.",
+  "Se sua clínica fatura acima de trinta mil, toque no botão e peça seu diagnóstico gratuito."
+ ],
+ "scenes": [
+  {
+   "type": "text",
+   "bg": "#0A1322",
+   "kicker": "antes de pagar o próximo lead",
+   "title": "Sua agenda cheia já está no seu WhatsApp.",
+   "accent": "#1AA6E3",
+   "size": 116
+  },
+  {
+   "type": "text",
+   "bg": "#F2F4F7",
+   "kicker": "limpeza, retorno, orçamento parado",
+   "title": "Pacientes que ninguém chamou de novo.",
+   "accent": "#7A32C4",
+   "size": 104,
+   "sub": "e que já confiam na sua clínica.",
+   "subTop": 820,
+   "subSize": 84
+  },
+  {
+   "type": "text",
+   "bg": "#1597D4",
+   "kicker": "Gou Odonto · resultado real",
+   "title": "Dobrou os agendamentos",
+   "sub": "no primeiro disparo para a própria base.",
+   "accent": "#F1E6FB",
+   "size": 96,
+   "subTop": 600,
+   "subSize": 92
+  },
+  {
+   "type": "big",
+   "bg": "#0A1322",
+   "kicker": "Instituto Victor Santos · 6 meses",
+   "from": 0,
+   "to": 200,
+   "suffix": " mil",
+   "size": 200,
+   "accent": "#1AA6E3",
+   "sub": "mensagens e R$ 60 mil economizados.",
+   "subColor": "#C9A6F4",
+   "subSize": 84,
+   "countDur": 1.4
+  },
+  {
+   "type": "reply",
+   "bg": "#7A32C4",
+   "name": "Sua clínica",
+   "msgs": [
+    {
+     "from": "t",
+     "text": "Oi, Marta! Faz um tempo da sua última limpeza. Tenho terça às 10h, posso reservar?",
+     "time": "10:02",
+     "at": 0.2
+    },
+    {
+     "from": "p",
+     "text": "Pode sim, obrigada!",
+     "time": "10:05",
+     "at": 1.5
+    },
+    {
+     "from": "t",
+     "text": "Reservado ✓ Te lembro um dia antes.",
+     "time": "10:05",
+     "at": 2.3
+    }
+   ],
+   "badge": "paciente de volta",
+   "badgeAt": 2.9
+  },
+  {
+   "type": "cta",
+   "bg": "#7A32C4",
+   "title": "Sua base está parada?",
+   "button": "Agendar diagnóstico",
+   "sub": "diagnóstico comercial gratuito"
+  }
+ ]
+}

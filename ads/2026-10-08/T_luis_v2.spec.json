@@ -1,0 +1,4 @@
+{"id":"T_luis_v2","angulo":"base parada","angle":"base parada + prova: Gou Odonto dobrou os agendamentos no primeiro disparo da base, com o número nos 2 primeiros segundos (H11)","voz":"depoimento real (Luis)","musica":"sem música","fonte":"ads/2026-10-06/T_luis.mp4, trecho 10,4 s a 17,05 s","estrutura":["cartão dobrou os agendamentos (2,4 s)","Luis: 'não imaginava que eu ia ter um resultado tão fantástico assim, e no primeiro disparo, nos primeiros dias de uso' (6,65 s)","CTA (3 s)"],
+"lines":["Dobrou os agendamentos no primeiro disparo.","Agende seu diagnóstico."],
+"scenes":[{"type":"text","bg":"#0A1322","kicker":"caso real · Gou Odonto","title":"Dobrou os agendamentos","sub":"no primeiro disparo para a base de pacientes.","accent":"#1AA6E3","size":104,"subTop":620,"subSize":88},
+{"type":"cta","bg":"#7A32C4","title":"Sua base de pacientes está parada?","size":96,"button":"Agendar diagnóstico","sub":"diagnóstico comercial gratuito"}]}
