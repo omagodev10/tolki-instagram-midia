@@ -38,6 +38,8 @@ Receitas de cue (`scene` = índice da cena, `at` = segundos a partir do início 
 - **Abrindo com energia (gancho forte):** `{"scene": <cena da moral ou da dor>, "at": 1.1, "kind": "break"}`, `{"scene": <solução>, "kind": "drop"}` e o mesmo break e hit do CTA.
 - **Sem música:** apague `"music"`. Use em depoimento real, assunto sério, explicação com número ou quando a ironia da voz precisa de silêncio. Os efeitos continuam.
 
+Momento exato da música: um cue aceita `"song_t": <segundos na música>` para fixar o trecho que cai ali (ex.: a virada real da Time está em 30,98 s; o song.json marca 31,53, um tempo atrasado). Use quando o cue der FRACO ou cair fora do lugar.
+
 Rodízio: não repita a música do motion anterior e alterne com e sem música conforme o conteúdo. Depois do `mix_motion.py`, cada cue imprime a variação da música: drop e hit pedem +3 dB ou mais, break pede -6 dB ou menos. "FRACO" = troque o cue ou a música.
 Música nova: o Carlos manda o arquivo numa conversa com o Claude, que tira a voz, marca os momentos e coloca na biblioteca.
 

@@ -54,7 +54,7 @@ if J.get('music'):
     M = J['music']
     if M.get('song'):   # remix: arrange the song so drops/breaks/hits land on the video cues
         sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); import music_edit
-        cues = [{'t': sc[c['scene']]['start'] + c.get('at', 0.0), 'kind': c['kind']} for c in M.get('cues', [])]
+        cues = [{'t': sc[c['scene']]['start'] + c.get('at', 0.0), 'kind': c['kind'], 'song_t': c.get('song_t')} for c in M.get('cues', [])]
         src = next((os.path.join(M['song'], f) for f in ('inst.wav', 'inst.mp4', 'inst.m4a', 'inst.mp3') if os.path.exists(os.path.join(M['song'], f))), None)
         if not src: sys.exit('sem instrumental em ' + M['song'] + ' (inst.wav, inst.mp4, inst.m4a ou inst.mp3)')
         music_edit.arrange(src, os.path.join(M['song'], 'song.json'), cues, total, '_music.wav')
