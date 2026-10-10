@@ -10,17 +10,36 @@ O ângulo "história narrada com personagem" está em `HISTORIA.md`.
 - Estrutura: gancho (0 a 3 s), a dor, a virada "a Tolki resolve", "Comenta PALAVRA". Cada cena tem uma animação própria. Conversas, listas e personagens ilustrativos levam "exemplo ilustrativo".
 - Capa separada (1080x1920) no modelo de `exemplo-apuracao/gen_covers.py`, seguindo o rodízio de cor da grade (capa.txt).
 
-## Vozes oficiais (só estas 3, em rodízio; não repita a voz do motion anterior)
+## Vozes oficiais (rodízio aprovado pelo Carlos em 10/10/2026)
+**Principal: Gemini 3.8 Flash TTS, 6 vozes brasileiras nativas.** Rodízio: não repita a voz do motion anterior (Reel) nem a do criativo anterior (anúncio). Variar a voz também dá diversidade de criativo para a Meta.
+| Voz (id) | Perfil | Combina com |
+|---|---|---|
+| `pt-br-podcaster-1` | homem, humor seco | ironia, mito e verdade, "faz sentido? não" |
+| `pt-br-commercial-5` | homem jovem, caloroso | história com personagem, virada |
+| `pt-br-storyteller-4` | homem, perfil comediante | humor, bastidor, assunto do momento |
+| `pt-br-techagent-4` | homem jovem, rápido e energético | dica rápida, número, demonstração |
+| `pt-br-commercial-2` | mulher, confiante | prova de cliente, autoridade |
+| `pt-br-csagent-8` | mulher, energética | dor, urgência, base parada |
+
+Como gerar (o tom é dirigido fala por fala, como um diretor de dublagem):
+1. Escreva `dirigido.json`: `{"estilo": "tom geral", "falas": [{"texto": "...", "estilo": "como dizer esta fala"}, ...]}` (exemplo em `exemplo-gemini/dirigido.json`).
+   - "estilo" curto e concreto em português: "irônico, segurando o riso", "corta seco e sério", "orgulhoso e enfático no número".
+   - Expressões no meio do texto, entre < >: `<laugh>` `<sigh>` `<breath>` `<short pause>` `<long pause>`. No máximo 1 ou 2 por fala. Elas não são lidas.
+   - O texto é lido ao pé da letra: nada de instrução dentro dele. Escreva nomes como se falam: "Ortodôntic" (OrthoDontic), "Espaço Lêizer" (Espaçolaser), números por extenso.
+2. `python3 <repo>/tools/reel-motion/gemini_tts.py dirigido.json v/take.mp3 <voz>` (precisa de `GEMINI_API_KEY` no ambiente; ela está no prompt da tarefa, nunca no repositório). Ele grava também `v/take_lines.json` (as falas sem as etiquetas).
+3. `python3 <repo>/tools/reel-motion/split_take.py v/take.mp3 v/take_lines.json a` como sempre.
+4. Confira por transcrição que todas as falas saíram e que nenhuma etiqueta foi lida em voz alta. Se algo sair errado, gere de novo (cada geração varia um pouco).
+
+**Reserva (só se a API do Gemini falhar):** as 3 vozes antigas, em rodízio.
 | Voz | Clima | Onde gerar |
 |---|---|---|
 | 1 · Bernard | masculina, confiante, narrador de história | Runway `generate_speech`: model `eleven_v3`, voice `Bernard`, languageCode `pt`, speed 1.2 |
 | 4 · Brooks | masculina, leve, conversa | Higgsfield `generate_audio`: model `elevenlabs_v4`, prompt = roteiro, `dialogue` = [{"text": roteiro, "voice_type": "preset", "voice_id": "c2acff45-84b2-4974-892d-89fa2d4e5598"}] (confira com `models_explore` se o formato mudar) |
 | 6 · Sandra | feminina, debochada, ironia | Runway `generate_speech`: model `eleven_v3`, voice `Sandra`, languageCode `pt`, speed 1.2, texto começa com `[sarcastic]` |
 
-Combine voz e roteiro: história e virada pedem Bernard; ironia e "faz sentido? não" pedem Sandra; papo leve, bastidor e dica rápida pedem Brooks. Sem o conector Higgsfield na sessão, alterne só Bernard e Sandra e diga isso na entrega.
 Nunca clone a voz de uma pessoa real (dublador, influenciador, celebridade). A voz antiga (Luana) saiu do padrão.
 
-**Take único (soa mais natural que uma frase por pedido):** mande o roteiro inteiro num pedido, uma fala por linha, sem etiquetas de pausa (elas mudam o jeito de falar).
+**Take único, também nas vozes de reserva (soa mais natural que uma frase por pedido):** mande o roteiro inteiro num pedido, uma fala por linha, sem etiquetas de pausa (elas mudam o jeito de falar).
 Runway: espere o `get_task` dar a URL (dnznrvs05pmza.cloudfront.net) e baixe com curl em `v/take.mp3`. Higgsfield: baixe o resultado do `jobs_wait`.
 Se o `split_take.py` avisar "divisão incerta", gere uma fala por pedido (mesma voz e parâmetros) e passe os arquivos separados por vírgula.
 
