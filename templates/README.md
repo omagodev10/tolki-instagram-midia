@@ -34,3 +34,17 @@ Previews em `previas/` (`_grade.png` mostra o feed intercalado).
 - Conversa, agenda ou recibo ilustrativos levam a marca "exemplo" quando parecerem reais. Sem nome, foto ou número real de paciente.
 - Números só com fonte ou prova permitida (ex.: Odonto Excellence 15% para 45%).
 - Sem emoji, sem travessão, sem degradê.
+
+## Ângulos extras do instagram-skills (opcionais, aprovados pelo Carlos em 10/10/2026)
+Não é obrigação usar. São possibilidades novas de ângulo e formato para a fatia de teste da regra 70/30 (ou quando o tema pedir). Os 70% continuam explorando o que já dá resultado. Vale para carrossel, Reel e criativo de anúncio.
+1. Objetivo do post: escolha um (SALVAR, ENVIAR, COMENTAR ou SEGUIR) e diga na entrega "Objetivo: X". Formatos que combinam: SALVAR = lista, passo a passo, antes e depois; ENVIAR = mito e verdade, opinião contrária defensável; COMENTAR = cena que o dono de clínica reconhece; SEGUIR = transformação com prova.
+2. CTA: "Comente PALAVRA" continua o padrão (o ManyChat entrega algo real). Em post de SALVAR ou ENVIAR pode trocar por "Salva pra usar na próxima campanha" ou "Manda pra quem ainda acha que [mito]". Nunca "comenta SIM", "marca 3 amigos" ou "o que você acha?".
+3. Esqueletos novos:
+   - Antes e depois: o primeiro slide ou cena mostra o DEPOIS, o segundo o ANTES, depois o caminho (encaixa na prova Odonto Excellence, 15% para 45%).
+   - Mito e verdade: o mito precisa ser crença real do dono de clínica (não invente mito); a verdade só com prova permitida. Último slide ou cena pede envio.
+4. Ganchos: "Como a [cliente real] fez X" em vez de "Como fazer X"; número exato com o nome do cliente junto (só provas permitidas, número solto não conta); laço aberto ("o terceiro sai caro", "o 4º quase todo mundo erra").
+5. Carrossel: o ponto mais forte no slide 2 ou 3; penúltimo slide resume tudo numa tela (o que se salva); com menos de 4 pontos reais vira post único.
+6. Reel: laço visual, o último quadro conversa com o primeiro (mesma cor, objeto ou frase).
+7. Cortes de cara de IA em roteiro e legenda: "O resultado?", "A verdade?", "Papo reto", "Vou ser sincero", "Sem X. Sem Y. Só Z.", "Pare de X, comece Y"; no máximo 2 frases soltas de efeito por legenda; evite abrir frase com gerúndio ("Pensando nisso,").
+8. Hashtags: 2 ou 3 de nicho (menos de 50 mil posts), 1 ou 2 médias, no máximo 1 ampla. Métricas e agendamento continuam no Metricool.
+9. Quando usar um destes, registre no painel (campo angulo, ex.: "mito e verdade · objetivo ENVIAR") para comparar salvamentos, envios e CPL com os ângulos de sempre.
