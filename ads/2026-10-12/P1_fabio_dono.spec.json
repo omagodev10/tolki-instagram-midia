@@ -1,0 +1,82 @@
+{
+ "id": "P1_fabio_dono_1012",
+ "angulo": "prova (variação do campeão Fabio, número no 1º segundo + chamada ICP)",
+ "angle": "prova OrthoDontic 54 contratos e R$ 45 mil em disparos, gancho de número, CTA para quem fatura acima de 30 mil",
+ "voz": "pt-br-commercial-2",
+ "musica": "Seven Nation Army (sna) remix",
+ "destino": "https://tolki.com.br/v4/",
+ "lines": [
+  "Cinquenta e quatro contratos em um mês. Recorde da Ortodôntic.",
+  "E o Fábio ainda economizou mais de quarenta e cinco mil reais em disparos.",
+  "A Tolki responde o lead em segundos, qualifica e agenda pelo WhatsApp.",
+  "Mais de quatrocentas e setenta clínicas já usam.",
+  "Se a sua clínica fatura acima de trinta mil, toque no botão e faça o diagnóstico gratuito."
+ ],
+ "scenes": [
+  {
+   "type": "big",
+   "bg": "#0A1322",
+   "kicker": "OrthoDontic · resultado real",
+   "from": 0,
+   "to": 54,
+   "size": 340,
+   "accent": "#1AA6E3",
+   "sub": "contratos em um mês. Recorde.",
+   "subColor": "#C9A6F4",
+   "subSize": 92,
+   "countDur": 1.3
+  },
+  {
+   "type": "big",
+   "bg": "#1597D4",
+   "kicker": "OrthoDontic · disparos",
+   "from": 0,
+   "to": 45,
+   "prefix": "+R$ ",
+   "suffix": " mil",
+   "size": 165,
+   "accent": "#F1E6FB",
+   "sub": "economizados em disparos.",
+   "subColor": "#FFFFFF",
+   "subSize": 92,
+   "countDur": 1.3
+  },
+  {
+   "type": "list",
+   "bg": "#7A32C4",
+   "title": "A Tolki no seu WhatsApp",
+   "items": [
+    "Responde em segundos",
+    "Qualifica",
+    "Agenda"
+   ],
+   "accent": "#25D366",
+   "size": 92,
+   "itemSize": 70,
+   "listTop": 600,
+   "at": [
+    1.0,
+    1.9,
+    2.6
+   ]
+  },
+  {
+   "type": "text",
+   "bg": "#F2F4F7",
+   "kicker": "quem já usa",
+   "title": "+470 clínicas",
+   "sub": "já atendem com a Tolki.",
+   "accent": "#7A32C4",
+   "size": 140,
+   "subTop": 760,
+   "subSize": 96
+  },
+  {
+   "type": "cta",
+   "bg": "#8A3FD1",
+   "title": "Fatura acima de R$ 30 mil?",
+   "button": "Fazer diagnóstico",
+   "sub": "diagnóstico comercial gratuito"
+  }
+ ]
+}

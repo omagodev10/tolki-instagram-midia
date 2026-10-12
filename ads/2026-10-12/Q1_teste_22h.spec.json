@@ -1,0 +1,76 @@
+{
+ "id": "Q1_teste_22h_1012",
+ "angulo": "pergunta de autoavaliação (teste de 4 perguntas, casa com o quiz /v4/)",
+ "angle": "autoavaliação: quanto tempo sua clínica demora para responder às 22h, convite para o teste e prova Odonto Excellence",
+ "voz": "pt-br-podcaster-1",
+ "musica": "sem música",
+ "destino": "https://tolki.com.br/v4/",
+ "lines": [
+  "Pergunta rápida: quanto tempo a sua clínica demora pra responder um lead às dez da noite?",
+  "Se a resposta é amanhã cedo... esse paciente marca com quem respondeu primeiro.",
+  "Faz o teste: quatro perguntas rápidas, e você vê onde a sua clínica perde paciente.",
+  "Na Odonto Excelence, o agendamento foi de quinze pra quarenta e cinco por cento.",
+  "Toque no botão, faça o teste e peça seu diagnóstico gratuito."
+ ],
+ "scenes": [
+  {
+   "type": "chat",
+   "bg": "#0A1322",
+   "time": "22:00",
+   "msg": "Oi! Vocês têm horário essa semana?",
+   "waitLabel": "sem resposta há ",
+   "waitAt": 0.8,
+   "speed": 160,
+   "title": "Quanto tempo sua clínica demora pra responder?",
+   "titleTop": 760,
+   "size": 88,
+   "titleAt": 1.2,
+   "illus": "exemplo ilustrativo"
+  },
+  {
+   "type": "text",
+   "bg": "#F2F4F7",
+   "kicker": "amanhã cedo?",
+   "title": "Ele já marcou com quem respondeu primeiro.",
+   "accent": "#FF4D4D",
+   "size": 100
+  },
+  {
+   "type": "list",
+   "bg": "#7A32C4",
+   "title": "Faça o teste: 4 perguntas",
+   "items": [
+    "Resposta às 22h",
+    "Taxa de agendamento",
+    "Rastreio dos leads",
+    "Base parada"
+   ],
+   "accent": "#25D366",
+   "size": 88,
+   "itemSize": 64,
+   "listTop": 560,
+   "at": [
+    0.9,
+    1.5,
+    2.1,
+    2.7
+   ]
+  },
+  {
+   "type": "beforeafter",
+   "bg": "#0A1322",
+   "kicker": "Odonto Excellence · agendamento",
+   "before": "15%",
+   "after": "45%",
+   "accent": "#1AA6E3",
+   "sub": "com a Tolki no WhatsApp."
+  },
+  {
+   "type": "cta",
+   "bg": "#8A3FD1",
+   "title": "Onde sua clínica perde paciente?",
+   "button": "Fazer o teste",
+   "sub": "e o diagnóstico gratuito"
+  }
+ ]
+}
