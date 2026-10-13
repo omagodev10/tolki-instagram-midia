@@ -87,3 +87,10 @@ Não é obrigação usar. São possibilidades novas de ângulo e formato para a 
 7. Cortes de cara de IA em roteiro e legenda: "O resultado?", "A verdade?", "Papo reto", "Vou ser sincero", "Sem X. Sem Y. Só Z.", "Pare de X, comece Y"; no máximo 2 frases soltas de efeito por legenda; evite abrir frase com gerúndio ("Pensando nisso,").
 8. Hashtags: 2 ou 3 de nicho (menos de 50 mil posts), 1 ou 2 médias, no máximo 1 ampla. Métricas e agendamento continuam no Metricool.
 9. Quando usar um destes, registre no painel (campo angulo, ex.: "mito e verdade · objetivo ENVIAR") para comparar salvamentos, envios e CPL com os ângulos de sempre.
+
+## Regra de clareza (Carlos, 13/10/2026): vale para capa, roteiro e legenda
+"O conteúdo deve ser fácil de ser compreendido." Quem rola o feed é dono de clínica com pressa, entre um paciente e outro.
+- **Capa se explica sozinha, sem o vídeo:** a CENA do problema (notificação, conversa, agenda) + a PERGUNTA DA DOR em palavras simples ("Paciente pediu o preço e sumiu?") + uma linha que promete a resposta ("o erro que manda ele pra outra clínica"). Nada de frase enigmática ou de efeito solta ("Sumiu.", "Quem faz a apuração dos seus pacientes?"). Modelo: `tools/reel-motion/exemplo-capa-clara/capa.html` (troque `__REPO__` pelo caminho do repositório).
+- **Roteiro:** uma ideia por frase, palavras do dia a dia, o problema dito com todas as letras. Nada de metáfora ou frase abstrata ("compra a certeza de que você resolve"); prefira o concreto ("quem só recebe o preço compara e some; quem é ouvido marca"). Teste: alguém que não conhece a Tolki entende cada cena sem a anterior?
+- **Na tela:** nada de símbolo que pode ser lido ao contrário (ex.: riscar a palavra que é justamente o problema).
+- Simples não é tratar o público como bobo: tom de conversa entre donos de clínica, sem explicar o óbvio.
