@@ -1,0 +1,116 @@
+{
+ "id": "D4_conta_quiz_1013",
+ "angulo": "conta (variação do campeão D conta, gancho de pergunta + quiz /v4/)",
+ "angle": "conta do lead perdido com gancho 'quanto custou o lead que você não respondeu ontem', prova +470 clínicas, CTA para o teste de 4 perguntas",
+ "voz": "pt-br-csagent-8",
+ "musica": "Timeless (timeless) remix",
+ "destino": "https://tolki.com.br/v4/",
+ "lines": [
+  "Quanto custou o lead que a sua clínica não respondeu ontem?",
+  "Se você paga cinquenta reais por lead e metade some sem resposta, cada paciente de verdade custou cem.",
+  "E aquele que sumiu? Marcou com a clínica que respondeu primeiro.",
+  "A Tolki responde em segundos, qualifica e agenda pelo WhatsApp oficial.",
+  "Mais de quatrocentas e setenta clínicas já usam.",
+  "Toque no botão, responda quatro perguntas e veja quanto a sua clínica está perdendo."
+ ],
+ "scenes": [
+  {
+   "type": "chat",
+   "bg": "#0A1322",
+   "time": "ontem 21:40",
+   "msg": "Oi! Vocês têm horário essa semana?",
+   "waitLabel": "sem resposta há ",
+   "waitAt": 0.5,
+   "speed": 350,
+   "title": "Quanto custou esse lead?",
+   "titleTop": 780,
+   "size": 104,
+   "titleAt": 0.9,
+   "illus": "exemplo ilustrativo"
+  },
+  {
+   "type": "calc",
+   "bg": "#FFFFFF",
+   "kicker": "conta ilustrativa",
+   "rows": [
+    [
+     "Lead pago",
+     "R$ 50"
+    ],
+    [
+     "Some sem resposta",
+     "metade"
+    ],
+    [
+     "Paciente real",
+     "R$ 100"
+    ]
+   ],
+   "accent": "#FF4D4D",
+   "at": [
+    0.1,
+    1.2,
+    2.6
+   ]
+  },
+  {
+   "type": "text",
+   "bg": "#F2F4F7",
+   "kicker": "e aquele que sumiu?",
+   "title": "Marcou com quem respondeu primeiro.",
+   "accent": "#FF4D4D",
+   "size": 104
+  },
+  {
+   "type": "reply",
+   "bg": "#1597D4",
+   "name": "Sua clínica",
+   "msgs": [
+    {
+     "from": "p",
+     "text": "Oi! Vocês têm horário essa semana?",
+     "time": "21:40",
+     "at": 0.1
+    },
+    {
+     "from": "t",
+     "text": "Oi! Tenho sim. Quinta às 15h ou sexta às 10h, qual fica melhor?",
+     "time": "21:40",
+     "at": 0.9
+    },
+    {
+     "from": "p",
+     "text": "Quinta!",
+     "time": "21:41",
+     "at": 2.0
+    },
+    {
+     "from": "t",
+     "text": "Agendado ✓",
+     "time": "21:41",
+     "at": 2.7
+    }
+   ],
+   "badge": "respondido em segundos",
+   "badgeAt": 3.0
+  },
+  {
+   "type": "text",
+   "bg": "#7A32C4",
+   "kicker": "quem já usa",
+   "title": "+470 clínicas",
+   "sub": "já atendem com a Tolki.",
+   "accent": "#F1E6FB",
+   "size": 140,
+   "subTop": 760,
+   "subSize": 96
+  },
+  {
+   "type": "cta",
+   "bg": "#8A3FD1",
+   "title": "Quanto sua clínica está perdendo?",
+   "button": "Fazer o teste",
+   "sub": "4 perguntas e diagnóstico gratuito"
+  }
+ ]
+}

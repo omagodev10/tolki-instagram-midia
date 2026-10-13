@@ -1,0 +1,82 @@
+{
+ "id": "E1_tres_erros_1013",
+ "angulo": "erro comum / checklist (novo, fatia de teste 30%)",
+ "angle": "3 erros que fazem o lead sumir (resposta no dia seguinte, sem rastreio, base esquecida) com prova Gou Odonto e CTA para o teste de 4 perguntas",
+ "voz": "pt-br-techagent-4",
+ "musica": "sem música",
+ "destino": "https://tolki.com.br/v4/",
+ "lines": [
+  "Três erros que fazem o lead da sua clínica sumir. O terceiro, quase todo mundo comete.",
+  "Erro um: responder só no dia seguinte. O paciente marca com quem respondeu primeiro.",
+  "Erro dois: não saber qual anúncio virou consulta. Aí a verba vai pro anúncio errado.",
+  "Erro três: esquecer quem já pediu orçamento e sumiu.",
+  "Na Gou Odonto, o primeiro disparo pra base dobrou os agendamentos.",
+  "Toque no botão, faça o teste de quatro perguntas e receba seu diagnóstico gratuito."
+ ],
+ "scenes": [
+  {
+   "type": "big",
+   "bg": "#0A1322",
+   "kicker": "erros que fazem o lead sumir",
+   "from": 0,
+   "to": 3,
+   "suffix": " erros",
+   "size": 210,
+   "accent": "#FF4D4D",
+   "sub": "o terceiro, quase todo mundo comete.",
+   "subColor": "#C9A6F4",
+   "subSize": 92,
+   "countDur": 0.9
+  },
+  {
+   "type": "chat",
+   "bg": "#000000",
+   "time": "segunda 20:15",
+   "msg": "Oi, tem horário amanhã?",
+   "waitLabel": "respondido só depois de ",
+   "waitAt": 0.4,
+   "speed": 260,
+   "title": "Erro 1: responder no dia seguinte.",
+   "titleTop": 780,
+   "size": 96,
+   "titleAt": 0.9,
+   "illus": "exemplo ilustrativo"
+  },
+  {
+   "type": "text",
+   "bg": "#F2F4F7",
+   "kicker": "erro 2",
+   "title": "Não saber qual anúncio virou consulta.",
+   "sub": "A verba vai pro anúncio errado.",
+   "accent": "#7A32C4",
+   "size": 100,
+   "subTop": 900,
+   "subSize": 84
+  },
+  {
+   "type": "stack",
+   "bg": "#E9EDF2",
+   "title": "Erro 3: esquecer quem pediu orçamento.",
+   "size": 76,
+   "n": 40,
+   "illus": "exemplo ilustrativo",
+   "pileTop": 690
+  },
+  {
+   "type": "beforeafter",
+   "bg": "#0A1322",
+   "kicker": "Gou Odonto · agendamentos",
+   "before": "1x",
+   "after": "2x",
+   "accent": "#25D366",
+   "sub": "no primeiro disparo pra base."
+  },
+  {
+   "type": "cta",
+   "bg": "#8A3FD1",
+   "title": "Sua clínica comete algum?",
+   "button": "Fazer o teste",
+   "sub": "4 perguntas e diagnóstico gratuito"
+  }
+ ]
+}
