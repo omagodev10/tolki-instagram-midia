@@ -1,0 +1,61 @@
+{
+ "id": "I2_icp_nao_e_lead_quiz_1014",
+ "angulo": "ICP (campeão H14, variação de gancho 70%) com contraintuitivo + prova Odonto Excellence",
+ "angle": "fatura +30 mil? o problema não é falta de lead; olhe o que acontece depois do clique; prova Edson 15% para 45%, destino quiz /v4/",
+ "voz": "pt-br-podcaster-1",
+ "musica": "sem música",
+ "destino": "https://tolki.com.br/v4/",
+ "lines": [
+  "Sua clínica fatura mais de trinta mil? Então o problema provavelmente não é falta de lead.",
+  "Todo mês o anúncio fica mais caro. E muita conversa morre no WhatsApp sem resposta.",
+  "Antes de aumentar a verba, olha o que acontece depois do clique.",
+  "Na Odonto Excellence, o agendamento foi de quinze pra quarenta e cinco por cento.",
+  "Toque no botão, faça o teste de quatro perguntas e receba seu diagnóstico gratuito."
+ ],
+ "scenes": [
+  {
+   "type": "text",
+   "bg": "#0A1322",
+   "kicker": "clínica que fatura +30 mil",
+   "title": "O problema não é falta de lead.",
+   "sub": "provavelmente.",
+   "accent": "#FF8A8A",
+   "size": 116,
+   "subTop": 860
+  },
+  {
+   "type": "stack",
+   "bg": "#E9EDF2",
+   "title": "Conversas sem resposta no WhatsApp.",
+   "size": 76,
+   "n": 40,
+   "illus": "exemplo ilustrativo",
+   "pileTop": 690
+  },
+  {
+   "type": "text",
+   "bg": "#F2F4F7",
+   "kicker": "antes de aumentar a verba",
+   "title": "Olhe o que acontece depois do clique.",
+   "accent": "#7A32C4",
+   "size": 104,
+   "subTop": 900
+  },
+  {
+   "type": "beforeafter",
+   "bg": "#0A1322",
+   "kicker": "Odonto Excellence · agendamento",
+   "before": "15%",
+   "after": "45%",
+   "accent": "#25D366",
+   "sub": "mesmo anúncio, outro atendimento."
+  },
+  {
+   "type": "cta",
+   "bg": "#8A3FD1",
+   "title": "Sua clínica fatura +30 mil?",
+   "button": "Fazer o teste",
+   "sub": "4 perguntas e diagnóstico gratuito"
+  }
+ ]
+}

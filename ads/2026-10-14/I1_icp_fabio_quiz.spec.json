@@ -1,0 +1,80 @@
+{
+ "id": "I1_icp_fabio_quiz_1014",
+ "angulo": "ICP (campeão H14, variação de gancho 70%) + prova OrthoDontic",
+ "angle": "chamada ICP direta (fatura +30 mil e vive de anúncio) + quem responde primeiro fecha + prova Fabio 54 contratos, destino quiz /v4/",
+ "voz": "pt-br-commercial-2",
+ "musica": "sna (Seven Nation Army remix: drop na prova, break antes do CTA, hit no CTA)",
+ "destino": "https://tolki.com.br/v4/",
+ "lines": [
+  "Se a sua clínica fatura mais de trinta mil por mês e vive de anúncio, esse vídeo é pra você.",
+  "Você paga pelo lead. Ele chama no WhatsApp. E o paciente fecha com quem responde primeiro.",
+  "Na OrthoDontic, o Fabio fechou cinquenta e quatro contratos em um mês. Recorde da clínica.",
+  "Com a Tolki, cada lead que chega no WhatsApp é respondido, qualificado e agendado.",
+  "Toque no botão, responda quatro perguntas e receba seu diagnóstico comercial gratuito."
+ ],
+ "scenes": [
+  {
+   "type": "text",
+   "bg": "#FFFFFF",
+   "kicker": "donos de clínica",
+   "title": "Fatura +30 mil e vive de anúncio?",
+   "sub": "esse vídeo é pra você.",
+   "accent": "#8A3FD1",
+   "size": 104,
+   "subTop": 900
+  },
+  {
+   "type": "chat",
+   "bg": "#000000",
+   "time": "terça 19:42",
+   "msg": "Oi, quanto custa o clareamento?",
+   "waitLabel": "respondido só depois de ",
+   "waitAt": 0.4,
+   "speed": 260,
+   "title": "Quem responde primeiro fecha.",
+   "titleTop": 780,
+   "size": 96,
+   "titleAt": 0.9,
+   "illus": "exemplo ilustrativo"
+  },
+  {
+   "type": "big",
+   "bg": "#0A1322",
+   "kicker": "OrthoDontic · Fabio",
+   "from": 0,
+   "to": 54,
+   "suffix": "",
+   "size": 300,
+   "accent": "#25D366",
+   "sub": "contratos em um mês. Recorde da clínica.",
+   "subColor": "#C9A6F4",
+   "subSize": 84,
+   "countDur": 1.0
+  },
+  {
+   "type": "list",
+   "bg": "#7A32C4",
+   "title": "Com a Tolki, cada lead é",
+   "items": [
+    "Respondido",
+    "Qualificado",
+    "Agendado"
+   ],
+   "accent": "#25D366",
+   "size": 84,
+   "listTop": 560,
+   "at": [
+    1.2,
+    1.9,
+    2.6
+   ]
+  },
+  {
+   "type": "cta",
+   "bg": "#8A3FD1",
+   "title": "Quanto lead sua clínica deixa escapar?",
+   "button": "Fazer o teste",
+   "sub": "4 perguntas e diagnóstico gratuito"
+  }
+ ]
+}
