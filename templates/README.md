@@ -55,3 +55,12 @@ Não é obrigação usar. São possibilidades novas de ângulo e formato para a 
 - **Roteiro:** uma ideia por frase, palavras do dia a dia, o problema dito com todas as letras. Nada de metáfora ou frase abstrata ("compra a certeza de que você resolve"); prefira o concreto ("quem só recebe o preço compara e some; quem é ouvido marca"). Teste: alguém que não conhece a Tolki entende cada cena sem a anterior?
 - **Na tela:** nada de símbolo que pode ser lido ao contrário (ex.: riscar a palavra que é justamente o problema).
 - Simples não é tratar o público como bobo: tom de conversa entre donos de clínica, sem explicar o óbvio.
+
+## Padrão de capa da manhã (aprovado pelo Carlos em 14/10/2026)
+Modelo: `elaborados/capa-centralizada.html` (exemplo publicado: `posts/2026-10-14-manha/01.jpg`).
+- Texto centralizado. Topo só com o ícone e "TOLKI": sem "Nº XX · TEMA" e sem linha de horário ou "exemplo" em cima do título.
+- Título = a dor em palavras do dono de clínica (Montserrat 900, caixa alta) + complemento em Instrument Serif itálico roxo.
+- No meio, o elemento visual da cena (balões de WhatsApp com as perguntas reais, notificações, agenda, recibo...).
+- Embaixo, UMA linha de curiosidade que faz arrastar sem prometer nada ("Nenhuma dessas perguntas precisava passar por ela.").
+- Rodapé: fio, @tolkibrasil e "Arrasta →". Foto, quando usada, fica de fundo clarinho (camada lisa por cima, sem degradê) ou com o título sobre área lisa.
+- Varie a cor de fundo, o elemento do meio e a foto a cada post; o layout centralizado é o que fica.
