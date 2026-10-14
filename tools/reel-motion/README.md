@@ -94,3 +94,14 @@ Não é obrigação usar. São possibilidades novas de ângulo e formato para a 
 - **Roteiro:** uma ideia por frase, palavras do dia a dia, o problema dito com todas as letras. Nada de metáfora ou frase abstrata ("compra a certeza de que você resolve"); prefira o concreto ("quem só recebe o preço compara e some; quem é ouvido marca"). Teste: alguém que não conhece a Tolki entende cada cena sem a anterior?
 - **Na tela:** nada de símbolo que pode ser lido ao contrário (ex.: riscar a palavra que é justamente o problema).
 - Simples não é tratar o público como bobo: tom de conversa entre donos de clínica, sem explicar o óbvio.
+
+## Padrão de capa do Reel (Carlos, 14/10/2026; junta a regra de clareza de 13/10 com o padrão de capa centralizada de 14/10)
+Modelo: `tools/reel-motion/exemplo-capa-clara/capa-centralizada.html` (1080x1920). O mesmo padrão da capa da manhã (`templates/elaborados/capa-centralizada.html`), deslocado para a área que aparece na grade.
+- Tudo entre y 285 e y 1635: é o recorte 4:5 que a grade do perfil mostra. Fora dessa faixa, só fundo.
+- Texto CENTRALIZADO. Topo só com o ícone e "TOLKI": sem "REEL · DD/MM", sem Nº, sem horário em cima do título.
+- Título = a PERGUNTA ou a cena da DOR com as palavras do dono de clínica (Montserrat 900, caixa alta) + complemento curto em Instrument Serif itálico.
+- No meio, a CENA do problema (notificação, conversa, agenda, balões com as perguntas reais). Se a cena tiver valor, nome ou conversa que pareça real, "exemplo ilustrativo" vai pequeno embaixo, nunca no topo.
+- Embaixo, UMA linha de CURIOSIDADE concreta que os 30 segundos respondem ("o erro que manda ele pra outra clínica", "Nenhuma dessas perguntas precisava passar por ela."). Proibido promessa genérica ("Arrasta: o que dá pra...", "tirar das costas", "o segredo", "descubra", "veja como"), frase enigmática ou de efeito solta ("Sumiu."), metáfora.
+- Público: quem responde o WhatsApp é a recepção ou o comercial, nunca o doutor no meio da consulta.
+- Teste da voz alta: se a capa soar como anúncio, slogan ou frase de IA, reescreva. Entregue a capa com 2 alternativas.
+- Varie a cor de fundo (rodízio do capa.txt), a cena do meio e a foto (foto nova gerada para a cena, de fundo clarinho com camada lisa por cima, sem degradê); o layout centralizado é o que fica.
