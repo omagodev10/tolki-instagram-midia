@@ -97,7 +97,7 @@ def main():
             r_ = np.linspace(0, 1, xf); z[-xf:] = z[-xf:] * (1 - r_) + p[:xf] * r_; z = np.concatenate([z, p[xf:]])
         segs.append(z)
     tot = sum(len(s) for s in segs) / SR + 0.25 * (len(L) - 1); words = sum(nwords(l) for l in L)
-    f = float(np.clip(TARGET / (words / tot), 1.0, CAP))
+    f = float(os.environ['TEMPO']) if os.environ.get('TEMPO') else float(np.clip(TARGET / (words / tot), 1.0, CAP))   # TEMPO=1.0: sem aceleração (padrão desde 15/10/2026)
     print(f'fala {tot:.1f}s, {words} palavras, ritmo {words / tot:.2f} palavras/s -> andamento x{f:.2f}')
     info = []
     for k, z in enumerate(segs):

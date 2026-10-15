@@ -19,7 +19,13 @@ O ângulo "história narrada com personagem" está em `HISTORIA.md`.
 | `pt-br-storyteller-4` | homem, perfil comediante | humor, bastidor, assunto do momento |
 | `pt-br-techagent-4` | homem jovem, rápido e energético | dica rápida, número, demonstração |
 | `pt-br-commercial-2` | mulher, confiante | prova de cliente, autoridade |
-| `pt-br-csagent-8` | mulher, energética | dor, urgência, base parada |
+| `pt-br-podcaster-2` | mulher, 29 anos, confiante e clara (entrou no lugar da csagent-8 em 15/10/2026) | dor, urgência, base parada, assunto do momento |
+
+**Padrão de voz natural (Carlos, 15/10/2026):** a csagent-8 e a aceleração soaram robóticas; a podcaster-2 num take só, sem aceleração, foi aprovada.
+- Gere o roteiro inteiro num pedido só (take único), com o estilo geral em português: "português do Brasil bem natural, como uma dona de clínica mandando um áudio de WhatsApp pra outra: conversa de verdade, ritmo ágil, entonação variada, sem tom de locução nem de propaganda", e um estilo curto por fala.
+- Não acelere a voz: rode o split_take.py com `TEMPO=1.0` (só corta as falas e encurta pausas). Se passar de 35 s, encurte o roteiro em vez de acelerar.
+- Nunca escreva "Tolki" no texto falado (a voz pronuncia errado): use "a gente" ou "nosso time". Números por extenso.
+- Exemplo aprovado: `posts/2026-10-15-noite/reel.mp4`.
 
 Como gerar (o tom é dirigido fala por fala, como um diretor de dublagem):
 1. Escreva `dirigido.json`: `{"estilo": "tom geral", "falas": [{"texto": "...", "estilo": "como dizer esta fala"}, ...]}` (exemplo em `exemplo-gemini/dirigido.json`).
@@ -44,7 +50,7 @@ Runway: espere o `get_task` dar a URL (dnznrvs05pmza.cloudfront.net) e baixe com
 Se o `split_take.py` avisar "divisão incerta", gere uma fala por pedido (mesma voz e parâmetros) e passe os arquivos separados por vírgula.
 
 ## Ritmo (regra aprovada)
-`python3 <repo>/tools/reel-motion/split_take.py v/take.mp3 roteiro.json a` faz tudo: corta uma fala por cena, encurta pausas acima de 0,38 s para 0,30 s (a pausa cômica curta fica) e acelera para 3,3 palavras por segundo, entre 1,0x e 1,3x, sem mudar o tom. `roteiro.json` = `{"lines": [...]}`. Leia o que ele imprime: com "ATENÇÃO", refaça a voz antes de seguir.
+`python3 <repo>/tools/reel-motion/split_take.py v/take.mp3 roteiro.json a` faz tudo: corta uma fala por cena, encurta pausas acima de 0,38 s para 0,30 s (a pausa cômica curta fica) e acelera para 3,3 palavras por segundo, entre 1,0x e 1,3x, sem mudar o tom. Desde 15/10/2026 o padrão é `TEMPO=1.0 python3 .../split_take.py ...` (sem aceleração, veja o padrão de voz natural acima). `roteiro.json` = `{"lines": [...]}`. Leia o que ele imprime: com "ATENÇÃO", refaça a voz antes de seguir.
 
 ## Música (remix: o melhor momento cai na hora certa)
 As instrumentais (sem a voz do cantor) ficam numa biblioteca privada (artifact "Biblioteca de músicas Tolki"; o link está no prompt da tarefa). Não suba música com direitos neste repositório.
