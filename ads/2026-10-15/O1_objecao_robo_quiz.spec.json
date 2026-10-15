@@ -1,0 +1,94 @@
+{
+ "id": "O1_objecao_robo_quiz_1015",
+ "angulo": "Objeção (teste 30%): IA no WhatsApp parece robô? + prova Odonto Excellence e +470 clínicas",
+ "angle": "desmonta a objeção mostrando uma conversa natural (exemplo ilustrativo) que acolhe o medo do paciente e oferece horário; prova Edson 15% para 45%; destino quiz /v4/",
+ "voz": "pt-br-storyteller-4",
+ "musica": "Virada (synth-virada, trilha original Tolki)",
+ "destino": "https://tolki.com.br/v4/",
+ "lines": [
+  "Inteligência artificial no WhatsApp da clínica parece robô? Olha essa conversa.",
+  "Ela acolhe o medo do paciente, responde na hora e já oferece o horário.",
+  "Nada de menu com número. É conversa de verdade, a qualquer hora.",
+  "Na Odonto Excellence, o agendamento foi de quinze pra quarenta e cinco por cento.",
+  "Mais de quatrocentas e setenta clínicas já atendem assim.",
+  "Toque no botão e faça o teste de quatro perguntas. O diagnóstico é gratuito."
+ ],
+ "scenes": [
+  {
+   "type": "text",
+   "bg": "#0A1322",
+   "kicker": "a dúvida de todo dono de clínica",
+   "title": "IA no WhatsApp parece robô?",
+   "accent": "#FF8A8A",
+   "size": 116
+  },
+  {
+   "type": "reply",
+   "bg": "#1597D4",
+   "name": "Sua clínica",
+   "msgs": [
+    {
+     "from": "p",
+     "text": "Oi! Tenho um pouco de medo de dentista.",
+     "time": "21:12",
+     "at": 0.1
+    },
+    {
+     "from": "t",
+     "text": "Super normal, a gente vai com calma. Prefere um horário mais tranquilo, no fim da tarde?",
+     "time": "21:12",
+     "at": 0.8
+    },
+    {
+     "from": "p",
+     "text": "Prefiro sim!",
+     "time": "21:13",
+     "at": 1.9
+    },
+    {
+     "from": "t",
+     "text": "Quinta às 17h fica bom?",
+     "time": "21:13",
+     "at": 2.5
+    }
+   ],
+   "badge": "respondido em segundos",
+   "badgeAt": 2.9
+  },
+  {
+   "type": "text",
+   "bg": "#F2F4F7",
+   "kicker": "sem menu de número",
+   "title": "Conversa de verdade, a qualquer hora.",
+   "accent": "#7A32C4",
+   "size": 104
+  },
+  {
+   "type": "beforeafter",
+   "bg": "#0A1322",
+   "kicker": "Odonto Excellence · agendamento",
+   "before": "15%",
+   "after": "45%",
+   "accent": "#25D366",
+   "sub": "com a Tolki no WhatsApp."
+  },
+  {
+   "type": "text",
+   "bg": "#7A32C4",
+   "kicker": "quem já usa",
+   "title": "+470 clínicas",
+   "sub": "já atendem assim.",
+   "accent": "#F1E6FB",
+   "size": 140,
+   "subTop": 760,
+   "subSize": 96
+  },
+  {
+   "type": "cta",
+   "bg": "#8A3FD1",
+   "title": "Veja como sua clínica atende.",
+   "button": "Fazer o teste",
+   "sub": "4 perguntas e diagnóstico gratuito"
+  }
+ ]
+}

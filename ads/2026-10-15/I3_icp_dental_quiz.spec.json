@@ -1,0 +1,70 @@
+{
+ "id": "I3_icp_dental_quiz_1015",
+ "angulo": "ICP (campeão H14, variação de gancho 70%) + prova Dental Clinic",
+ "angle": "chamada direta ao dono que fatura +30 mil e vive de anúncio; dor da recepção sem tempo; prova Dr. Felipe Mafra +38% de agendamentos em 10 meses; destino quiz /v4/",
+ "voz": "pt-br-commercial-5",
+ "musica": "sem música",
+ "destino": "https://tolki.com.br/v4/",
+ "lines": [
+  "Se a sua clínica fatura mais de trinta mil e vive de anúncio, presta atenção.",
+  "O lead chega, mas a recepção não dá conta de responder todo mundo na hora.",
+  "E quem espera resposta marca com outra clínica.",
+  "Na Dental Clinic, do doutor Felipe Mafra, os agendamentos subiram trinta e oito por cento em dez meses.",
+  "Toque no botão, responda quatro perguntas e receba seu diagnóstico comercial gratuito."
+ ],
+ "scenes": [
+  {
+   "type": "text",
+   "bg": "#0A1322",
+   "kicker": "para dono de clínica",
+   "title": "Fatura +30 mil e vive de anúncio?",
+   "accent": "#25D366",
+   "size": 112
+  },
+  {
+   "type": "stack",
+   "bg": "#E9EDF2",
+   "title": "Lead chegando. Recepção sem tempo.",
+   "size": 80,
+   "n": 40,
+   "illus": "exemplo ilustrativo",
+   "pileTop": 690
+  },
+  {
+   "type": "chat",
+   "bg": "#000000",
+   "time": "terça 19:40",
+   "msg": "Oi! Queria marcar uma avaliação.",
+   "waitLabel": "sem resposta há ",
+   "waitAt": 0.4,
+   "speed": 300,
+   "title": "Quem espera, marca com outra clínica.",
+   "titleTop": 780,
+   "size": 92,
+   "titleAt": 0.8,
+   "illus": "exemplo ilustrativo"
+  },
+  {
+   "type": "big",
+   "bg": "#0A1322",
+   "kicker": "Dental Clinic · Dr. Felipe Mafra",
+   "from": 0,
+   "to": 38,
+   "prefix": "+",
+   "suffix": "%",
+   "size": 260,
+   "accent": "#25D366",
+   "sub": "de agendamentos em 10 meses.",
+   "subColor": "#C9A6F4",
+   "subSize": 84,
+   "countDur": 1.2
+  },
+  {
+   "type": "cta",
+   "bg": "#8A3FD1",
+   "title": "Sua clínica fatura +30 mil?",
+   "button": "Fazer o teste",
+   "sub": "4 perguntas e diagnóstico gratuito"
+  }
+ ]
+}
