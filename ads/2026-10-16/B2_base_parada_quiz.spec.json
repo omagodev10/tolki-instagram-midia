@@ -1,0 +1,69 @@
+{
+ "id": "B2_base_parada_quiz_1016",
+ "angulo": "base parada (curiosidade de método do adclaude 6, versão honesta com prova; 70%)",
+ "angle": "antes de pagar mais anúncio, a base de pacientes parada no WhatsApp; provas Gou Odonto e Instituto Victor Santos; destino quiz /v4/",
+ "voz": "pt-br-podcaster-2",
+ "musica": "Confiante (synth-confiante, trilha original Tolki)",
+ "destino": "https://tolki.com.br/v4/",
+ "lines": [
+  "Antes de colocar mais dinheiro em anúncio, olha a lista de pacientes que já passaram pela sua clínica.",
+  "Gente que fez avaliação, pediu orçamento e nunca mais voltou. Tá tudo parado no WhatsApp.",
+  "Na Gou Odonto, o primeiro disparo pra essa base dobrou os agendamentos.",
+  "E o Instituto Victor Santos mandou duzentas mil mensagens em seis meses e economizou sessenta mil reais.",
+  "Se a sua clínica fatura mais de trinta mil, toque no botão, responda quatro perguntas e receba seu diagnóstico comercial gratuito."
+ ],
+ "scenes": [
+  {
+   "type": "text",
+   "bg": "#0A1322",
+   "kicker": "antes de pagar mais anúncio",
+   "title": "Olhe os pacientes que você já tem.",
+   "accent": "#25D366",
+   "size": 104
+  },
+  {
+   "type": "stack",
+   "bg": "#E9EDF2",
+   "title": "Avaliação, orçamento... e nunca mais voltou.",
+   "size": 76,
+   "n": 40,
+   "illus": "exemplo ilustrativo",
+   "pileTop": 690
+  },
+  {
+   "type": "big",
+   "bg": "#0A1322",
+   "kicker": "Gou Odonto · primeiro disparo para a base",
+   "from": 1,
+   "to": 2,
+   "suffix": "x",
+   "size": 300,
+   "accent": "#25D366",
+   "sub": "dobrou os agendamentos.",
+   "subColor": "#C9A6F4",
+   "subSize": 84,
+   "countDur": 0.8
+  },
+  {
+   "type": "big",
+   "bg": "#7A32C4",
+   "kicker": "Instituto Victor Santos · 6 meses",
+   "from": 0,
+   "to": 200,
+   "suffix": " mil",
+   "size": 220,
+   "accent": "#F1E6FB",
+   "sub": "mensagens e R$ 60 mil economizados.",
+   "subColor": "#FFFFFF",
+   "subSize": 76,
+   "countDur": 1.2
+  },
+  {
+   "type": "cta",
+   "bg": "#8A3FD1",
+   "title": "Sua clínica fatura +30 mil?",
+   "button": "Fazer o teste",
+   "sub": "4 perguntas e diagnóstico gratuito"
+  }
+ ]
+}

@@ -1,0 +1,29 @@
+{
+ "estilo": "português do Brasil bem natural, contando uma história curta pra um amigo dono de clínica: conversa de verdade, ritmo ágil, entonação variada, sem tom de locução nem de propaganda",
+ "falas": [
+  {
+   "texto": "Essa é a Juliana. Domingo, nove da noite, ela pediu avaliação de implante pra três clínicas.",
+   "estilo": "começando uma história, curioso e próximo"
+  },
+  {
+   "texto": "A primeira respondeu na segunda, às onze da manhã. <short pause> A segunda, só na terça.",
+   "estilo": "levemente irônico, segurando o riso na segunda frase"
+  },
+  {
+   "texto": "A terceira respondeu na hora, tirou as dúvidas e já marcou a avaliação.",
+   "estilo": "acelera, animado, virada da história"
+  },
+  {
+   "texto": "Adivinha onde a Juliana fez o implante. <short pause> Paciente não some. Paciente vai pra quem responde primeiro.",
+   "estilo": "pergunta retórica com sorriso, depois sério e convicto na moral"
+  },
+  {
+   "texto": "Na Odonto Excellence, o agendamento foi de quinze pra quarenta e cinco por cento.",
+   "estilo": "orgulhoso e enfático nos números"
+  },
+  {
+   "texto": "Se a sua clínica fatura mais de trinta mil, toque no botão e faça seu diagnóstico comercial gratuito.",
+   "estilo": "convite caloroso e direto"
+  }
+ ]
+}

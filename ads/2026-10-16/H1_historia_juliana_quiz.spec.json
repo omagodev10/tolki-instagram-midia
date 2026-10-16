@@ -1,0 +1,100 @@
+{
+ "id": "H1_historia_juliana_quiz_1016",
+ "angulo": "historia (personagem ilustrativo; teste 30%) + prova Odonto Excellence",
+ "angle": "Juliana pede avaliação de implante a 3 clínicas no domingo à noite; fecha com quem respondeu na hora; prova 15% para 45%; destino quiz /v4/",
+ "voz": "pt-br-commercial-5",
+ "musica": "Urgência (synth-urgencia, trilha original Tolki)",
+ "destino": "https://tolki.com.br/v4/",
+ "lines": [
+  "Essa é a Juliana. Domingo, nove da noite, ela pediu avaliação de implante pra três clínicas.",
+  "A primeira respondeu na segunda, às onze da manhã. A segunda, só na terça.",
+  "A terceira respondeu na hora, tirou as dúvidas e já marcou a avaliação.",
+  "Adivinha onde a Juliana fez o implante. Paciente não some. Paciente vai pra quem responde primeiro.",
+  "Na Odonto Excellence, o agendamento foi de quinze pra quarenta e cinco por cento.",
+  "Se a sua clínica fatura mais de trinta mil, toque no botão e faça seu diagnóstico comercial gratuito."
+ ],
+ "scenes": [
+  {
+   "type": "text",
+   "bg": "#F2F4F7",
+   "kicker": "história ilustrativa",
+   "title": "Essa é a Juliana.",
+   "sub": "domingo, 21h, pediu avaliação a 3 clínicas",
+   "accent": "#7A32C4",
+   "size": 120,
+   "subTop": 760,
+   "subSize": 64
+  },
+  {
+   "type": "chat",
+   "bg": "#000000",
+   "time": "domingo 21:00",
+   "msg": "Oi! Queria marcar uma avaliação de implante.",
+   "waitLabel": "sem resposta há ",
+   "waitAt": 0.3,
+   "speed": 2000,
+   "title": "Clínica 1: segunda. Clínica 2: terça.",
+   "titleTop": 780,
+   "size": 84,
+   "titleAt": 0.5,
+   "illus": "exemplo ilustrativo"
+  },
+  {
+   "type": "reply",
+   "bg": "#1597D4",
+   "name": "Clínica 3",
+   "msgs": [
+    {
+     "from": "p",
+     "text": "Oi! Queria marcar uma avaliação de implante.",
+     "time": "21:00",
+     "at": 0.1
+    },
+    {
+     "from": "t",
+     "text": "Oi, Juliana! Claro. Posso tirar suas dúvidas e já ver um horário?",
+     "time": "21:00",
+     "at": 0.7
+    },
+    {
+     "from": "p",
+     "text": "Pode sim!",
+     "time": "21:01",
+     "at": 1.8
+    },
+    {
+     "from": "t",
+     "text": "Terça às 9h fica bom?",
+     "time": "21:01",
+     "at": 2.6
+    }
+   ],
+   "badge": "respondido na hora",
+   "badgeAt": 3.0
+  },
+  {
+   "type": "text",
+   "bg": "#0A1322",
+   "kicker": "moral da história",
+   "title": "Paciente vai pra quem responde primeiro.",
+   "accent": "#25D366",
+   "size": 100
+  },
+  {
+   "type": "beforeafter",
+   "bg": "#0A1322",
+   "kicker": "Odonto Excellence · agendamento",
+   "before": "15%",
+   "after": "45%",
+   "accent": "#25D366",
+   "sub": "com a Tolki no WhatsApp."
+  },
+  {
+   "type": "cta",
+   "bg": "#8A3FD1",
+   "title": "Sua clínica fatura +30 mil?",
+   "button": "Fazer o teste",
+   "sub": "4 perguntas e diagnóstico gratuito"
+  }
+ ]
+}
