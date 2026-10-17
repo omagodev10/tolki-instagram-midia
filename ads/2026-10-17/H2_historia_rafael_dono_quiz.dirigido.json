@@ -1,0 +1,11 @@
+{
+ "estilo": "português do Brasil bem natural, contando um causo curto pra um amigo dono de clínica: conversa de verdade, ritmo ágil, entonação variada, um humor leve, sem tom de locução nem de propaganda",
+ "falas": [
+  {"texto": "Esse é o Rafael, dono de clínica. Todo mês ele paga anúncio pra chegar paciente no WhatsApp.", "estilo": "começando um causo, próximo e curioso"},
+  {"texto": "Só que a recepção tá atendendo no balcão. <short pause> A mensagem das sete da noite fica pra amanhã.", "estilo": "levemente irônico, como quem já viu isso mil vezes"},
+  {"texto": "No dia seguinte, o paciente já marcou em outra clínica. E o Rafael culpa o anúncio.", "estilo": "segurando o riso no culpa o anúncio"},
+  {"texto": "O problema não é o anúncio. <short pause> É quem responde. Com a gente, o WhatsApp responde na hora, tira as dúvidas e agenda.", "estilo": "fica sério e convicto, depois acelera animado na solução"},
+  {"texto": "Na Ortodôntic, foram cinquenta e quatro contratos em um mês. Recorde da clínica.", "estilo": "orgulhoso e enfático no número"},
+  {"texto": "Se a sua clínica fatura mais de trinta mil, toque no botão e faça seu diagnóstico comercial gratuito.", "estilo": "convite caloroso e direto"}
+ ]
+}

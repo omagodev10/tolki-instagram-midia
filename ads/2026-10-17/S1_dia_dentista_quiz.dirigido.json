@@ -1,0 +1,11 @@
+{
+ "estilo": "português do Brasil bem natural, como uma dona de clínica mandando um áudio de WhatsApp pra outra: conversa de verdade, ritmo ágil, entonação variada, sem tom de locução nem de propaganda",
+ "falas": [
+  {"texto": "Dia vinte e cinco é Dia do Dentista. Então, uma pergunta pra quem é dono de clínica.", "estilo": "simpática, puxando conversa"},
+  {"texto": "Quantos pacientes ficaram sem resposta essa semana? <short pause> Às dez da noite? No sábado? No feriado?", "estilo": "provocando de leve, uma pergunta atrás da outra"},
+  {"texto": "Quem pede avaliação no sábado e espera até segunda marca com quem respondeu primeiro.", "estilo": "séria e direta, como quem conta um fato"},
+  {"texto": "Com a gente, o WhatsApp da clínica responde na hora, tira as dúvidas e já agenda.", "estilo": "confiante, animada na solução"},
+  {"texto": "Na Gou Odonto, os agendamentos dobraram já no primeiro disparo pra base de pacientes.", "estilo": "orgulhosa e enfática no dobraram"},
+  {"texto": "Se a sua clínica fatura mais de trinta mil, toque no botão e faça seu diagnóstico comercial gratuito.", "estilo": "convite caloroso e direto"}
+ ]
+}

@@ -1,0 +1,108 @@
+{
+ "id": "S1_dia_dentista_quiz_1017",
+ "angulo": "sazonal Dia do Dentista (25/10) + pergunta de autoavaliação (teste 30%, ângulo novo) + prova Gou Odonto",
+ "angle": "Dia do Dentista: quantos pacientes ficaram sem resposta essa semana (22h, sábado, feriado)? quem espera até segunda marca com quem respondeu primeiro; prova Gou Odonto dobrou agendamentos no primeiro disparo da base; destino quiz /v4/",
+ "voz": "pt-br-commercial-2",
+ "musica": "sem música",
+ "destino": "https://tolki.com.br/v4/",
+ "lines": [
+  "Dia vinte e cinco é Dia do Dentista. Então, uma pergunta pra quem é dono de clínica.",
+  "Quantos pacientes ficaram sem resposta essa semana? Às dez da noite? No sábado? No feriado?",
+  "Quem pede avaliação no sábado e espera até segunda marca com quem respondeu primeiro.",
+  "Com a gente, o WhatsApp da clínica responde na hora, tira as dúvidas e já agenda.",
+  "Na Gou Odonto, os agendamentos dobraram já no primeiro disparo pra base de pacientes.",
+  "Se a sua clínica fatura mais de trinta mil, toque no botão e faça seu diagnóstico comercial gratuito."
+ ],
+ "scenes": [
+  {
+   "type": "text",
+   "bg": "#F2F4F7",
+   "kicker": "25 de outubro",
+   "title": "Dia do Dentista.",
+   "sub": "uma pergunta pra quem é dono de clínica",
+   "accent": "#1597D4",
+   "size": 120,
+   "subTop": 760,
+   "subSize": 64
+  },
+  {
+   "type": "text",
+   "bg": "#0A1322",
+   "kicker": "pergunta rápida",
+   "title": "Quantos ficaram sem resposta essa semana?",
+   "sub": "às 22h, no sábado, no feriado",
+   "accent": "#FF4D4D",
+   "size": 96,
+   "subTop": 900,
+   "subSize": 64
+  },
+  {
+   "type": "chat",
+   "bg": "#000000",
+   "time": "sábado 22:10",
+   "msg": "Oi! Queria marcar uma avaliação.",
+   "waitLabel": "sem resposta há ",
+   "waitAt": 0.3,
+   "speed": 800,
+   "title": "Esperou até segunda? Marcou em outra.",
+   "titleTop": 780,
+   "size": 84,
+   "titleAt": 0.5,
+   "illus": "exemplo ilustrativo"
+  },
+  {
+   "type": "reply",
+   "bg": "#1597D4",
+   "name": "Sua clínica",
+   "msgs": [
+    {
+     "from": "p",
+     "text": "Oi! Queria marcar uma avaliação.",
+     "time": "22:10",
+     "at": 0.1
+    },
+    {
+     "from": "t",
+     "text": "Oi! Claro. Posso tirar suas dúvidas e já ver um horário?",
+     "time": "22:10",
+     "at": 0.7
+    },
+    {
+     "from": "p",
+     "text": "Pode sim!",
+     "time": "22:11",
+     "at": 1.8
+    },
+    {
+     "from": "t",
+     "text": "Segunda às 9h fica bom?",
+     "time": "22:11",
+     "at": 2.6
+    }
+   ],
+   "badge": "respondido na hora",
+   "badgeAt": 3.0
+  },
+  {
+   "type": "big",
+   "bg": "#0A1322",
+   "kicker": "Gou Odonto · Luis",
+   "from": 0,
+   "to": 2,
+   "suffix": "x",
+   "size": 300,
+   "accent": "#25D366",
+   "sub": "agendamentos no primeiro disparo pra base.",
+   "subColor": "#C9A6F4",
+   "subSize": 80,
+   "countDur": 0.8
+  },
+  {
+   "type": "cta",
+   "bg": "#8A3FD1",
+   "title": "Sua clínica fatura +30 mil?",
+   "button": "Fazer o teste",
+   "sub": "4 perguntas e diagnóstico gratuito"
+  }
+ ]
+}

@@ -1,0 +1,91 @@
+{
+ "id": "H2_historia_rafael_dono_quiz_1017",
+ "angulo": "historia (variação 70% do ângulo com lead na principal, H1) + prova OrthoDontic",
+ "angle": "Rafael, dono de clínica, paga anúncio todo mês e a recepção responde no dia seguinte; o problema não é o anúncio, é quem responde; prova OrthoDontic 54 contratos; destino quiz /v4/",
+ "voz": "pt-br-storyteller-4",
+ "musica": "Revelação (synth-revelacao, trilha original Tolki)",
+ "destino": "https://tolki.com.br/v4/",
+ "lines": [
+  "Esse é o Rafael, dono de clínica. Todo mês ele paga anúncio pra chegar paciente no WhatsApp.",
+  "Só que a recepção tá atendendo no balcão. A mensagem das sete da noite fica pra amanhã.",
+  "No dia seguinte, o paciente já marcou em outra clínica. E o Rafael culpa o anúncio.",
+  "O problema não é o anúncio. É quem responde. Com a gente, o WhatsApp responde na hora, tira as dúvidas e agenda.",
+  "Na Ortodôntic, foram cinquenta e quatro contratos em um mês. Recorde da clínica.",
+  "Se a sua clínica fatura mais de trinta mil, toque no botão e faça seu diagnóstico comercial gratuito."
+ ],
+ "scenes": [
+  {
+   "type": "text",
+   "bg": "#F2F4F7",
+   "kicker": "história ilustrativa",
+   "title": "Esse é o Rafael.",
+   "sub": "dono de clínica, paga anúncio todo mês",
+   "accent": "#7A32C4",
+   "size": 120,
+   "subTop": 760,
+   "subSize": 64
+  },
+  {
+   "type": "chat",
+   "bg": "#000000",
+   "time": "terça 19:04",
+   "msg": "Oi! Vi o anúncio. Queria marcar uma avaliação.",
+   "waitLabel": "sem resposta há ",
+   "waitAt": 0.3,
+   "speed": 500,
+   "title": "Recepção no balcão. Fica pra amanhã.",
+   "titleTop": 780,
+   "size": 84,
+   "titleAt": 0.5,
+   "illus": "exemplo ilustrativo"
+  },
+  {
+   "type": "stack",
+   "bg": "#E9EDF2",
+   "title": "No dia seguinte: marcou em outra clínica.",
+   "size": 76,
+   "n": 40,
+   "illus": "exemplo ilustrativo",
+   "pileTop": 690
+  },
+  {
+   "type": "list",
+   "bg": "#7A32C4",
+   "title": "Com a Tolki, o WhatsApp",
+   "items": [
+    "Responde na hora",
+    "Tira as dúvidas",
+    "Agenda"
+   ],
+   "accent": "#25D366",
+   "size": 88,
+   "itemSize": 70,
+   "listTop": 600,
+   "at": [
+    2.2,
+    2.9,
+    3.6
+   ]
+  },
+  {
+   "type": "big",
+   "bg": "#0A1322",
+   "kicker": "OrthoDontic · Fabio",
+   "from": 0,
+   "to": 54,
+   "size": 300,
+   "accent": "#25D366",
+   "sub": "contratos em um mês. Recorde da clínica.",
+   "subColor": "#C9A6F4",
+   "subSize": 84,
+   "countDur": 1.1
+  },
+  {
+   "type": "cta",
+   "bg": "#8A3FD1",
+   "title": "Sua clínica fatura +30 mil?",
+   "button": "Fazer o teste",
+   "sub": "4 perguntas e diagnóstico gratuito"
+  }
+ ]
+}
