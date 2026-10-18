@@ -1,0 +1,29 @@
+{
+ "estilo": "português do Brasil bem natural, como uma dona de clínica mandando um áudio de WhatsApp pra outra contando um causo: conversa de verdade, ritmo ágil, entonação variada, sem tom de locução nem de propaganda",
+ "falas": [
+  {
+   "texto": "Essa é a Patrícia. Sábado de manhã, ela pediu orçamento de aparelho pra filha.",
+   "estilo": "começando um causo, próxima e curiosa"
+  },
+  {
+   "texto": "A clínica viu a mensagem. Mas no sábado, quem atende? Ficou pra segunda.",
+   "estilo": "levemente irônica na pergunta, seca no ficou pra segunda"
+  },
+  {
+   "texto": "Na segunda veio a resposta: oi, tudo bem? A Patrícia já tinha marcado em outra clínica.",
+   "estilo": "segurando o riso no oi, tudo bem, depois direta"
+  },
+  {
+   "texto": "Ela não sumiu. Foi pra quem respondeu primeiro. Com a gente, o WhatsApp responde na hora, até no sábado, e já agenda.",
+   "estilo": "séria na primeira frase, depois animada e rápida na solução"
+  },
+  {
+   "texto": "Na Dental Clinic, os agendamentos cresceram trinta e oito por cento em dez meses.",
+   "estilo": "orgulhosa e enfática no número"
+  },
+  {
+   "texto": "Se a sua clínica fatura mais de trinta mil, toque no botão e marque seu diagnóstico comercial gratuito.",
+   "estilo": "convite caloroso e direto"
+  }
+ ]
+}

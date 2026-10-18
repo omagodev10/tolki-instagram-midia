@@ -1,0 +1,97 @@
+{
+ "id": "AB1_antes_depois_mesma_mensagem_1018",
+ "angulo": "antes e depois (teste 30%, ângulo sem teste nos últimos 7 dias) + prova Odonto Excellence",
+ "angle": "mesma pergunta de valor às 20h em duas clínicas: uma responde no dia seguinte e fica no visualizado, a outra responde em segundos, pergunta o que incomoda e oferece horário; moral 'não foi o preço, foi a resposta'; prova Odonto Excellence 15% para 45%; destino quiz /v4/",
+ "voz": "pt-br-techagent-4",
+ "musica": "Virada (synth-virada, trilha original Tolki)",
+ "destino": "https://tolki.com.br/v4/",
+ "lines": [
+  "Mesma mensagem, duas clínicas. Olha a diferença.",
+  "Na primeira, o paciente pergunta o valor às oito da noite. A resposta chega no outro dia. Visualizado, e nada.",
+  "Na segunda, a resposta vem em segundos, pergunta o que incomoda e já oferece um horário.",
+  "O paciente marcou na hora. Não foi o preço. Foi a resposta.",
+  "Na Odonto Excellence, o agendamento foi de quinze pra quarenta e cinco por cento.",
+  "Se a sua clínica fatura mais de trinta mil, toque no botão e faça seu diagnóstico comercial gratuito."
+ ],
+ "scenes": [
+  {
+   "type": "text",
+   "bg": "#F2F4F7",
+   "kicker": "antes e depois · exemplo ilustrativo",
+   "title": "Mesma mensagem. Duas clínicas.",
+   "accent": "#7A32C4",
+   "size": 112
+  },
+  {
+   "type": "chat",
+   "bg": "#000000",
+   "time": "Clínica 1 · 20:00",
+   "msg": "Oi! Qual o valor do clareamento?",
+   "waitLabel": "sem resposta há ",
+   "waitAt": 0.3,
+   "speed": 120,
+   "title": "Respondeu no outro dia. Visualizado, e nada.",
+   "titleTop": 780,
+   "size": 80,
+   "titleAt": 0.8,
+   "illus": "exemplo ilustrativo"
+  },
+  {
+   "type": "reply",
+   "bg": "#1597D4",
+   "name": "Clínica 2",
+   "msgs": [
+    {
+     "from": "p",
+     "text": "Oi! Qual o valor do clareamento?",
+     "time": "20:00",
+     "at": 0.1
+    },
+    {
+     "from": "t",
+     "text": "Oi! Te passo sim. O que mais te incomoda hoje no sorriso?",
+     "time": "20:00",
+     "at": 0.8
+    },
+    {
+     "from": "p",
+     "text": "A cor, tá bem amarelado",
+     "time": "20:01",
+     "at": 1.9
+    },
+    {
+     "from": "t",
+     "text": "Dá pra resolver. Quinta às 18h fica bom pra avaliação?",
+     "time": "20:01",
+     "at": 2.8
+    }
+   ],
+   "badge": "respondido em segundos",
+   "badgeAt": 3.3
+  },
+  {
+   "type": "text",
+   "bg": "#0A1322",
+   "kicker": "a diferença",
+   "title": "Não foi o preço. Foi a resposta.",
+   "accent": "#25D366",
+   "size": 104
+  },
+  {
+   "type": "beforeafter",
+   "bg": "#0A1322",
+   "kicker": "Odonto Excellence · agendamento",
+   "before": "15%",
+   "after": "45%",
+   "accent": "#25D366",
+   "sub": "com a Tolki no WhatsApp."
+  },
+  {
+   "type": "cta",
+   "bg": "#8A3FD1",
+   "title": "Sua clínica fatura +30 mil?",
+   "button": "Fazer o teste",
+   "sub": "4 perguntas e diagnóstico gratuito"
+  }
+ ]
+}

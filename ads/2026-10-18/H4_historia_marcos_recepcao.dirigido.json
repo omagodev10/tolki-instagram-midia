@@ -1,0 +1,29 @@
+{
+ "estilo": "português do Brasil bem natural, humor seco, como um dono de clínica contando pro amigo a rotina de um colega: conversa de verdade, ritmo ágil, entonação variada, sem tom de locução nem de propaganda",
+ "falas": [
+  {
+   "texto": "Esse é o doutor Marcos. Dentista, dono da clínica e, depois das sete da noite, a recepção.",
+   "estilo": "humor seco, pausa curta antes de a recepção"
+  },
+  {
+   "texto": "Dez da noite, e lá está ele no WhatsApp, respondendo qual o valor pela décima vez.",
+   "estilo": "cansado e irônico, segurando o riso"
+  },
+  {
+   "texto": "Paciente não manda mensagem em horário comercial. Manda quando lembra.",
+   "estilo": "sério, como quem conta uma verdade"
+  },
+  {
+   "texto": "Com a gente, o WhatsApp responde na hora, tira as dúvidas e já marca o horário. E o doutor Marcos? Foi jantar.",
+   "estilo": "animado na solução, sorriso no vai jantar"
+  },
+  {
+   "texto": "Na Ortodôntic, foram cinquenta e quatro contratos em um mês. Recorde da clínica.",
+   "estilo": "orgulhoso e enfático no número"
+  },
+  {
+   "texto": "Se a sua clínica fatura mais de trinta mil, toque no botão e faça seu diagnóstico comercial gratuito.",
+   "estilo": "convite caloroso e direto"
+  }
+ ]
+}

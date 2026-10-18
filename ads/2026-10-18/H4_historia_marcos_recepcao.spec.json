@@ -1,0 +1,92 @@
+{
+ "id": "H4_historia_marcos_recepcao_1018",
+ "angulo": "historia (variação 70% do ângulo de menor CPL, personagem dono que vira recepção à noite) + prova OrthoDontic",
+ "angle": "Doutor Marcos, dentista e dono, vira a recepção depois das 19h e responde 'qual o valor?' pela décima vez às 22h; paciente manda mensagem quando lembra; virada com humor (vai jantar); prova OrthoDontic 54 contratos; sem música; destino quiz /v4/",
+ "voz": "pt-br-podcaster-1",
+ "musica": "sem música",
+ "destino": "https://tolki.com.br/v4/",
+ "lines": [
+  "Esse é o doutor Marcos. Dentista, dono da clínica e, depois das sete da noite, a recepção.",
+  "Dez da noite, e lá está ele no WhatsApp, respondendo qual o valor pela décima vez.",
+  "Paciente não manda mensagem em horário comercial. Manda quando lembra.",
+  "Com a gente, o WhatsApp responde na hora, tira as dúvidas e já marca o horário. E o doutor Marcos? Foi jantar.",
+  "Na Ortodôntic, foram cinquenta e quatro contratos em um mês. Recorde da clínica.",
+  "Se a sua clínica fatura mais de trinta mil, toque no botão e faça seu diagnóstico comercial gratuito."
+ ],
+ "scenes": [
+  {
+   "type": "text",
+   "bg": "#F2F4F7",
+   "kicker": "história ilustrativa",
+   "title": "Esse é o Dr. Marcos.",
+   "sub": "dentista, dono e, depois das 19h, a recepção",
+   "accent": "#7A32C4",
+   "size": 116,
+   "subTop": 760,
+   "subSize": 62
+  },
+  {
+   "type": "stack",
+   "bg": "#E9EDF2",
+   "title": "22h. Qual o valor? Pela 10ª vez.",
+   "size": 76,
+   "n": 10,
+   "msgs": [
+    "Qual o valor?",
+    "Quanto fica?",
+    "Qual o valor?",
+    "Tem horário amanhã?"
+   ],
+   "illus": "exemplo ilustrativo",
+   "pileTop": 690,
+   "countDur": 2.4
+  },
+  {
+   "type": "text",
+   "bg": "#0A1322",
+   "kicker": "a verdade",
+   "title": "Paciente manda mensagem quando lembra.",
+   "accent": "#25D366",
+   "size": 100
+  },
+  {
+   "type": "list",
+   "bg": "#7A32C4",
+   "title": "Com a Tolki, o WhatsApp",
+   "items": [
+    "Responde na hora",
+    "Tira as dúvidas",
+    "Marca o horário"
+   ],
+   "accent": "#25D366",
+   "size": 88,
+   "itemSize": 70,
+   "listTop": 600,
+   "at": [
+    0.9,
+    1.6,
+    2.3
+   ]
+  },
+  {
+   "type": "big",
+   "bg": "#0A1322",
+   "kicker": "OrthoDontic · Fabio",
+   "from": 0,
+   "to": 54,
+   "size": 300,
+   "accent": "#25D366",
+   "sub": "contratos em um mês. Recorde da clínica.",
+   "subColor": "#C9A6F4",
+   "subSize": 84,
+   "countDur": 1.1
+  },
+  {
+   "type": "cta",
+   "bg": "#8A3FD1",
+   "title": "Sua clínica fatura +30 mil?",
+   "button": "Fazer o teste",
+   "sub": "4 perguntas e diagnóstico gratuito"
+  }
+ ]
+}

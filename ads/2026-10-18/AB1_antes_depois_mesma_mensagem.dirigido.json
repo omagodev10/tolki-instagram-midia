@@ -1,0 +1,29 @@
+{
+ "estilo": "português do Brasil bem natural, como um dono de clínica jovem mostrando uma comparação pro colega no celular: conversa de verdade, ritmo ágil e energético, entonação variada, sem tom de locução nem de propaganda",
+ "falas": [
+  {
+   "texto": "Mesma mensagem, duas clínicas. Olha a diferença.",
+   "estilo": "chamando atenção, curioso e rápido"
+  },
+  {
+   "texto": "Na primeira, o paciente pergunta o valor às oito da noite. A resposta chega no outro dia. Visualizado, e nada.",
+   "estilo": "narrando com leve decepção, seco no e nada"
+  },
+  {
+   "texto": "Na segunda, a resposta vem em segundos, pergunta o que incomoda e já oferece um horário.",
+   "estilo": "acelera, animado, virada"
+  },
+  {
+   "texto": "O paciente marcou na hora. Não foi o preço. Foi a resposta.",
+   "estilo": "firme e convicto, pausa curta entre as frases"
+  },
+  {
+   "texto": "Na Odonto Excellence, o agendamento foi de quinze pra quarenta e cinco por cento.",
+   "estilo": "orgulhoso e enfático nos números"
+  },
+  {
+   "texto": "Se a sua clínica fatura mais de trinta mil, toque no botão e faça seu diagnóstico comercial gratuito.",
+   "estilo": "convite caloroso e direto"
+  }
+ ]
+}

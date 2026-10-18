@@ -1,0 +1,100 @@
+{
+ "id": "H3_historia_patricia_sabado_1018",
+ "angulo": "historia (variação 70% do ângulo de menor CPL da principal, H1) + prova Dental Clinic",
+ "angle": "Patrícia pede orçamento de aparelho para a filha no sábado de manhã; a clínica responde na segunda com 'oi, tudo bem?'; ela já marcou em outra; prova Dental Clinic +38% em 10 meses; CTA neutro (vai para o quiz na principal e para a LP1 nos testes)",
+ "voz": "pt-br-podcaster-2",
+ "musica": "Timeless (instrumental, biblioteca)",
+ "destino": "https://tolki.com.br/v4/ e https://tolkicomercial.web.app/lp1",
+ "lines": [
+  "Essa é a Patrícia. Sábado de manhã, ela pediu orçamento de aparelho pra filha.",
+  "A clínica viu a mensagem. Mas no sábado, quem atende? Ficou pra segunda.",
+  "Na segunda veio a resposta: oi, tudo bem? A Patrícia já tinha marcado em outra clínica.",
+  "Ela não sumiu. Foi pra quem respondeu primeiro. Com a gente, o WhatsApp responde na hora, até no sábado, e já agenda.",
+  "Na Dental Clinic, os agendamentos cresceram trinta e oito por cento em dez meses.",
+  "Se a sua clínica fatura mais de trinta mil, toque no botão e marque seu diagnóstico comercial gratuito."
+ ],
+ "scenes": [
+  {
+   "type": "text",
+   "bg": "#F2F4F7",
+   "kicker": "história ilustrativa",
+   "title": "Essa é a Patrícia.",
+   "sub": "sábado de manhã, orçamento de aparelho pra filha",
+   "accent": "#7A32C4",
+   "size": 120,
+   "subTop": 760,
+   "subSize": 64
+  },
+  {
+   "type": "chat",
+   "bg": "#000000",
+   "time": "sábado 11:02",
+   "msg": "Oi! Quanto fica o aparelho? É pra minha filha.",
+   "waitLabel": "sem resposta há ",
+   "waitAt": 0.3,
+   "speed": 650,
+   "title": "Sábado. Quem atende?",
+   "titleTop": 780,
+   "size": 96,
+   "titleAt": 0.6,
+   "illus": "exemplo ilustrativo"
+  },
+  {
+   "type": "chat",
+   "bg": "#0A1322",
+   "time": "segunda 10:14",
+   "msg": "Oi, tudo bem?",
+   "waitLabel": "visualizado há ",
+   "waitAt": 0.4,
+   "speed": 30,
+   "title": "Ela já tinha marcado em outra clínica.",
+   "titleTop": 760,
+   "size": 84,
+   "titleAt": 0.9,
+   "stamp": "tarde demais",
+   "stampTop": 1080,
+   "illus": "exemplo ilustrativo"
+  },
+  {
+   "type": "list",
+   "bg": "#7A32C4",
+   "title": "Com a Tolki, o WhatsApp",
+   "items": [
+    "Responde na hora",
+    "Atende no sábado",
+    "Já agenda"
+   ],
+   "accent": "#25D366",
+   "size": 88,
+   "itemSize": 70,
+   "listTop": 600,
+   "at": [
+    2.6,
+    3.4,
+    4.2
+   ]
+  },
+  {
+   "type": "big",
+   "bg": "#0A1322",
+   "kicker": "Dental Clinic · Dr. Felipe Mafra",
+   "from": 0,
+   "to": 38,
+   "prefix": "+",
+   "suffix": "%",
+   "size": 300,
+   "accent": "#25D366",
+   "sub": "de agendamentos em 10 meses.",
+   "subColor": "#C9A6F4",
+   "subSize": 84,
+   "countDur": 1.2
+  },
+  {
+   "type": "cta",
+   "bg": "#8A3FD1",
+   "title": "Sua clínica fatura +30 mil?",
+   "button": "Marcar agora",
+   "sub": "diagnóstico comercial gratuito"
+  }
+ ]
+}
