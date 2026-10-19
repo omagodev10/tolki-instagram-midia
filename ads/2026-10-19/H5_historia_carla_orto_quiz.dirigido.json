@@ -1,0 +1,11 @@
+{
+ "estilo": "português do Brasil bem natural, como uma dona de clínica contando um caso pra outra num áudio de WhatsApp: conversa de verdade, ritmo ágil, entonação variada, sem tom de locução nem de propaganda",
+ "falas": [
+  {"texto": "Sábado, dez da noite. A Carla pediu orçamento de aparelho pra três clínicas.", "estilo": "abrindo um caso, curiosa, prende a atenção logo de cara"},
+  {"texto": "Duas responderam só na segunda. <short pause> Uma delas com um oi, tudo bem.", "estilo": "irônica, segurando o riso no final"},
+  {"texto": "A terceira respondeu na hora, explicou o tratamento e já marcou a avaliação.", "estilo": "acelera, animada, é a virada"},
+  {"texto": "Na segunda de manhã a Carla já tinha escolhido. Não foi o preço. Foi a resposta.", "estilo": "pausada e firme, a moral do caso"},
+  {"texto": "Na Ortodôntic, foram cinquenta e quatro contratos num mês só. Recorde.", "estilo": "orgulhosa e enfática nos números"},
+  {"texto": "Se a sua clínica fatura mais de trinta mil, toque no botão e faça o diagnóstico comercial gratuito.", "estilo": "convite caloroso e direto"}
+ ]
+}

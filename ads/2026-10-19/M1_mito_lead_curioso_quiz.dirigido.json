@@ -1,0 +1,25 @@
+{
+ "estilo": "português do Brasil bem natural, um dono de clínica falando com outro num áudio de WhatsApp, humor seco, ritmo ágil, entonação variada, sem tom de locução nem de propaganda",
+ "falas": [
+  {
+   "texto": "Mito: lead de anúncio é tudo curioso, ninguém quer marcar.",
+   "estilo": "imitando a reclamação de dono de clínica, meio cansado, com ironia"
+  },
+  {
+   "texto": "Verdade: o lead esfria esperando resposta. <short pause> Quem pergunta às dez da noite e só ouve de volta no outro dia já marcou em outro lugar.",
+   "estilo": "corta seco e sério no começo, depois explica com calma, óbvio quando você pensa"
+  },
+  {
+   "texto": "Na Dental Clinic, do doutor Felipe Mafra, os agendamentos subiram trinta e oito por cento em dez meses.",
+   "estilo": "orgulhoso e enfático no número"
+  },
+  {
+   "texto": "E mais de quatrocentas e setenta clínicas já atendem assim, respondendo na hora.",
+   "estilo": "confiante, leve"
+  },
+  {
+   "texto": "Se a sua clínica fatura mais de trinta mil, toque no botão e faça o diagnóstico comercial gratuito.",
+   "estilo": "convite direto e amigável"
+  }
+ ]
+}

@@ -1,0 +1,76 @@
+{
+ "id": "M1_mito_lead_curioso_quiz_1019",
+ "angulo": "mito e verdade (ângulo novo, teste 30%) + prova Dental Clinic + 470 clínicas",
+ "angle": "Mito real do dono de clínica: 'lead de anúncio é tudo curioso'. Verdade: esfria esperando resposta. Prova Dental Clinic +38% em 10 meses; destino quiz /v4/",
+ "gancho": "“Lead de anúncio é tudo curioso.” MITO (carimbo no 1º segundo)",
+ "voz": "pt-br-podcaster-1",
+ "musica": "sem música",
+ "destino": "https://tolki.com.br/v4/",
+ "lines": [
+  "Mito: lead de anúncio é tudo curioso, ninguém quer marcar.",
+  "Verdade: o lead esfria esperando resposta. Quem pergunta às dez da noite e só ouve de volta no outro dia já marcou em outro lugar.",
+  "Na Dental Clinic, do doutor Felipe Mafra, os agendamentos subiram trinta e oito por cento em dez meses.",
+  "E mais de quatrocentas e setenta clínicas já atendem assim, respondendo na hora.",
+  "Se a sua clínica fatura mais de trinta mil, toque no botão e faça o diagnóstico comercial gratuito."
+ ],
+ "scenes": [
+  {
+   "type": "text",
+   "bg": "#F2F4F7",
+   "kicker": "mito",
+   "title": "“Lead de anúncio é tudo curioso.”",
+   "sub": "ninguém quer marcar?",
+   "accent": "#FF4D4D",
+   "size": 104,
+   "subTop": 980,
+   "subSize": 72
+  },
+  {
+   "type": "chat",
+   "bg": "#000000",
+   "time": "terça 22:00",
+   "msg": "Oi! Vocês fazem implante? Queria marcar uma avaliação.",
+   "waitLabel": "sem resposta há ",
+   "waitAt": 0.3,
+   "speed": 82,
+   "title": "Verdade: ele esfria esperando resposta.",
+   "titleTop": 780,
+   "size": 80,
+   "titleAt": 0.4,
+   "illus": "exemplo ilustrativo"
+  },
+  {
+   "type": "big",
+   "bg": "#0A1322",
+   "kicker": "Dental Clinic · Dr. Felipe Mafra",
+   "from": 0,
+   "to": 38,
+   "prefix": "+",
+   "suffix": "%",
+   "size": 260,
+   "accent": "#25D366",
+   "sub": "de agendamentos em 10 meses.",
+   "subColor": "#C9A6F4",
+   "subSize": 84,
+   "countDur": 1.2
+  },
+  {
+   "type": "text",
+   "bg": "#7A32C4",
+   "kicker": "quem já usa",
+   "title": "+470 clínicas",
+   "sub": "respondem na hora.",
+   "accent": "#F1E6FB",
+   "size": 140,
+   "subTop": 760,
+   "subSize": 96
+  },
+  {
+   "type": "cta",
+   "bg": "#8A3FD1",
+   "title": "Sua clínica fatura +30 mil?",
+   "button": "Fazer o teste",
+   "sub": "4 perguntas e diagnóstico gratuito"
+  }
+ ]
+}

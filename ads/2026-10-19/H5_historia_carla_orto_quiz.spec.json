@@ -1,0 +1,105 @@
+{
+ "id": "H5_historia_carla_orto_quiz_1019",
+ "angulo": "historia (personagem ilustrativo, variação de gancho do H1, campeão da principal) + prova OrthoDontic",
+ "angle": "Carla pede orçamento de aparelho a 3 clínicas no sábado 22h; fecha com quem respondeu na hora; gancho com a pergunta na tela nos 2 primeiros segundos; prova 54 contratos; destino quiz /v4/",
+ "gancho": "Quem responde primeiro leva o paciente (pergunta na tela no 1º segundo)",
+ "voz": "pt-br-commercial-2",
+ "musica": "Revelação (synth-revelacao, trilha original Tolki)",
+ "destino": "https://tolki.com.br/v4/",
+ "lines": [
+  "Sábado, dez da noite. A Carla pediu orçamento de aparelho pra três clínicas.",
+  "Duas responderam só na segunda. Uma delas com um oi, tudo bem.",
+  "A terceira respondeu na hora, explicou o tratamento e já marcou a avaliação.",
+  "Na segunda de manhã a Carla já tinha escolhido. Não foi o preço. Foi a resposta.",
+  "Na Ortodôntic, foram cinquenta e quatro contratos num mês só. Recorde.",
+  "Se a sua clínica fatura mais de trinta mil, toque no botão e faça o diagnóstico comercial gratuito."
+ ],
+ "scenes": [
+  {
+   "type": "text",
+   "bg": "#0A1322",
+   "kicker": "história ilustrativa",
+   "title": "Quem responde primeiro leva o paciente.",
+   "sub": "sábado, 22h: Carla pediu orçamento de aparelho a 3 clínicas",
+   "accent": "#25D366",
+   "size": 104,
+   "subTop": 980,
+   "subSize": 60
+  },
+  {
+   "type": "chat",
+   "bg": "#000000",
+   "time": "sábado 22:00",
+   "msg": "Oi! Quanto fica o aparelho ortodôntico?",
+   "waitLabel": "sem resposta há ",
+   "waitAt": 0.3,
+   "speed": 440,
+   "title": "Clínica 1 e 2: só na segunda.",
+   "titleTop": 780,
+   "size": 84,
+   "titleAt": 0.5,
+   "illus": "exemplo ilustrativo"
+  },
+  {
+   "type": "reply",
+   "bg": "#1597D4",
+   "name": "Clínica 3",
+   "msgs": [
+    {
+     "from": "p",
+     "text": "Oi! Quanto fica o aparelho ortodôntico?",
+     "time": "22:00",
+     "at": 0.1
+    },
+    {
+     "from": "t",
+     "text": "Oi, Carla! Depende do caso. Posso te explicar e já ver um horário de avaliação?",
+     "time": "22:00",
+     "at": 0.7
+    },
+    {
+     "from": "p",
+     "text": "Pode sim!",
+     "time": "22:01",
+     "at": 1.9
+    },
+    {
+     "from": "t",
+     "text": "Terça às 18h fica bom?",
+     "time": "22:01",
+     "at": 2.7
+    }
+   ],
+   "badge": "respondido na hora",
+   "badgeAt": 3.1
+  },
+  {
+   "type": "text",
+   "bg": "#F2F4F7",
+   "kicker": "segunda de manhã",
+   "title": "Não foi o preço. Foi a resposta.",
+   "accent": "#7A32C4",
+   "size": 110
+  },
+  {
+   "type": "big",
+   "bg": "#0A1322",
+   "kicker": "OrthoDontic · resultado real",
+   "from": 0,
+   "to": 54,
+   "size": 320,
+   "accent": "#25D366",
+   "sub": "contratos em um mês. Recorde.",
+   "subColor": "#C9A6F4",
+   "subSize": 88,
+   "countDur": 1.2
+  },
+  {
+   "type": "cta",
+   "bg": "#8A3FD1",
+   "title": "Sua clínica fatura +30 mil?",
+   "button": "Fazer o teste",
+   "sub": "4 perguntas e diagnóstico gratuito"
+  }
+ ]
+}
