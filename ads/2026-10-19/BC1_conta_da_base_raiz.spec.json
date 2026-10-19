@@ -1,0 +1,81 @@
+{
+ "id": "BC1_conta_da_base_raiz_1019",
+ "angulo": "conta da base (método base parada, ângulo do adclaude 6) + Gou Odonto + OrthoDontic",
+ "angle": "Faz a conta: pacientes parados no WhatsApp x ticket médio; provas Gou Odonto (dobrou agendamentos) e OrthoDontic (59 para 121 contratos); destino raiz",
+ "gancho": "Quantos pacientes estão parados no seu WhatsApp?",
+ "voz": "pt-br-storyteller-4",
+ "musica": "Confiante (synth-confiante, trilha original Tolki)",
+ "destino": "https://tolki.com.br/",
+ "lines": [
+  "Faz uma conta comigo: quantos pacientes estão parados no seu WhatsApp agora?",
+  "Gente que fez avaliação, pediu orçamento e nunca mais voltou.",
+  "Multiplica esse número pelo seu ticket médio. Esse dinheiro já é seu, só tá parado.",
+  "Na Gou Odonto, o primeiro disparo pra base dobrou os agendamentos.",
+  "Na Ortodôntic, reativando a base, foram de cinquenta e nove pra cento e vinte e um contratos num mês.",
+  "Se a sua clínica fatura mais de trinta mil, toque no botão e faça o diagnóstico comercial gratuito."
+ ],
+ "scenes": [
+  {
+   "type": "text",
+   "bg": "#0A1322",
+   "kicker": "faça a conta",
+   "title": "Quantos pacientes estão parados no seu WhatsApp?",
+   "accent": "#25D366",
+   "size": 100
+  },
+  {
+   "type": "stack",
+   "bg": "#E9EDF2",
+   "title": "Avaliação, orçamento... e nunca mais voltou.",
+   "size": 76,
+   "n": 40,
+   "illus": "exemplo ilustrativo",
+   "pileTop": 690
+  },
+  {
+   "type": "text",
+   "bg": "#F2F4F7",
+   "kicker": "a conta",
+   "title": "Pacientes parados × ticket médio",
+   "sub": "= dinheiro que já é seu, parado na base",
+   "accent": "#7A32C4",
+   "size": 104,
+   "subTop": 900,
+   "subSize": 72
+  },
+  {
+   "type": "big",
+   "bg": "#0A1322",
+   "kicker": "Gou Odonto · primeiro disparo para a base",
+   "from": 1,
+   "to": 2,
+   "suffix": "x",
+   "size": 300,
+   "accent": "#25D366",
+   "sub": "dobrou os agendamentos.",
+   "subColor": "#C9A6F4",
+   "subSize": 84,
+   "countDur": 0.8
+  },
+  {
+   "type": "big",
+   "bg": "#1597D4",
+   "kicker": "OrthoDontic · contratos no mês",
+   "from": 59,
+   "to": 121,
+   "size": 300,
+   "accent": "#F1E6FB",
+   "sub": "reativando a própria base. Recorde.",
+   "subColor": "#FFFFFF",
+   "subSize": 80,
+   "countDur": 1.2
+  },
+  {
+   "type": "cta",
+   "bg": "#8A3FD1",
+   "title": "Sua clínica fatura +30 mil?",
+   "button": "Quero o diagnóstico",
+   "sub": "diagnóstico comercial gratuito"
+  }
+ ]
+}

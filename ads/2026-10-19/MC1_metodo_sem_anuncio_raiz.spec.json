@@ -1,0 +1,97 @@
+{
+ "id": "MC1_metodo_sem_anuncio_raiz_1019",
+ "angulo": "curiosidade de método (versão honesta do adclaude 6) + OrthoDontic + Victor Santos",
+ "angle": "Agenda cheia sem aumentar anúncio: o segredo é a base; IA reativa, responde e marca; provas OrthoDontic e Victor Santos; destino raiz",
+ "gancho": "Agenda cheia sem aumentar o anúncio?",
+ "voz": "pt-br-commercial-5",
+ "musica": "Virada (synth-virada, trilha original Tolki)",
+ "destino": "https://tolki.com.br/",
+ "lines": [
+  "Tem clínica enchendo a agenda sem aumentar um real de anúncio.",
+  "O segredo não é mais lead. É a base que a clínica já tem.",
+  "Uma inteligência artificial manda mensagem pra quem parou, responde na hora e já marca a avaliação.",
+  "Foi assim que a Ortodôntic foi de cinquenta e nove pra cento e vinte e um contratos num mês.",
+  "E o Instituto Victor Santos economizou sessenta mil reais em disparos em seis meses.",
+  "Se a sua clínica fatura mais de trinta mil, toque no botão e faça o diagnóstico comercial gratuito."
+ ],
+ "scenes": [
+  {
+   "type": "text",
+   "bg": "#F2F4F7",
+   "kicker": "o método",
+   "title": "Agenda cheia sem aumentar o anúncio?",
+   "accent": "#7A32C4",
+   "size": 110
+  },
+  {
+   "type": "text",
+   "bg": "#0A1322",
+   "kicker": "o segredo",
+   "title": "Não é mais lead. É a base que você já tem.",
+   "accent": "#25D366",
+   "size": 100
+  },
+  {
+   "type": "reply",
+   "bg": "#1597D4",
+   "name": "Clínica",
+   "msgs": [
+    {
+     "from": "t",
+     "text": "Oi, Marina! Vi que você fez avaliação com a gente em março. Ainda quer seguir com o tratamento?",
+     "time": "10:02",
+     "at": 0.1
+    },
+    {
+     "from": "p",
+     "text": "Quero sim! Esqueci de retornar",
+     "time": "10:05",
+     "at": 1.4
+    },
+    {
+     "from": "t",
+     "text": "Tenho quinta às 15h. Fica bom?",
+     "time": "10:05",
+     "at": 2.3
+    }
+   ],
+   "badge": "avaliação marcada",
+   "badgeAt": 3.2
+  },
+  {
+   "type": "big",
+   "bg": "#0A1322",
+   "kicker": "OrthoDontic · contratos no mês",
+   "from": 59,
+   "to": 121,
+   "size": 300,
+   "accent": "#25D366",
+   "sub": "reativando a base. Recorde da franquia.",
+   "subColor": "#C9A6F4",
+   "subSize": 80,
+   "countDur": 1.2
+  },
+  {
+   "type": "big",
+   "bg": "#7A32C4",
+   "kicker": "Instituto Victor Santos · 6 meses",
+   "from": 0,
+   "to": 60,
+   "prefix": "R$ ",
+   "suffix": " mil",
+   "size": 165,
+   "accent": "#F1E6FB",
+   "sub": "economizados em disparos.",
+   "subColor": "#FFFFFF",
+   "subSize": 80,
+   "countDur": 1.2
+  },
+  {
+   "type": "cta",
+   "bg": "#8A3FD1",
+   "title": "Sua clínica fatura +30 mil?",
+   "button": "Quero o diagnóstico",
+   "sub": "diagnóstico comercial gratuito"
+  }
+ ]
+}
