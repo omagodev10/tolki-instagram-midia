@@ -27,6 +27,7 @@ python3 render.py $W --out final.mp4 [--plate gancho.mp4] [--music trilha.mp3 --
 python3 render.py $W --out final.mp4 --audio-only ...           # só refaz o áudio (reaproveita o vídeo)
 ```
 
+- Sem gancho de 6 s: ponha `"hook": 0` no roteiro e, na cena, não use `s0h`/`s0`/`s1` nem `hookReveal` (o visual continua o mesmo; a cena começa direto na fala 1).
 - `--plate`: filmagem de 6 s do gancho (Seedance 720p 6 s, a partir de uma foto Soul Cinema). Sem ele, o gancho é desenhado na própria cena.
 - Música: nunca vai para o repositório. `--moff` é onde começa o trecho, `--music-swell` o segundo em que a música cresce, `--swell-line` a fala onde esse crescimento deve cair. O volume fica limitado a +7,5 dB (o nível aprovado).
 - A cena define `window.bgAt(t)` (fundo filmado no gancho), as cenas por fala (`SC`), o desenho em canvas (`drawArt`) e os efeitos (`cue(t, F('pasta/arquivo.ogg'), {g})`).

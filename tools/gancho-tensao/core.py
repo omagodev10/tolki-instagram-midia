@@ -68,7 +68,7 @@ const pop=(el,t,t0,d=.35)=>{const k=P(t,t0,t0+d); el.style.opacity=clamp(k*3); e
 const F=(n)=>'file:'+n;
 const KF=(K,t)=>{let i=0; while(i<K.length-2&&t>=K[i+1][0]) i++; const [t0,A]=K[i],[t1,B]=K[i+1]; const k=iO(P(t,t0,t1)); const o={}; for(const key in A) o[key]=lerp(A[key],B[key],k); return o;};
 // hook + reveal (shared)
-const C_SEG=SW(TW(1,'segundos')-.05,1420,.7), C_AQ=SW(LS(2),1000,.75);
+const C_SEG=HOOK>0?SW(TW(1,'segundos')-.05,1420,.7):-1, C_AQ=HOOK>0?SW(LS(2),1000,.75):-1;
 function hookReveal(t){
   if(t<HOOK){ const v=Math.max(0,HOOK-t); const h=$('hk'); h.textContent=v.toFixed(2); const ph=t%1; h.style.transform=`scale(${1+.06*Math.exp(-ph*9)})`; h.style.opacity=clamp(t*3)*(v<.02?0:1);}
   if(t>=HOOK&&t<LS(2)){ rise($('v1'),t,T(1,0)); const a=TW(1,'seis'); const v2=$('v2'); const k=P(t,a,a+.3); v2.style.opacity=t>=a?1:0; v2.style.transform=`scale(${t>=a?lerp(1.6,1,oQ(k)):1})`; v2.style.filter=k<1&&t>=a?`blur(${(1-k)*20}px)`:'';
@@ -86,8 +86,9 @@ function scenes(t,SC,TAGS){SC.forEach(([id,a,b])=>{$(id).style.display=(t>=a&&t<
 const DUST=[...Array(60)].map((_,i)=>({x:RN(i,7)*1080,y:RN(i,8)*1920,sp:14+RN(i,9)*30,r:1+RN(i,10)*2}));
 function dust(c,t){DUST.forEach(d=>{const y=(d.y-t*d.sp+1920*4)%1920; c.fillStyle='rgba(150,205,235,.16)'; c.beginPath(); c.arc(d.x+Math.sin(t*.4+d.y)*12,y,d.r,0,7); c.fill();});}
 // shared cues
-for(let k=0;k<6;k++) cue(k+.02,'tick',{g:.42,f:1500});
-cue(TW(1,'seis'),F('boom/ksci__lowFrequency_explosion_000.ogg'),{g:.6});
+// sons do gancho só quando houver gancho (TL.hook > 0); sem gancho, a cena começa direto na fala 1 e não usa s0h/s0/s1
+if(HOOK>0){ for(let k=0;k<Math.round(HOOK);k++) cue(k+.02,'tick',{g:.42,f:1500});
+  cue(TW(1,'seis'),F('boom/ksci__lowFrequency_explosion_000.ogg'),{g:.6}); }
 '''
 READY_JS = r'''
 window.DUR=DUR; window.renderAll=t=>render(t);
