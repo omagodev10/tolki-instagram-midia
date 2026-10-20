@@ -64,3 +64,14 @@ Modelo: `elaborados/capa-centralizada.html` (exemplo publicado: `posts/2026-10-1
 - Embaixo, UMA linha de curiosidade que faz arrastar sem prometer nada ("Nenhuma dessas perguntas precisava passar por ela.").
 - Rodapé: fio, @tolkibrasil e "Arrasta →". Foto, quando usada, fica de fundo clarinho (camada lisa por cima, sem degradê) ou com o título sobre área lisa.
 - Varie a cor de fundo, o elemento do meio e a foto a cada post; o layout centralizado é o que fica.
+
+## Variação de layout (Carlos, 20/10/2026)
+"O layout tá sempre igual, sempre." A partir de agora:
+- Nenhum carrossel repete a sequência de modelos do carrossel anterior. Antes de montar, abra os 2 últimos carrosséis em `posts/` e escolha uma sequência diferente.
+- Slides internos sorteiam entre os 10 modelos: `elaborados/` (celular-whatsapp, antes-depois, aspas, palavra-gigante, recibo, balao-anotado, roteiro-conversa, comparacao-vertical, resposta-rapida, prova-numero, bilhete-checklist) e `padrao/` (branco-frase, tweet-sobre-cor, numero-grande, notas). Pelo menos 1 modelo que não apareceu nos 2 últimos carrosséis.
+- O fechamento varia (notas, bilhete-checklist, branco-frase...). O Notas preto deixou de ser obrigatório no último slide; o "Comente PALAVRA" continua.
+- Vale inventar modelo novo quando o tema pedir (cores chapadas, sem degradê, sem pontilhado). Modelo novo aprovado vai pra `elaborados/` no commit da publicação.
+- Novos de 20/10 (post `posts/2026-10-20-manha`): balao-anotado (balão gigante + seta e anotação serifada), roteiro-conversa (conversa em transcrição, sem celular), comparacao-vertical (para em cima, anda embaixo), resposta-rapida (cartão /atalho com 3 partes), prova-numero (15% → 45% em cartão), bilhete-checklist (bilhete com fita + checklist).
+
+## Método A.G.E.N.D.A. (Carlos, 20/10/2026)
+Usar como base de alguns conteúdos, misturado na rotina (não é série e não entrega o PDF). Resumo em `docs/metodo-agenda.md`. Sugestão: 2 ou 3 posts por semana tirados do método (uma letra, um erro, uma frase pronta, o teste do cliente oculto), sem citar o nome do método em todo post.
