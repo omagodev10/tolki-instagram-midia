@@ -1,0 +1,53 @@
+{
+ "voz": "pt-br-techagent-4",
+ "estilo": "homem jovem brasileiro, voz próxima e confiante, narração de Reels com clima de cinema: calmo, intrigante, pausas curtas, sem tom de locutor",
+ "hook": 6.0,
+ "falas": [
+  {
+   "texto": "Você ficou seis segundos esperando essa chama apagar.",
+   "estilo": "intrigante, quase confidência, devagar, leve sorriso no final"
+  },
+  {
+   "texto": "E ainda está aqui.",
+   "estilo": "leve sorriso na voz, cúmplice"
+  },
+  {
+   "texto": "Tua base de pacientes está assim.",
+   "estilo": "virando a chave, sério"
+  },
+  {
+   "texto": "Gente que fez avaliação e sumiu. <short pause> Que perguntou o preço e nunca mais voltou.",
+   "estilo": "descrevendo, um pouco de tensão"
+  },
+  {
+   "texto": "Ninguém chama. <short pause> E a chama vai apagando.",
+   "estilo": "baixo, quase lamento"
+  },
+  {
+   "texto": "Isso não é lista de contato. <short pause> É agenda esperando alguém chamar.",
+   "estilo": "regra de ouro, firme, ênfase em 'agenda'"
+  },
+  {
+   "texto": "A Tolki chama cada um desses pacientes e já marca o horário.",
+   "estilo": "confiante, energia subindo"
+  },
+  {
+   "texto": "A Gou Odonto mandou uma mensagem pra base e dobrou os agendamentos. <short pause> No primeiro disparo.",
+   "estilo": "prova real, orgulho, ênfase em 'dobrou' e 'primeiro disparo'"
+  },
+  {
+   "texto": "Comenta BASE que eu te mostro como funciona.",
+   "estilo": "convite direto e simpático, sorriso na voz, a palavra BASE destacada"
+  }
+ ],
+ "pausas": {
+  "2": 0.15,
+  "3": 0.45,
+  "4": 0.2,
+  "5": 0.3,
+  "6": 0.4,
+  "7": 0.45,
+  "8": 0.3,
+  "9": 0.35
+ }
+}

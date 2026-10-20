@@ -1,0 +1,53 @@
+{
+ "voz": "pt-br-techagent-4",
+ "estilo": "homem jovem brasileiro, voz próxima e confiante, narração de Reels com clima de cinema: calmo, intrigante, pausas curtas, sem tom de locutor",
+ "hook": 6.0,
+ "falas": [
+  {
+   "texto": "Você ficou seis segundos esperando essa peça cair.",
+   "estilo": "intrigante, quase confidência, devagar, leve sorriso no final"
+  },
+  {
+   "texto": "E ainda está aqui.",
+   "estilo": "leve sorriso na voz, cúmplice"
+  },
+  {
+   "texto": "Na tua clínica, a primeira peça é uma mensagem sem resposta.",
+   "estilo": "virando a chave, sério"
+  },
+  {
+   "texto": "O paciente pergunta <short pause> e ninguém responde.",
+   "estilo": "descrevendo a cena, tensão"
+  },
+  {
+   "texto": "Ele desiste. <short pause> A avaliação não acontece. <short pause> O tratamento não fecha.",
+   "estilo": "enumerando em cascata, cada frase mais pesada"
+  },
+  {
+   "texto": "Uma peça derruba a agenda inteira.",
+   "estilo": "regra de ouro, firme e enfático"
+  },
+  {
+   "texto": "A Tolki responde em segundos e segura a primeira peça.",
+   "estilo": "confiante, energia subindo"
+  },
+  {
+   "texto": "A OrthoDontic fechou cinquenta e quatro contratos em um mês.",
+   "estilo": "prova real, orgulho, ênfase em 'cinquenta e quatro'"
+  },
+  {
+   "texto": "Comenta a palavra AGENDA que eu te mostro como funciona.",
+   "estilo": "convite direto e simpático, sorriso na voz, a palavra AGENDA destacada"
+  }
+ ],
+ "pausas": {
+  "2": 0.15,
+  "3": 0.45,
+  "4": 0.2,
+  "5": 0.3,
+  "6": 0.4,
+  "7": 0.45,
+  "8": 0.3,
+  "9": 0.35
+ }
+}

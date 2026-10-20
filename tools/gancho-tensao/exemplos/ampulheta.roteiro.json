@@ -1,0 +1,60 @@
+{
+ "voz": "pt-br-techagent-4",
+ "estilo": "homem jovem brasileiro, voz próxima e confiante, narração de Reels com clima de cinema: calmo, intrigante, pausas curtas, sem tom de locutor",
+ "hook": 6.0,
+ "falas": [
+  {
+   "texto": "Você ficou seis segundos esperando alguma coisa acontecer.",
+   "estilo": "intrigante, quase confidência, devagar, leve sorriso no final"
+  },
+  {
+   "texto": "E ainda está aqui.",
+   "estilo": "leve sorriso na voz, cúmplice"
+  },
+  {
+   "texto": "Teu paciente também espera.",
+   "estilo": "virando a chave, sério"
+  },
+  {
+   "texto": "Ele manda mensagem <short pause> e fica olhando a tela.",
+   "estilo": "descrevendo a cena, um pouco de tensão"
+  },
+  {
+   "texto": "Só que ele não espera seis segundos.",
+   "estilo": "firme, contraste"
+  },
+  {
+   "texto": "Ele espera nada. <short pause> E marca na próxima clínica.",
+   "estilo": "seco no 'nada', revelação no final"
+  },
+  {
+   "texto": "Paciente marca com quem responde primeiro.",
+   "estilo": "regra de ouro, enfático em 'primeiro', ritmo marcado"
+  },
+  {
+   "texto": "A Tolki responde em segundos.",
+   "estilo": "confiante, energia subindo"
+  },
+  {
+   "texto": "De madrugada, no domingo, no almoço.",
+   "estilo": "enumerando com ritmo, animado"
+  },
+  {
+   "texto": "Na clínica Odonto Excellence, o agendamento foi de quinze pra quarenta e cinco por cento.",
+   "estilo": "prova real, orgulho, destaque em 'quarenta e cinco'"
+  },
+  {
+   "texto": "Comenta <short pause> AGENDA, <short pause> que eu te mostro como funciona.",
+   "estilo": "convite direto e simpático, sorriso na voz, a palavra AGENDA dita sozinha e destacada"
+  }
+ ],
+ "pausas": {
+  "2": 0.15,
+  "3": 0.45,
+  "5": 0.2,
+  "7": 0.4,
+  "8": 0.45,
+  "10": 0.3,
+  "11": 0.35
+ }
+}
