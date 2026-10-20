@@ -1,0 +1,43 @@
+{
+ "hook": 4.0,
+ "falas": [
+  {
+   "texto": "Uma gota não parece nada.",
+   "estilo": "intrigante, devagar, quase sussurro"
+  },
+  {
+   "texto": "Um paciente perdido por dia também não.",
+   "estilo": "virando a chave"
+  },
+  {
+   "texto": "Até você fazer a conta: vinte e dois por mês. Com um tratamento de novecentos reais, quase vinte mil.",
+   "estilo": "fazendo a conta, tensão crescendo, ênfase em quase vinte mil"
+  },
+  {
+   "texto": "E quase sempre ele escapa no mesmo lugar: no quanto custa.",
+   "estilo": "revelação, sério"
+  },
+  {
+   "texto": "O Método Agenda fecha essa torneira em dez minutos.",
+   "estilo": "regra de ouro, firme"
+  },
+  {
+   "texto": "Numa clínica que mudou o atendimento com a gente, uma atendente foi de vinte e um para sessenta e dois contratos em um mês.",
+   "estilo": "prova real, ênfase nos números"
+  },
+  {
+   "texto": "Toca em saiba mais. Quarenta e sete reais.",
+   "estilo": "convite direto e simpático"
+  }
+ ],
+ "voz": "pt-br-commercial-7",
+ "estilo": "confident, energetic and slightly urgent female voice for a short social media ad, talking directly to a clinic owner, punchy rhythm with short dramatic pauses between sentences, clear Brazilian Portuguese diction",
+ "pausas": {
+  "2": 0.1,
+  "3": 0.15,
+  "4": 0.15,
+  "5": 0.2,
+  "6": 0.2,
+  "7": 0.25
+ }
+}

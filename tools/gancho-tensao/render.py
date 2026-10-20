@@ -79,7 +79,9 @@ def bg(PL, b):
     if b['blur'] > .3: img = cv2.GaussianBlur(img, (0, 0), b['blur'] / 2)
     return img * (1 - b['dim']) * VIG
 def comp(img, png):
-    fg = cv2.imdecode(np.frombuffer(png, np.uint8), cv2.IMREAD_UNCHANGED).astype(np.float32); a = fg[..., 3:4] / 255
+    fg = cv2.imdecode(np.frombuffer(png, np.uint8), cv2.IMREAD_UNCHANGED).astype(np.float32)
+    if fg.shape[2] == 3: return np.clip(fg, 0, 255).astype(np.uint8)  # página opaca (fundo chapado na própria cena)
+    a = fg[..., 3:4] / 255
     return np.clip(img * (1 - a) + fg[..., :3] * a, 0, 255).astype(np.uint8)
 async def run(prev):
     PL = plate_frames() if PLATE else None

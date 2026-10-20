@@ -1,0 +1,43 @@
+{
+ "hook": 4.0,
+ "falas": [
+  {
+   "texto": "Você esperou quatro segundos. O seu paciente espera três horas.",
+   "estilo": "intrigante, revelando, ênfase em três horas"
+  },
+  {
+   "texto": "E quando a resposta chega, é só o preço.",
+   "estilo": "seco, decepção"
+  },
+  {
+   "texto": "Aí ele some. E você culpa o lead.",
+   "estilo": "provocando"
+  },
+  {
+   "texto": "Não é o lead. Ninguém ensinou a recepção a conduzir a conversa.",
+   "estilo": "virada firme"
+  },
+  {
+   "texto": "O Método Agenda ensina isso em dez minutos, com as mensagens prontas.",
+   "estilo": "confiante, solução"
+  },
+  {
+   "texto": "Na clínica Odonto Excellence, que mudou o atendimento com a gente, o agendamento foi de quinze para quarenta e cinco por cento.",
+   "estilo": "prova, orgulho, ênfase nos números"
+  },
+  {
+   "texto": "Toca em saiba mais. Quarenta e sete reais.",
+   "estilo": "convite direto e simpático"
+  }
+ ],
+ "voz": "pt-br-commercial-7",
+ "estilo": "confident, energetic and slightly urgent female voice for a short social media ad, talking directly to a clinic owner, punchy rhythm with short dramatic pauses between sentences, clear Brazilian Portuguese diction",
+ "pausas": {
+  "2": 0.1,
+  "3": 0.15,
+  "4": 0.15,
+  "5": 0.2,
+  "6": 0.2,
+  "7": 0.25
+ }
+}
