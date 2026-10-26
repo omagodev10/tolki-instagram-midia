@@ -24,11 +24,14 @@ def smooth(x, ta, tr, cr=1000):
     return np.interp(np.arange(len(x)), np.arange(len(xc)) * h, y)
 def build_audio(cues):
     N = int(DUR * SR) + SR; voice = np.zeros(N)
-    for l in TL['lines']:
-        v = load(os.path.join(HERE, 'a', f"l{l['n']}.wav")); v *= 10 ** ((-17 - meter.integrated_loudness(v)) / 20) if len(v) > SR * .5 else 10 ** (2 / 20)
-        a = int(l['t'] * SR); voice[a:a + len(v)] += v[:N - a]
-    env = smooth(np.abs(voice), .005, .12); thr = 10 ** (-14 / 20)
-    voice *= np.where(env > thr, (thr + (env - thr) * .4) / np.maximum(env, 1e-9), 1)
+    if TL.get('voz_continua'):   # padrão de voz de 26/10/2026: a tomada inteira entra contínua, com um ganho só (feito no voz_continua.py)
+        v = load(os.path.join(HERE, 'a', 'voz.wav')); a = int(TL['voz_t0'] * SR); voice[a:a + len(v)] += v[:N - a]
+    else:
+        for l in TL['lines']:
+            v = load(os.path.join(HERE, 'a', f"l{l['n']}.wav")); v *= 10 ** ((-17 - meter.integrated_loudness(v)) / 20) if len(v) > SR * .5 else 10 ** (2 / 20)
+            a = int(l['t'] * SR); voice[a:a + len(v)] += v[:N - a]
+        env = smooth(np.abs(voice), .005, .12); thr = 10 ** (-14 / 20)
+        voice *= np.where(env > thr, (thr + (env - thr) * .4) / np.maximum(env, 1e-9), 1)
     mus = np.zeros((N, 2)); MST = TL['hook'] + .25
     if ARGS.music:
         if ARGS.music_swell is not None and ARGS.swell_line: MST = max(TL['hook'] + .25, TL['lines'][ARGS.swell_line - 1]['t'] - .05 - (ARGS.music_swell - MOFF))
@@ -37,7 +40,7 @@ def build_audio(cues):
     pb = butter(4, [300, 8000], 'bandpass', fs=SR, output='sos')
     act = np.convolve((np.abs(voice) > 10 ** (-40 / 20)).astype(float), np.ones(int(.25 * SR)), 'same') > 0
     vb = sosfilt(pb, voice); mb = sosfilt(pb, mus.mean(1)); me = np.convolve(np.abs(mb), np.ones(4800) / 4800, 'same'); loud = me > max(me.max() * .1, 1e-5)
-    g = 10 * np.log10((vb[act] ** 2).mean()) - 9 - 10 * np.log10((mb[loud] ** 2).mean() + 1e-12)
+    g = 10 * np.log10((vb[act] ** 2).mean()) - 12 - 10 * np.log10((mb[loud] ** 2).mean() + 1e-12)
     g = min(g, ARGS.music_gain_max) if np.isfinite(g) else 0   # 7,5 dB = nível aprovado na ampulheta v4
     tt = np.arange(N) / SR; end_v = TL['lines'][-1]['t'] + TL['lines'][-1]['d']
     gdb = np.where(act, g, g + 3.5); gdb = np.where(tt > end_v + .05, g + 6, gdb); gdb = smooth(gdb, .04, .3)

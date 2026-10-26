@@ -10,7 +10,10 @@ O ângulo "história narrada com personagem" está em `HISTORIA.md`.
 - Estrutura: gancho (0 a 3 s), a dor, a virada "a Tolki resolve", "Comenta PALAVRA". Cada cena tem uma animação própria. Conversas, listas e personagens ilustrativos levam "exemplo ilustrativo".
 - Capa separada (1080x1920) no modelo de `exemplo-apuracao/gen_covers.py`, seguindo o rodízio de cor da grade (capa.txt).
 
-## Vozes oficiais (rodízio aprovado pelo Carlos em 10/10/2026)
+## Voz (PADRÃO NOVO de 26/10/2026: vale mais que tudo desta seção)
+Leia `VOZ_PADRAO_TOLKI.md`. Resumo: voz única `pt-br-commercial-7`, estilo fixo em inglês, UMA tomada para o texto inteiro (3 tomadas, escolhe a sem palavra trocada e com menor deriva de tom), apara só começo e fim, 1,20x no áudio inteiro, ganho único. No motor gancho-tensao: `python3 tools/gancho-tensao/voz_continua.py roteiro.json WORK`. O rodízio de 6 vozes, a geração fala por fala, o `split_take.py` e o nivelamento por frase abaixo ficam só como histórico (a voz oscilava).
+
+## Vozes antigas (rodízio de 10/10/2026, SUBSTITUÍDO em 26/10/2026)
 **Principal: Gemini 3.8 Flash TTS, 6 vozes brasileiras nativas.** Rodízio: não repita a voz do motion anterior (Reel) nem a do criativo anterior (anúncio). Variar a voz também dá diversidade de criativo para a Meta.
 | Voz (id) | Perfil | Combina com |
 |---|---|---|
@@ -51,6 +54,9 @@ Se o `split_take.py` avisar "divisão incerta", gere uma fala por pedido (mesma 
 
 ## Ritmo (regra aprovada)
 `python3 <repo>/tools/reel-motion/split_take.py v/take.mp3 roteiro.json a` faz tudo: corta uma fala por cena, encurta pausas acima de 0,38 s para 0,30 s (a pausa cômica curta fica) e acelera para 3,3 palavras por segundo, entre 1,0x e 1,3x, sem mudar o tom. Desde 15/10/2026 o padrão é `TEMPO=1.0 python3 .../split_take.py ...` (sem aceleração, veja o padrão de voz natural acima). `roteiro.json` = `{"lines": [...]}`. Leia o que ele imprime: com "ATENÇÃO", refaça a voz antes de seguir.
+
+## Música (biblioteca nova de 26/10/2026)
+O Carlos mandou 13 músicas novas em 26/10/2026. Com Seven Nation Army e Timeless, são 15 ativas na biblioteca, para Reels e anúncios. As trilhas synth-* (genéricas) ficaram desativadas (`ativa: false`), só como reserva para anúncio que a Meta silenciar por direito autoral. A voz do cantor foi removida (MDX-Net Inst HQ3) e cada uma tem `clima`, `combina_com`, `drops` e `breaks` medidos pelo `music_edit.py analyze`. Use só as com `ativa: true`.
 
 ## Música (remix: o melhor momento cai na hora certa)
 As instrumentais (sem a voz do cantor) ficam numa biblioteca privada (artifact "Biblioteca de músicas Tolki"; o link está no prompt da tarefa). Não suba música com direitos neste repositório.
