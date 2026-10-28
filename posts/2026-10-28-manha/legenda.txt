@@ -1,0 +1,15 @@
+Seu paciente avisa às 21h que não vem amanhã às 9h. Quem lê essa mensagem na sua clínica?
+
+Terça, 17:40. A recepção de clínica abre a agenda de quarta e manda a confirmação de consulta pra cada paciente, um por um: copia, cola, troca o nome, troca o horário. Às 18h fecha o caixa. Vai embora.
+
+Às 21:12 chega: "não vou conseguir amanhã, tem outro dia?". Ninguém vê. Na quarta, às 8h, ela lê, pede desculpa e remarca pra sexta. Ele fica bem. A cadeira das 9h, não: em uma hora ninguém consegue encaixar outro paciente, e o aviso que chegou com 12 horas de folga vira falta de paciente na sua agenda.
+
+O WhatsApp tá testando a mensagem agendada, por enquanto no beta do iPhone. Vai ajudar a mandar. E quem responde às 21h? Faz assim: manda a confirmação às 10h, com a recepção aberta. Pergunta "precisa remarcar?". Oferece 2 horários pra quem não pode.
+
+Na Tolki, a IA manda o lembrete pelo WhatsApp oficial da sua clínica odontológica e responde às 21h também. Ele escolhe outro dia ali mesmo. Pronto. A quarta das 9h volta pra agenda na mesma noite. Na Espaçolaser, disparos com a IA da Tolki dobraram os agendamentos: mais de 300 por mês.
+
+Salva o checklist do slide 6 e mostra pra sua recepção. Depois comente LEMBRETE que a gente te mostra a IA remarcando às 21h.
+
+(conversa ilustrativa)
+
+#recepcaodeclinica #faltadepaciente #clinicaodontologica #gestaodeclinicas
