@@ -33,3 +33,16 @@ python3 render.py $W --out final.mp4 --audio-only ...           # só refaz o á
 - Música: nunca vai para o repositório. `--moff` é onde começa o trecho, `--music-swell` o segundo em que a música cresce, `--swell-line` a fala onde esse crescimento deve cair. O volume fica limitado a +7,5 dB e, desde 26/10/2026, a música fica 3 dB mais baixa em relação à voz (o Carlos achou alta no Reel do convênio).
 - A cena define `window.bgAt(t)` (fundo filmado no gancho), as cenas por fala (`SC`), o desenho em canvas (`drawArt`) e os efeitos (`cue(t, F('pasta/arquivo.ogg'), {g})`).
 - Confira a sincronia transcrevendo trechos do vídeo final nos pontos-chave (a palavra tem que abrir o trecho).
+
+## Rodízio de estilos visuais (Carlos, 02/11/2026)
+"Tá muito repetitivo, sempre a mesma coisa, esse efeitinho azul passando, fundo preto." O visual escuro com rastro ciano deixou de ser obrigatório. Agora são 5 estilos e o Reel nunca repete o estilo do Reel anterior. O motor (voz contínua, sincronia por palavra, legenda, mix) é o mesmo.
+
+| Estilo | Como é | Exemplo |
+|---|---|---|
+| Cor chapada | Fundo inteiro troca por cena (roxo, azul, branco, creme, preto), Montserrat 900 gigante, cortes secos na voz, sem rastro de luz | `exemplos/cor_chapada.py` (aprovado pelo Carlos em 02/11/2026) |
+| Tela do WhatsApp | O vídeo inteiro é a conversa no celular: mensagem chegando, relógio correndo, IA respondendo | ainda sem exemplo |
+| Papel e caneta | Fundo creme, rabisco à mão, marca-texto roxo, bilhete e agenda de papel | ainda sem exemplo |
+| Foto real da cena | Fotos geradas de recepção, balcão e celular, texto por cima e movimento de câmera (gasta créditos) | ainda sem exemplo |
+| Escuro com traço fino | O padrão de 20/10: fundo #050B12, ciano, rastro de luz | `exemplos/domino.py`, `vela.py`, `ampulheta.html` |
+
+Na cena sem o estilo escuro: esconda `#tag` e `#hgc` se não usar, não chame `comet()`, e use `assets/montserrat-900.woff2` para a Montserrat 900. Palavra grande precisa de tamanho conferido na prévia, porque o ajuste automático pode medir antes da fonte carregar.
